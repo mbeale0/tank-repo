@@ -9,8 +9,10 @@ namespace Tank
 {
     public class Health : NetworkBehaviour
     {
+        [SyncVar(hook = "SetHealthHook")] public int currentHealth = 100;
+
+      
         [SerializeField] private int maxHealth = 100;
-        [SyncVar] [SerializeField] private int currentHealth = 100;
         [SerializeField] private GameObject bustedTankPrefab;
         [SerializeField] private Transform tankTransform;
         [SerializeField] private GameObject tankRenderers;
@@ -20,6 +22,15 @@ namespace Tank
         public override void OnStartServer()
         {
             currentHealth = maxHealth;
+            healthSlider.value = currentHealth;
+        }
+
+        private void SetHealthHook(int oldHealth, int newHealth)
+        {
+            SetHealth();
+        }
+        private void SetHealth()
+        {
             healthSlider.value = currentHealth;
         }
 
@@ -40,7 +51,7 @@ namespace Tank
         {
             if (hasAuthority)
             {
-                healthSlider.value = currentHealth;
+                SetHealth();
             }
 
             if (currentHealth == 0)
@@ -53,6 +64,7 @@ namespace Tank
             }
         }
 
+        
         IEnumerator Respawn()
         {
             CmdSpawnBustedTank();
