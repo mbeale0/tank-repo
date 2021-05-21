@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 6e4cc0827b572b5408b2cd8eb8b456b4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_MovementAudio: {instanceID: 0}
+  - m_EngineIdling: {instanceID: 0}
+  - m_EngineDriving: {instanceID: 0}
+  - m_Rigidbody: {instanceID: 0}
+  - fuelGauge: {fileID: 9104451281936599961, guid: 8df33bc95ac77cb4ab4be5b145ae7762,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
