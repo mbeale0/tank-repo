@@ -5,7 +5,12 @@ using UnityEngine.UI;
 using System.Linq;
 public class MenuController : MonoBehaviour
 {
-    // TODO: Possibly add saving system so settings don't have to be changed every game launch(not sure how it works yet)
+    /* 
+     * TODO: Possibly add saving system so settings don't have to be changed every game launch(not sure how it works yet)
+     * UNKNOWN: When exiting from the build and rerunning the same build, if set at a higher resolution than the player screen the game automatically
+     * lowers to the native. However, if set at a lower resolution than exit/rerun the lower resolution stays. I am leaving this for now, as it 
+     * might be fixed when a saving system (like the one from GameDev.tv) is implemented
+     */
 
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] Dropdown resolutionDropdown;
