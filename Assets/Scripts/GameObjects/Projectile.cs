@@ -25,7 +25,6 @@ namespace GameObjects
         {
             rigidBody.AddForce(transform.forward * force);
         }
-
        
         // destroy for everyone on the server
         [Server]
@@ -55,9 +54,6 @@ namespace GameObjects
         {
             yield return new WaitForSeconds(10f);
             NetworkServer.Destroy(gameObject);
-
-
-
         }
     }
 }

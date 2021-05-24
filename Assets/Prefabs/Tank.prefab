@@ -5416,8 +5416,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  maxHealth: 100
   currentHealth: 1
+  maxHealth: 100
   bustedTankPrefab: {fileID: 3915631344924530330, guid: 1955945f986fece47b746f6f1c2b0c5f,
     type: 3}
   tankTransform: {fileID: 938947275851987210}

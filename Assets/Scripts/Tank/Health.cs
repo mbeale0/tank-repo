@@ -9,7 +9,7 @@ namespace Tank
 {
     public class Health : NetworkBehaviour
     {
-        [SyncVar(hook = "SetHealthHook")] public int currentHealth = 100;
+        [SyncVar(hook = nameof(SetHealthHook))] public int currentHealth = 100;
 
       
         [SerializeField] private int maxHealth = 100;
@@ -23,16 +23,15 @@ namespace Tank
         {
             currentHealth = maxHealth;
             healthSlider.value = currentHealth;
+            healthSlider.gameObject.SetActive(isLocalPlayer);
         }
 
         private void SetHealthHook(int oldHealth, int newHealth)
         {
-            SetHealth();
+            if (!isLocalPlayer) return;
+                SetHealth();
         }
-        private void SetHealth()
-        {
-            healthSlider.value = currentHealth;
-        }
+     
 
         [Command]
         void CmdSpawnBustedTank()
@@ -40,6 +39,7 @@ namespace Tank
             GameObject tankBusted = Instantiate(bustedTankPrefab, tankTransform.position, tankTransform.rotation);
             NetworkServer.Spawn(tankBusted);
         }
+       
 
         public void DealDamage(int damageAmount)
         {
@@ -49,7 +49,7 @@ namespace Tank
 
         private void Update()
         {
-            if (hasAuthority)
+            if (isLocalPlayer) 
             {
                 SetHealth();
             }
@@ -63,26 +63,27 @@ namespace Tank
                return;
             }
         }
-
-        
         IEnumerator Respawn()
         {
             CmdSpawnBustedTank();
             yield return new WaitForEndOfFrame();
             currentHealth = maxHealth;
             tankRenderers.SetActive(false);
-            CmdRespawn();
+            ReLocate();
             yield return new WaitForSeconds(2f);
             tankRenderers.SetActive(true);
         }
-         private void CmdRespawn()
+         private void ReLocate()
                 {
                     if (isLocalPlayer)
                     {
                         transform.position = Vector3.zero;
                     }
                 }
-
+  
+        private void SetHealth()
+        {
+            healthSlider.value = currentHealth;
+        }
     }
-
 }
