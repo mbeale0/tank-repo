@@ -9,8 +9,10 @@ namespace Tank
 {
     public class Health : NetworkBehaviour
     {
+        [SyncVar(hook = nameof(SetHealthHook))] public int currentHealth = 100;
+
+      
         [SerializeField] private int maxHealth = 100;
-        [SyncVar] [SerializeField] private int currentHealth = 100;
         [SerializeField] private GameObject bustedTankPrefab;
         [SerializeField] private Transform tankTransform;
         [SerializeField] private GameObject tankRenderers;
@@ -21,7 +23,15 @@ namespace Tank
         {
             currentHealth = maxHealth;
             healthSlider.value = currentHealth;
+            healthSlider.gameObject.SetActive(isLocalPlayer);
         }
+
+        private void SetHealthHook(int oldHealth, int newHealth)
+        {
+            if (!isLocalPlayer) return;
+                SetHealth();
+        }
+     
 
         [Command]
         void CmdSpawnBustedTank()
@@ -29,6 +39,7 @@ namespace Tank
             GameObject tankBusted = Instantiate(bustedTankPrefab, tankTransform.position, tankTransform.rotation);
             NetworkServer.Spawn(tankBusted);
         }
+       
 
         public void DealDamage(int damageAmount)
         {
@@ -38,9 +49,9 @@ namespace Tank
 
         private void Update()
         {
-            if (hasAuthority)
+            if (isLocalPlayer) 
             {
-                healthSlider.value = currentHealth;
+                SetHealth();
             }
 
             if (currentHealth == 0)
@@ -52,25 +63,27 @@ namespace Tank
                return;
             }
         }
-
         IEnumerator Respawn()
         {
             CmdSpawnBustedTank();
             yield return new WaitForEndOfFrame();
             currentHealth = maxHealth;
             tankRenderers.SetActive(false);
-            CmdRespawn();
+            ReLocate();
             yield return new WaitForSeconds(2f);
             tankRenderers.SetActive(true);
         }
-         private void CmdRespawn()
+         private void ReLocate()
                 {
                     if (isLocalPlayer)
                     {
                         transform.position = Vector3.zero;
                     }
                 }
-
+  
+        private void SetHealth()
+        {
+            healthSlider.value = currentHealth;
+        }
     }
-
 }
