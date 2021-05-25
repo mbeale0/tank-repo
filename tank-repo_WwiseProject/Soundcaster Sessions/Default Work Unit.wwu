@@ -13,6 +13,14 @@
 							<ObjectRef Name="Play_Tank_Moving" ID="{8174D5C6-E85F-448A-9315-07D9098FA651}" WorkUnitID="{F82206BE-6B67-4C5A-987C-42D0178936E5}"/>
 							<Position X="0" Y="1"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Play_Tank_Rotation" ID="{07A57A3D-8E9D-4C53-94C0-2671872928B6}" WorkUnitID="{F82206BE-6B67-4C5A-987C-42D0178936E5}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_Tank_Rotation" ID="{4CE634BC-A8AC-4663-BC56-FF341340FBA4}" WorkUnitID="{F82206BE-6B67-4C5A-987C-42D0178936E5}"/>
+							<Position X="1" Y="1"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>

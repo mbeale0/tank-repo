@@ -17,18 +17,18 @@ public class Firing :NetworkBehaviour
     public Slider timerSlider;
     private bool canShoot=true;
 
-    AudioSource audioSource;
+    
 
-  public void onKeyCode.Space()
-    {
-        AkSoundEngine.PostEvent("Play_Tank_Shoot");
-    }
+  
+        
+    
     private void Update()
     {
         if (!hasAuthority) return;
         timerSlider.value += Time.deltaTime;
         if (Input.GetKey(shootKey)&&canShoot)
         {
+            AkSoundEngine.PostEvent("Play_Tank_Shoot", gameObject);
             StartCoroutine(ShootDelay());
         }
     }
@@ -45,7 +45,7 @@ public class Firing :NetworkBehaviour
     }
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        
         timerSlider.maxValue = cannonRechargeTime;
         timerSlider.value = cannonRechargeTime;
         timerSlider.gameObject.SetActive(isLocalPlayer);
@@ -53,7 +53,8 @@ public class Firing :NetworkBehaviour
     [Command]
     public void CmdFire()
     {
-        audioSource.PlayOneShot(shotFiringClip, shotFiringVolume);
+        
+        
         GameObject projectile = Instantiate(projectilePrefab, projectileMount.position, projectileMount.rotation);
         NetworkServer.Spawn(projectile);
         

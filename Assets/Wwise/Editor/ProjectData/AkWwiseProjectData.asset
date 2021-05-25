@@ -66,8 +66,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 3d846a1d515f9742a94ea0e19aa8a541
     GuidInternal: 
-    m_lastTime: -8585796572775467056
-    List: []
+    m_lastTime: -8585796508433803313
+    List:
+    - name: Tank
+      guid: 454add07c41b4a41b2287db73da7ee1c
+      id: 3206747537
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 3d846a1d515f9742a94ea0e19aa8a541
+      - ElementName: Tank
+        ObjectType: 7
+        guid: 454add07c41b4a41b2287db73da7ee1c
+      Path: SoundBanks\Default Work Unit\Tank
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -80,8 +94,110 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: be0622f8676b5a4c987c42d0178936e5
     GuidInternal: 
-    m_lastTime: -8585796572774529553
-    List: []
+    m_lastTime: -8585796508433623794
+    List:
+    - name: Play_Click
+      guid: 197f965117c07d4d974cf2538bf77c99
+      id: 311910498
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: be0622f8676b5a4c987c42d0178936e5
+      - ElementName: Play_Click
+        ObjectType: 3
+        guid: 197f965117c07d4d974cf2538bf77c99
+      Path: Events\Default Work Unit\Play_Click
+      maxAttenuation: 0
+      maxDuration: 0.319478
+      minDuration: 0.319478
+    - name: Play_Tank_Moving
+      guid: c6d574815fe88a44931507d9098fa651
+      id: 1849641471
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: be0622f8676b5a4c987c42d0178936e5
+      - ElementName: Play_Tank_Moving
+        ObjectType: 3
+        guid: c6d574815fe88a44931507d9098fa651
+      Path: Events\Default Work Unit\Play_Tank_Moving
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Tank_Rotation
+      guid: 3d7aa5079d8e534c94c02671872928b6
+      id: 425465487
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: be0622f8676b5a4c987c42d0178936e5
+      - ElementName: Play_Tank_Rotation
+        ObjectType: 3
+        guid: 3d7aa5079d8e534c94c02671872928b6
+      Path: Events\Default Work Unit\Play_Tank_Rotation
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Tank_Shoot
+      guid: c98e8ea2a007fe4eb80a65d1b2af5d98
+      id: 2800788618
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: be0622f8676b5a4c987c42d0178936e5
+      - ElementName: Play_Tank_Shoot
+        ObjectType: 3
+        guid: c98e8ea2a007fe4eb80a65d1b2af5d98
+      Path: Events\Default Work Unit\Play_Tank_Shoot
+      maxAttenuation: 0
+      maxDuration: 1.569525
+      minDuration: 1.245733
+    - name: Stop_Tank_Moving
+      guid: a2303c32941cfd438383a99614612156
+      id: 769492269
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: be0622f8676b5a4c987c42d0178936e5
+      - ElementName: Stop_Tank_Moving
+        ObjectType: 3
+        guid: a2303c32941cfd438383a99614612156
+      Path: Events\Default Work Unit\Stop_Tank_Moving
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_Tank_Rotation
+      guid: bc34e64caca86346bc56ff341340fba4
+      id: 1109520597
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: be0622f8676b5a4c987c42d0178936e5
+      - ElementName: Stop_Tank_Rotation
+        ObjectType: 3
+        guid: bc34e64caca86346bc56ff341340fba4
+      Path: Events\Default Work Unit\Stop_Tank_Rotation
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -94,8 +210,22 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 32573d97f96d324e84ff80b560f08d68
     GuidInternal: 
-    m_lastTime: -8585796572774000970
-    List: []
+    m_lastTime: -8585796558827773075
+    List:
+    - name: Tank_Speed
+      guid: 80385ff6f19a4647b88776ce79ffe922
+      id: 2362893381
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 32573d97f96d324e84ff80b560f08d68
+      - ElementName: Tank_Speed
+        ObjectType: 13
+        guid: 80385ff6f19a4647b88776ce79ffe922
+      Path: Game Parameters\Default Work Unit\Tank_Speed
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -139,7 +269,7 @@ MonoBehaviour:
     m_lastTime: -8585796572775865987
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 0c0000000d000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

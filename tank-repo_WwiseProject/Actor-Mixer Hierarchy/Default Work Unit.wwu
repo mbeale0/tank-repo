@@ -138,6 +138,83 @@
 						<ActiveSource Name="15779_1460487609" ID="{152BD63A-BE66-4917-92AC-51E6E344C4CC}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="Tank_Rotation" ID="{CD429ED1-1554-4589-8609-1EDC948762AD}" ShortID="935839143">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>38</Value>
+							</ValueList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{8D5630EF-722D-42BD-8CE5-B2B8BB00869E}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="150"/>
+											<Property Name="Min" Type="Real64" Value="-150"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DADA4622-5785-46B6-BEE9-CE43CC3A870D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{77B53B97-C2EF-470F-845B-3BFE4F1E2073}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="z_uko_ye-effekty-po_orot-bashni-tanka" ID="{7DB99B12-DBAF-46B6-A12A-9195625F8608}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.171320414601171"/>
+								<Property Name="TrimEnd" Type="Real64" Value="4.88263181613339"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>z_uko_ye-effekty-po_orot-bashni-tanka.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="426274905"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="z_uko_ye-effekty-po_orot-bashni-tanka" ID="{7DB99B12-DBAF-46B6-A12A-9195625F8608}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Click" ID="{FE69A094-5691-411A-8CF5-88F3E4ECDA62}" ShortID="968797616">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DADA4622-5785-46B6-BEE9-CE43CC3A870D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{77B53B97-C2EF-470F-845B-3BFE4F1E2073}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="20af166b0a13e92 (1)" ID="{B1A6BB88-19AB-4C1D-80ED-CBA47BA4F012}">
+							<Language>SFX</Language>
+							<AudioFile>20af166b0a13e92 (1).wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="322553246"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="20af166b0a13e92 (1)" ID="{B1A6BB88-19AB-4C1D-80ED-CBA47BA4F012}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

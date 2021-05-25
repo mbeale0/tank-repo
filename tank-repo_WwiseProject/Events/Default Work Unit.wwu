@@ -31,11 +31,49 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
 								<Property Name="FadeOutCurve" Type="int16" Value="5"/>
-								<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Tank_Moving" ID="{FD628382-6C21-4715-87B6-EF56EE630900}" WorkUnitID="{B85BAA13-2DD9-470A-BF68-AB73A5B8B5D3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Tank_Rotation" ID="{07A57A3D-8E9D-4C53-94C0-2671872928B6}">
+					<ChildrenList>
+						<Action Name="" ID="{F792CBCB-3DA7-4B20-9F11-9DC4D60CECF2}" ShortID="344455950">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tank_Rotation" ID="{CD429ED1-1554-4589-8609-1EDC948762AD}" WorkUnitID="{B85BAA13-2DD9-470A-BF68-AB73A5B8B5D3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Tank_Rotation" ID="{4CE634BC-A8AC-4663-BC56-FF341340FBA4}">
+					<ChildrenList>
+						<Action Name="" ID="{D8B5ACC7-A0DD-4C54-91FC-A2600A5005CE}" ShortID="447141360">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="3"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tank_Rotation" ID="{CD429ED1-1554-4589-8609-1EDC948762AD}" WorkUnitID="{B85BAA13-2DD9-470A-BF68-AB73A5B8B5D3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Click" ID="{51967F19-C017-4D7D-974C-F2538BF77C99}">
+					<ChildrenList>
+						<Action Name="" ID="{056BD216-3D12-4922-83CC-514F24FFE981}" ShortID="604950174">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Click" ID="{FE69A094-5691-411A-8CF5-88F3E4ECDA62}" WorkUnitID="{B85BAA13-2DD9-470A-BF68-AB73A5B8B5D3}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
