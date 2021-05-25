@@ -18,7 +18,11 @@ public class Firing :NetworkBehaviour
     private bool canShoot=true;
 
     AudioSource audioSource;
-  
+
+  public void onKeyCode.Space()
+    {
+        AkSoundEngine.PostEvent("Play_Tank_Shoot");
+    }
     private void Update()
     {
         if (!hasAuthority) return;

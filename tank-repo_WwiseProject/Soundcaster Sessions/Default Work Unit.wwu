@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{61801DC8-B75A-463D-B235-5CA2B423A306}" SchemaVersion="103">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{61801DC8-B75A-463D-B235-5CA2B423A306}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Tank" ID="{1A42CE82-E33D-41CB-A346-240D92AA171E}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Stop_Tank_Moving" ID="{323C30A2-1C94-43FD-8383-A99614612156}" WorkUnitID="{F82206BE-6B67-4C5A-987C-42D0178936E5}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Tank_Moving" ID="{8174D5C6-E85F-448A-9315-07D9098FA651}" WorkUnitID="{F82206BE-6B67-4C5A-987C-42D0178936E5}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="Tank_Speed" ID="{F65F3880-9AF1-4746-B887-76CE79FFE922}"/>
+							<Value>30</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

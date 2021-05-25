@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F82206BE-6B67-4C5A-987C-42D0178936E5}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{F82206BE-6B67-4C5A-987C-42D0178936E5}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Tank_Shoot" ID="{A28E8EC9-07A0-4EFE-B80A-65D1B2AF5D98}">
+					<ChildrenList>
+						<Action Name="" ID="{08595488-1993-470A-A249-5B92EE0337F6}" ShortID="665836520">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tank_Shoot" ID="{E24935CC-E871-46BA-86E7-ACEA60E71E2D}" WorkUnitID="{B85BAA13-2DD9-470A-BF68-AB73A5B8B5D3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Tank_Moving" ID="{8174D5C6-E85F-448A-9315-07D9098FA651}">
+					<ChildrenList>
+						<Action Name="" ID="{2D4CE17F-521C-4E55-A70C-49B1F995D3D8}" ShortID="280293771">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tank_Moving" ID="{FD628382-6C21-4715-87B6-EF56EE630900}" WorkUnitID="{B85BAA13-2DD9-470A-BF68-AB73A5B8B5D3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Tank_Moving" ID="{323C30A2-1C94-43FD-8383-A99614612156}">
+					<ChildrenList>
+						<Action Name="" ID="{965002B9-DA12-4DF8-BD5D-5F208A8EF81B}" ShortID="337429594">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+								<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tank_Moving" ID="{FD628382-6C21-4715-87B6-EF56EE630900}" WorkUnitID="{B85BAA13-2DD9-470A-BF68-AB73A5B8B5D3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

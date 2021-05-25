@@ -1,0 +1,12 @@
+Event	ID	Name			Wwise Object Path	Notes
+	769492269	Stop_Tank_Moving			\Default Work Unit\Stop_Tank_Moving	
+	1849641471	Play_Tank_Moving			\Default Work Unit\Play_Tank_Moving	
+	2800788618	Play_Tank_Shoot			\Default Work Unit\Play_Tank_Shoot	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2362893381	Tank_Speed			\Default Work Unit\Tank_Speed	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	163324611	Tank_Shoot	C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\.cache\Windows\SFX\f4ee46bb060c102_7A4F84B3.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank_Shoot		123394
+	588723361	Tank_Moving	C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\.cache\Windows\SFX\15779_1460487609_040DBB30.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank_Moving		12511804
+
