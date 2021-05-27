@@ -5420,10 +5420,10 @@ MonoBehaviour:
   syncInterval: 0.1
   currentHealth: 1
   maxHealth: 100
-  bustedTankPrefab: {fileID: 3915631344924530330, guid: 1955945f986fece47b746f6f1c2b0c5f,
+  remainsPrefab: {fileID: 3915631344924530330, guid: 1955945f986fece47b746f6f1c2b0c5f,
     type: 3}
-  tankTransform: {fileID: 938947275851987210}
-  tankRenderers: {fileID: 938947275852281954}
+  parentTransform: {fileID: 938947275851987210}
+  parentRenderers: {fileID: 938947275852281954}
   healthSlider: {fileID: 1970896369317087581}
   isDead: 0
 --- !u!114 &3716252263390049881

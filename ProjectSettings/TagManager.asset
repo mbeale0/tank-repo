@@ -7,6 +7,8 @@ TagManager:
   - Flag
   - Turret
   - Tank base
+  - Building
+  - Projectile
   layers:
   - Default
   - TransparentFX
