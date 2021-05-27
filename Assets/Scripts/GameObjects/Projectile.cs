@@ -7,11 +7,11 @@ namespace GameObjects
 {
     public class Projectile : NetworkBehaviour
     {
-        [SerializeField] private int damageAmount = 25;
+        public int damageAmount = 25;
         public float destroyAfter = 5;
         public Rigidbody rigidBody;
         public float force = 1000;
-        [SerializeField] private ParticleSystem vehicleExplosionSfx;
+       // [SerializeField] private ParticleSystem vehicleExplosionSfx;
 
         // ReSharper disable Unity.PerformanceAnalysis
         public override void OnStartServer()
@@ -38,22 +38,21 @@ namespace GameObjects
         [ServerCallback]
         private void OnTriggerEnter(Collider co)
         {
+          if (!co.TryGetComponent<Health>(out var health))return;
+          health.DealDamage(damageAmount);
+          NetworkServer.Destroy(gameObject);
 
-            if (co.TryGetComponent<NetworkIdentity>(out var networkIdentity))
-            {
-                if (networkIdentity.connectionToClient == connectionToClient) { return; }
-            }
-
-            if (!co.TryGetComponent<Health>(out var health)) return;
-            health.DealDamage(damageAmount);
-            NetworkServer.Destroy(gameObject);
+          /*  if (co.TryGetComponent<NetworkIdentity>(out var networkIdentity))
+         {
+             if (networkIdentity.connectionToClient == connectionToClient) { return; }
+         }*/
 
         }
 
-        IEnumerator VechicleHit()
+/*        IEnumerator VechicleHit()
         {
             yield return new WaitForSeconds(10f);
             NetworkServer.Destroy(gameObject);
-        }
+        }*/
     }
 }

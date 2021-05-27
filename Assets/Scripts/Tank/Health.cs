@@ -1,89 +1,90 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
-
+ 
 namespace Tank
 {
     public class Health : NetworkBehaviour
     {
         [SyncVar(hook = nameof(SetHealthHook))] public int currentHealth = 100;
-
-      
+ 
         [SerializeField] private int maxHealth = 100;
-        [SerializeField] private GameObject bustedTankPrefab;
-        [SerializeField] private Transform tankTransform;
-        [SerializeField] private GameObject tankRenderers;
+        [SerializeField] private GameObject remainsPrefab;
+        //[SerializeField] private Transform parentTransform;
         [SerializeField] private Slider healthSlider;
         public bool isDead = false;
+ 
+        NetworkConnection cachedNetworkConnection;
         
         public override void OnStartServer()
         {
+            // this seem silly - should already be this in inspector
             currentHealth = maxHealth;
+ 
+            cachedNetworkConnection = connectionToClient;
+        }
+ 
+        public override void OnStartClient()
+        {
             healthSlider.value = currentHealth;
             healthSlider.gameObject.SetActive(isLocalPlayer);
         }
-
-        private void SetHealthHook(int oldHealth, int newHealth)
+ 
+        void SetHealthHook(int oldHealth, int newHealth)
         {
-            if (!isLocalPlayer) return;
-                SetHealth();
+            healthSlider.value = currentHealth;
         }
-     
-
-        [Command]
-        void CmdSpawnBustedTank()
+ 
+ 
+        [ServerCallback]
+        void SpawnRemains()
         {
-            GameObject tankBusted = Instantiate(bustedTankPrefab, tankTransform.position, tankTransform.rotation);
-            NetworkServer.Spawn(tankBusted);
+            // if this is a player object, RemovePlayerForConnection to take it off of clients
+            // for buildings, UnSpawn it to take it off clients
+            if (connectionToClient != null)
+                NetworkServer.RemovePlayerForConnection(connectionToClient, false);
+            else
+                NetworkServer.Destroy(gameObject);
+ 
+            // spawn the remains prefab for this object in either case
+            NetworkServer.Spawn(Instantiate(remainsPrefab, transform.position, transform.rotation));
         }
-       
-
+ 
+        [ServerCallback]
         public void DealDamage(int damageAmount)
         {
             currentHealth -= damageAmount;
-
-        }
-
-        private void Update()
-        {
-            if (isLocalPlayer) 
-            {
-                SetHealth();
-            }
-
+ 
             if (currentHealth == 0)
-            {
-              StartCoroutine(Respawn());
-            }
-            else
-            {
-               return;
-            }
+                StartCoroutine(Respawn());
         }
+ 
+        [ServerCallback]
         IEnumerator Respawn()
         {
-            CmdSpawnBustedTank();
+            // this will nullify connectionToClient so use cachedNetworkConnection after this
+            SpawnRemains();
+ 
+            // bail out here for non-player objects, e.g. buildings
+            if (cachedNetworkConnection == null) 
+                yield break;
+ 
             yield return new WaitForEndOfFrame();
-            currentHealth = maxHealth;
-            tankRenderers.SetActive(false);
+ 
             ReLocate();
+            currentHealth = maxHealth;
             yield return new WaitForSeconds(2f);
-            tankRenderers.SetActive(true);
+ 
+            NetworkServer.AddPlayerForConnection(cachedNetworkConnection, gameObject);
         }
-         private void ReLocate()
-                {
-                    if (isLocalPlayer)
-                    {
-                        transform.position = Vector3.zero;
-                    }
-                }
-  
-        private void SetHealth()
+ 
+        [ServerCallback]
+        void ReLocate()
         {
-            healthSlider.value = currentHealth;
+            // leaving this in assuming more complex relocation is planned
+            transform.position = Vector3.zero;
         }
     }
 }

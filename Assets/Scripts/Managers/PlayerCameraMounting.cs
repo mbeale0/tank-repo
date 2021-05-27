@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
@@ -17,6 +18,15 @@ public class PlayerCameraMounting : NetworkBehaviour
             cameraTransform.position = CameraMountPoint.transform.position;  //Set position/rotation same as the mount point
             cameraTransform.rotation = CameraMountPoint.transform.rotation;
 
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (isLocalPlayer)
+        {
+            Transform cameraTransform = Camera.main.gameObject.transform;
+            cameraTransform.parent = null;
         }
     }
 }
