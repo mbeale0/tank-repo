@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 9dd9215beff91b458a8c4d44bf22546b
     GuidInternal: 
-    m_lastTime: -8585795342571468771
+    m_lastTime: -8585795137597685834
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 973bb577efc20f47845b3bfe4f1e2073
     GuidInternal: 
-    m_lastTime: -8585795342572615708
+    m_lastTime: -8585795137598984370
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 3d846a1d515f9742a94ea0e19aa8a541
     GuidInternal: 
-    m_lastTime: -8585795342571488729
+    m_lastTime: -8585795137597705779
     List:
     - name: Tank
       guid: 454add07c41b4a41b2287db73da7ee1c
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: be0622f8676b5a4c987c42d0178936e5
     GuidInternal: 
-    m_lastTime: -8585795342573962116
+    m_lastTime: -8585795137600576247
     List:
     - name: Play_Click
       guid: 197f965117c07d4d974cf2538bf77c99
@@ -111,8 +111,8 @@ MonoBehaviour:
         guid: 197f965117c07d4d974cf2538bf77c99
       Path: Events\Default Work Unit\Play_Click
       maxAttenuation: 0
-      maxDuration: 0.319478
-      minDuration: 0.319478
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Tank_Moving
       guid: c6d574815fe88a44931507d9098fa651
       id: 1849641471
@@ -162,8 +162,8 @@ MonoBehaviour:
         guid: c98e8ea2a007fe4eb80a65d1b2af5d98
       Path: Events\Default Work Unit\Play_Tank_Shoot
       maxAttenuation: 0
-      maxDuration: 1.569525
-      minDuration: 1.245733
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_Tank_Moving
       guid: a2303c32941cfd438383a99614612156
       id: 769492269
@@ -179,8 +179,8 @@ MonoBehaviour:
         guid: a2303c32941cfd438383a99614612156
       Path: Events\Default Work Unit\Stop_Tank_Moving
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_Tank_Rotation
       guid: bc34e64caca86346bc56ff341340fba4
       id: 1109520597
@@ -196,8 +196,8 @@ MonoBehaviour:
         guid: bc34e64caca86346bc56ff341340fba4
       Path: Events\Default Work Unit\Stop_Tank_Rotation
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -210,7 +210,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 32573d97f96d324e84ff80b560f08d68
     GuidInternal: 
-    m_lastTime: -8585795342573962116
+    m_lastTime: -8585795137600566287
     List:
     - name: Tank_Speed
       guid: 80385ff6f19a4647b88776ce79ffe922
@@ -238,7 +238,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 2f6ec83edbcbcd48a1ef2044517a987c
     GuidInternal: 
-    m_lastTime: -8585795342571478755
+    m_lastTime: -8585795137597695807
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -252,7 +252,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: f4411a8eae866146becc399c3f986ea1
     GuidInternal: 
-    m_lastTime: -8585795342571478755
+    m_lastTime: -8585795137597685834
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -266,7 +266,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 9a23faeef39e304a981a60f8facc7f2a
     GuidInternal: 
-    m_lastTime: -8585795342571468771
+    m_lastTime: -8585795137597685834
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 0c0000000d000000
