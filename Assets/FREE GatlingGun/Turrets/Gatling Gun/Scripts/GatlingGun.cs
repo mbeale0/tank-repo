@@ -13,6 +13,10 @@ public class GatlingGun : NetworkBehaviour
     public Transform go_GunBody;
     public Transform go_barrel;
 
+    [SerializeField] AudioClip shotFiringClip;
+
+    [SerializeField] private float shotFiringVolume = 1f;
+    AudioSource audioSource;
     // Gun barrel rotation
     public float barrelRotationSpeed;
     float currentRotationSpeed;
@@ -25,6 +29,7 @@ public class GatlingGun : NetworkBehaviour
 
     // Used to start and stop the turret firing
     bool canFire = false;
+    private bool canFireProjectile = true;
     
     // projectile
     public GameObject bulletPrefab;
@@ -92,10 +97,12 @@ public class GatlingGun : NetworkBehaviour
             if (!muzzelFlash.isPlaying)
             {
                 muzzelFlash.Play();
+                audioSource.PlayOneShot(shotFiringClip, shotFiringVolume);
             }
             
             // shoot bullets
-            StartCoroutine(BulletsPerSecond());
+            if(canFireProjectile){
+            StartCoroutine(BulletsPerSecond());}
 
         }
         else
@@ -116,14 +123,15 @@ public class GatlingGun : NetworkBehaviour
     {
         FireProjectile();
         yield return new WaitForEndOfFrame();
-        canFire = false;
+        canFireProjectile = false;
         yield return new WaitForSeconds(bulletsPerSecond);
-        canFire = true;
+        canFireProjectile = true;
     }
 
     [ServerCallback]
     public void FireProjectile()
     {
+       
         GameObject bullet = Instantiate(bulletPrefab, bulletMount.position, bulletMount.rotation);
         NetworkServer.Spawn(bullet);
     }
