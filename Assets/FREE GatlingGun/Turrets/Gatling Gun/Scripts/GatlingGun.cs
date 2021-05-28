@@ -34,7 +34,7 @@ public class GatlingGun : NetworkBehaviour
     // projectile
     public GameObject bulletPrefab;
     public Transform bulletMount;
-    public float bulletsPerSecond = 1f;
+    public float timeBetweenRounds = 1f;
 
     
     void Start()
@@ -124,7 +124,7 @@ public class GatlingGun : NetworkBehaviour
         FireProjectile();
         yield return new WaitForEndOfFrame();
         canFireProjectile = false;
-        yield return new WaitForSeconds(bulletsPerSecond);
+        yield return new WaitForSeconds(timeBetweenRounds);
         canFireProjectile = true;
     }
 

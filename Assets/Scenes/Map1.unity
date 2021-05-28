@@ -828,11 +828,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114048599433676842, guid: f72d03e48b3dbfd4ca0f692e695377c3,
+        type: 3}
+      propertyPath: bulletsPerSecond
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114048599433676842, guid: f72d03e48b3dbfd4ca0f692e695377c3,
+        type: 3}
+      propertyPath: timeBetweenRounds
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 4710780471355991062, guid: f72d03e48b3dbfd4ca0f692e695377c3,
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6706807211050088209, guid: f72d03e48b3dbfd4ca0f692e695377c3,
         type: 3}
       propertyPath: sceneId
