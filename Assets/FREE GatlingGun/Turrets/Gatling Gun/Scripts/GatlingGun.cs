@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Tank;
 using UnityEngine;
 using Mirror;
 
@@ -13,7 +12,6 @@ public class GatlingGun : NetworkBehaviour
     public Transform go_baseRotation;
     public Transform go_GunBody;
     public Transform go_barrel;
-    public int gatlingGunDamage = 1;
 
     // Gun barrel rotation
     public float barrelRotationSpeed;
@@ -27,6 +25,11 @@ public class GatlingGun : NetworkBehaviour
 
     // Used to start and stop the turret firing
     bool canFire = false;
+    
+    // projectile
+    public GameObject bulletPrefab;
+    public Transform bulletMount;
+    public float bulletsPerSecond = 1f;
 
     
     void Start()
@@ -54,7 +57,6 @@ public class GatlingGun : NetworkBehaviour
         {
             go_target = other.transform;
             canFire = true;
-            other.GetComponent<Health>().DealDamage(gatlingGunDamage);
         }
 
     }
@@ -84,12 +86,17 @@ public class GatlingGun : NetworkBehaviour
 
             go_baseRotation.transform.LookAt(baseTargetPostition);
             go_GunBody.transform.LookAt(gunBodyTargetPostition);
-
+            // instantiate projectiles
+            
             // start particle system 
             if (!muzzelFlash.isPlaying)
             {
                 muzzelFlash.Play();
             }
+            
+            // shoot bullets
+            StartCoroutine(BulletsPerSecond());
+
         }
         else
         {
@@ -102,5 +109,22 @@ public class GatlingGun : NetworkBehaviour
                 muzzelFlash.Stop();
             }
         }
+      
+    }
+
+    IEnumerator BulletsPerSecond()
+    {
+        FireProjectile();
+        yield return new WaitForEndOfFrame();
+        canFire = false;
+        yield return new WaitForSeconds(bulletsPerSecond);
+        canFire = true;
+    }
+
+    [ServerCallback]
+    public void FireProjectile()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, bulletMount.position, bulletMount.rotation);
+        NetworkServer.Spawn(bullet);
     }
 }

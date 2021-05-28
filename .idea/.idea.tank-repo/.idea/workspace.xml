@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cb0245de-f3a3-4da6-a8e7-1ca556ac81c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.tank-repo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tank-repo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FREE GatlingGun/Prefabs/GatlingGun/GatelingGun_Yellow_L3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FREE GatlingGun/Prefabs/GatlingGun/GatelingGun_Yellow_L3.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FREE GatlingGun/Turrets/Gatling Gun/Scripts/GatlingGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FREE GatlingGun/Turrets/Gatling Gun/Scripts/GatlingGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tank.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tank.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tank/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tank/Health.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wwise/API/Runtime/Plugins/Windows/x86/Profile/AkSoundEngine.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/API/Runtime/Plugins/Windows/x86/Profile/AkSoundEngine.dll.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wwise/API/Runtime/Plugins/Windows/x86_64/Profile/AkSoundEngine.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/API/Runtime/Plugins/Windows/x86_64/Profile/AkSoundEngine.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +19,8 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/FREE GatlingGun/Turrets/Gatling Gun/Scripts/GatlingGun.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tank/Health.cs" />
+      <option value="$PROJECT_DIR$/Assets/FREE GatlingGun/Turrets/Gatling Gun/Scripts/GatlingGun.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1t6tthtNcYHYk5PwgPUfxP0TZ40" />
