@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="1370070549">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3206747537" Language="SFX" Hash="3227774374">
+			<ObjectPath>\SoundBanks\Default Work Unit\Tank</ObjectPath>
+			<ShortName>Tank</ShortName>
+			<Path>Tank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="311910498" Name="Play_Click" ObjectPath="\Events\Default Work Unit\Play_Click" DurationType="OneShot" DurationMin="0.319478" DurationMax="0.319478">
+					<IncludedMemoryFiles>
+						<File Id="322553246" Language="SFX">
+							<ShortName>20af166b0a13e92 (1).wav</ShortName>
+							<Path>SFX\20af166b0a13e92 (1)_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1849641471" Name="Play_Tank_Moving" ObjectPath="\Events\Default Work Unit\Play_Tank_Moving" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="588723361" Language="SFX">
+							<ShortName>15779_1460487609.wav</ShortName>
+							<Path>SFX\15779_1460487609_384F5B5B.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="425465487" Name="Play_Tank_Rotation" ObjectPath="\Events\Default Work Unit\Play_Tank_Rotation" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="426274905" Language="SFX">
+							<ShortName>z_uko_ye-effekty-po_orot-bashni-tanka.wav</ShortName>
+							<Path>SFX\z_uko_ye-effekty-po_orot-bashni-tanka_3357D56E.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2800788618" Name="Play_Tank_Shoot" ObjectPath="\Events\Default Work Unit\Play_Tank_Shoot" DurationType="OneShot" DurationMin="1.245733" DurationMax="1.569525">
+					<IncludedMemoryFiles>
+						<File Id="163324611" Language="SFX">
+							<ShortName>f4ee46bb060c102.wav</ShortName>
+							<Path>SFX\f4ee46bb060c102_EE201CF6.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="769492269" Name="Stop_Tank_Moving" ObjectPath="\Events\Default Work Unit\Stop_Tank_Moving" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1109520597" Name="Stop_Tank_Rotation" ObjectPath="\Events\Default Work Unit\Stop_Tank_Rotation" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="2362893381" Name="Tank_Speed" ObjectPath="\Game Parameters\Default Work Unit\Tank_Speed"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

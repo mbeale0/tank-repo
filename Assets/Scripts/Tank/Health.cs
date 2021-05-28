@@ -20,9 +20,6 @@ namespace Tank
         
         public override void OnStartServer()
         {
-            // this seem silly - should already be this in inspector
-            currentHealth = maxHealth;
- 
             cachedNetworkConnection = connectionToClient;
         }
  

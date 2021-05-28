@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Tank;
 using UnityEngine;
+using Mirror;
 
-public class GatlingGun : MonoBehaviour
+public class GatlingGun : NetworkBehaviour
 {
     // target the gun will aim at
     Transform go_target;
@@ -11,6 +13,7 @@ public class GatlingGun : MonoBehaviour
     public Transform go_baseRotation;
     public Transform go_GunBody;
     public Transform go_barrel;
+    public int gatlingGunDamage = 1;
 
     // Gun barrel rotation
     public float barrelRotationSpeed;
@@ -51,6 +54,7 @@ public class GatlingGun : MonoBehaviour
         {
             go_target = other.transform;
             canFire = true;
+            other.GetComponent<Health>().DealDamage(gatlingGunDamage);
         }
 
     }
