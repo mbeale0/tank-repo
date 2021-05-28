@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c9f0e915bbc694da2f7d52786a6aad, type: 3}
+  m_Name: 51967F19-C017-4D7D-974C-F2538BF77C99
+  m_EditorClassIdentifier: 
+  objectName: Play_Click
+  id: 311910498
+  guid: 51967F19-C017-4D7D-974C-F2538BF77C99

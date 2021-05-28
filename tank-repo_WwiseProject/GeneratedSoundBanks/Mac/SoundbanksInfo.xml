@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3206747537" Language="SFX" Hash="3227774374">
+		<SoundBank Id="3206747537" Language="SFX" Hash="3625946201">
 			<ObjectPath>\SoundBanks\Default Work Unit\Tank</ObjectPath>
 			<ShortName>Tank</ShortName>
 			<Path>Tank.bnk</Path>
@@ -26,6 +26,14 @@
 						<File Id="322553246" Language="SFX">
 							<ShortName>20af166b0a13e92 (1).wav</ShortName>
 							<Path>SFX\20af166b0a13e92 (1)_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3306210749" Name="Play_Main_Menu" ObjectPath="\Events\Default Work Unit\Play_Main_Menu" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="430966633" Language="SFX">
+							<ShortName>tanks main menu.wav</ShortName>
+							<Path>SFX\tanks main menu_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

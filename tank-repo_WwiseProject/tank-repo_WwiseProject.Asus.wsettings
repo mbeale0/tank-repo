@@ -6,10 +6,12 @@
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\Asus\Downloads\"/>
 				<Property Name="Event Action List\{07A57A3D-8E9D-4C53-94C0-2671872928B6}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{323C30A2-1C94-43FD-8383-A99614612156}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{3FD0195A-5DB2-4FED-AE08-7FF7A102E11B}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{4CE634BC-A8AC-4663-BC56-FF341340FBA4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{51967F19-C017-4D7D-974C-F2538BF77C99}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{8174D5C6-E85F-448A-9315-07D9098FA651}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{A28E8EC9-07A0-4EFE-B80A-65D1B2AF5D98}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{DDA1EF94-0D48-4AA8-B882-10E171DC5130}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>

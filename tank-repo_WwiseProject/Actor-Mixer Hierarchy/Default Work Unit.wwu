@@ -215,6 +215,32 @@
 						<ActiveSource Name="20af166b0a13e92 (1)" ID="{B1A6BB88-19AB-4C1D-80ED-CBA47BA4F012}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="Main_Menu" ID="{B95DF6BA-D4DC-489F-9544-A9920012F02F}" ShortID="388524063">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DADA4622-5785-46B6-BEE9-CE43CC3A870D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{77B53B97-C2EF-470F-845B-3BFE4F1E2073}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="tanks main menu" ID="{B37A21F1-D39F-489C-91BF-995D8B912234}">
+							<Language>SFX</Language>
+							<AudioFile>tanks main menu.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="430966633"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="tanks main menu" ID="{B37A21F1-D39F-489C-91BF-995D8B912234}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

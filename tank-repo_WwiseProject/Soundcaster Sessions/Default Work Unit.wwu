@@ -21,6 +21,14 @@
 							<ObjectRef Name="Stop_Tank_Rotation" ID="{4CE634BC-A8AC-4663-BC56-FF341340FBA4}" WorkUnitID="{F82206BE-6B67-4C5A-987C-42D0178936E5}"/>
 							<Position X="1" Y="1"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Play_Main_Menu" ID="{DDA1EF94-0D48-4AA8-B882-10E171DC5130}" WorkUnitID="{F82206BE-6B67-4C5A-987C-42D0178936E5}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_Main_Menu" ID="{3FD0195A-5DB2-4FED-AE08-7FF7A102E11B}" WorkUnitID="{F82206BE-6B67-4C5A-987C-42D0178936E5}"/>
+							<Position X="2" Y="1"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>

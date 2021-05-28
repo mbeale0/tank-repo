@@ -79,6 +79,33 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Main_Menu" ID="{DDA1EF94-0D48-4AA8-B882-10E171DC5130}">
+					<ChildrenList>
+						<Action Name="" ID="{44622F40-D3EE-4339-A839-09A9543FA5E1}" ShortID="790706005">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Main_Menu" ID="{B95DF6BA-D4DC-489F-9544-A9920012F02F}" WorkUnitID="{B85BAA13-2DD9-470A-BF68-AB73A5B8B5D3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Main_Menu" ID="{3FD0195A-5DB2-4FED-AE08-7FF7A102E11B}">
+					<ChildrenList>
+						<Action Name="" ID="{106DEA67-EF92-43C2-BC9B-A1096C2685D6}" ShortID="1064833708">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+								<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Main_Menu" ID="{B95DF6BA-D4DC-489F-9544-A9920012F02F}" WorkUnitID="{B85BAA13-2DD9-470A-BF68-AB73A5B8B5D3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

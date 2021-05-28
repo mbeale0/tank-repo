@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_CLICK = 311910498U;
+        static const AkUniqueID PLAY_MAIN_MENU = 3306210749U;
         static const AkUniqueID PLAY_TANK_MOVING = 1849641471U;
         static const AkUniqueID PLAY_TANK_ROTATION = 425465487U;
         static const AkUniqueID PLAY_TANK_SHOOT = 2800788618U;
