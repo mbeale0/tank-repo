@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb0245de-f3a3-4da6-a8e7-1ca556ac81c4" name="Default Changelist" comment="" />
+    <list default="true" id="cb0245de-f3a3-4da6-a8e7-1ca556ac81c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.tank-repo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tank-repo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/BuildingWhite.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/BuildingWhite.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Base.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Base.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Flag.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Flag.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tank.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tank.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjects/Base.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjects/HomeBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjects/Base.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjects/HomeBase.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjects/Flag.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjects/Flag.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tank/TankController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tank/TankController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +30,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Tank/Health.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tank/Firing.cs" />
       <option value="$PROJECT_DIR$/Assets/FREE GatlingGun/Turrets/Gatling Gun/Scripts/GatlingGun.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/Base.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/Flag.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/HomeBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/PlayerPickupTheFlag.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/FlagPickup.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tank/TankController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1t6tthtNcYHYk5PwgPUfxP0TZ40" />
@@ -70,5 +91,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

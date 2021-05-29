@@ -9,6 +9,7 @@ TagManager:
   - Tank base
   - Building
   - Projectile
+  - HomeBase
   layers:
   - Default
   - TransparentFX
