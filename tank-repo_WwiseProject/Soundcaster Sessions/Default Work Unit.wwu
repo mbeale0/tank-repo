@@ -35,6 +35,10 @@
 							<GameParameterRef Name="Tank_Speed" ID="{F65F3880-9AF1-4746-B887-76CE79FFE922}"/>
 							<Value>30</Value>
 						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="MainVolume" ID="{EB0E9873-933F-4CBB-BD7F-C52C017C4599}"/>
+							<Value>100</Value>
+						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true"/>
