@@ -38,12 +38,7 @@ namespace Tank {
             otherTransform.rotation = flagMountPoint.transform.rotation;
             hasFlag = true;
 
-            if (!hasFlag || !other.CompareTag("HomeBase")) return;
-            otherTransform.parent= other.GetComponent<HomeBase>().flagMountPoint.transform;
-            otherTransform.position = other.GetComponent<HomeBase>().flagMountPoint.transform.position;
-            otherTransform.rotation = other.GetComponent<HomeBase>().flagMountPoint.transform.rotation;
-            hasFlag = false;
-        }
+      }
     }
 }
 

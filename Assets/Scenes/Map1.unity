@@ -449,6 +449,16 @@ PrefabInstance:
       propertyPath: sceneId
       value: 4271013887
       objectReference: {fileID: 0}
+    - target: {fileID: 2757809832437227644, guid: e391bed4f4d364f4996afce8beb99a36,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307597270371490413, guid: e391bed4f4d364f4996afce8beb99a36,
+        type: 3}
+      propertyPath: flagMountTransform
+      value: 
+      objectReference: {fileID: 835905708}
     - target: {fileID: 4570810476499841566, guid: e391bed4f4d364f4996afce8beb99a36,
         type: 3}
       propertyPath: m_Name
@@ -511,6 +521,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e391bed4f4d364f4996afce8beb99a36, type: 3}
+--- !u!4 &835905708 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2475255239053681259, guid: e391bed4f4d364f4996afce8beb99a36,
+    type: 3}
+  m_PrefabInstance: {fileID: 835905707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1158996493
 PrefabInstance:
   m_ObjectHideFlags: 0
