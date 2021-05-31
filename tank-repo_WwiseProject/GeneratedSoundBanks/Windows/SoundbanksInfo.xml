@@ -11,12 +11,12 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="192863312">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1370070549">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3206747537" Language="SFX" Hash="3210051270">
+		<SoundBank Id="3206747537" Language="SFX" Hash="3625946201">
 			<ObjectPath>\SoundBanks\Default Work Unit\Tank</ObjectPath>
 			<ShortName>Tank</ShortName>
 			<Path>Tank.bnk</Path>
@@ -61,12 +61,10 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="774860123" Name="Stop_Main_Menu" ObjectPath="\Events\Default Work Unit\Stop_Main_Menu" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="769492269" Name="Stop_Tank_Moving" ObjectPath="\Events\Default Work Unit\Stop_Tank_Moving" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1109520597" Name="Stop_Tank_Rotation" ObjectPath="\Events\Default Work Unit\Stop_Tank_Rotation" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 			<GameParameters>
-				<GameParameter Id="1843561328" Name="MainVolume" ObjectPath="\Game Parameters\Default Work Unit\MainVolume"/>
 				<GameParameter Id="2362893381" Name="Tank_Speed" ObjectPath="\Game Parameters\Default Work Unit\Tank_Speed"/>
 			</GameParameters>
 		</SoundBank>

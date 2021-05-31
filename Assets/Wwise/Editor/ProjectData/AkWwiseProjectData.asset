@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 3d846a1d515f9742a94ea0e19aa8a541
     GuidInternal: 
-    m_lastTime: -8585792891033572084
+    m_lastTime: -8585794065296980569
     List:
     - name: Tank
       guid: 454add07c41b4a41b2287db73da7ee1c
@@ -196,8 +196,8 @@ MonoBehaviour:
         guid: 5a19d03fb25ded4fae087ff7a102e11b
       Path: Events\Default Work Unit\Stop_Main_Menu
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_Tank_Moving
       guid: a2303c32941cfd438383a99614612156
       id: 769492269
@@ -244,22 +244,8 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 32573d97f96d324e84ff80b560f08d68
     GuidInternal: 
-    m_lastTime: -8585792120827410461
+    m_lastTime: -8585795137600566287
     List:
-    - name: MainVolume
-      guid: 73980eeb3f93bb4cbd7fc52c017c4599
-      id: 1843561328
-      PathAndIcons:
-      - ElementName: Game Parameters
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 32573d97f96d324e84ff80b560f08d68
-      - ElementName: MainVolume
-        ObjectType: 13
-        guid: 73980eeb3f93bb4cbd7fc52c017c4599
-      Path: Game Parameters\Default Work Unit\MainVolume
     - name: Tank_Speed
       guid: 80385ff6f19a4647b88776ce79ffe922
       id: 2362893381
