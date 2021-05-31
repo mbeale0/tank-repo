@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{10CC5B84-7F49-4363-9B7B-A0A146796BAC}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{10CC5B84-7F49-4363-9B7B-A0A146796BAC}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Stop_Main_Menu" ID="{8090D763-F139-4B27-854B-5900EEAAB98A}">
+					<ChildrenList>
+						<Action Name="" ID="{8AB61690-0B61-4ED2-82E6-46E7203C4183}" ShortID="887719286">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Main_Menu" ID="{CF3D7746-ECE3-4D8B-85B1-E9AFB1226CD6}" WorkUnitID="{A77F5E54-DC00-481A-BA05-EC1CF0095CA9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Main_Menu" ID="{C7C9E3A5-F1F7-491B-8BE9-02E561BA3518}">
+					<ChildrenList>
+						<Action Name="" ID="{FC003576-CDCB-4401-98FB-E2E53BEAB4DB}" ShortID="711125989">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Main_Menu" ID="{CF3D7746-ECE3-4D8B-85B1-E9AFB1226CD6}" WorkUnitID="{A77F5E54-DC00-481A-BA05-EC1CF0095CA9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

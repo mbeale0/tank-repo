@@ -1,0 +1,10 @@
+Event	ID	Name			Wwise Object Path	Notes
+	774860123	Stop_Main_Menu			\Default Work Unit\Stop_Main_Menu	
+	3306210749	Play_Main_Menu			\Default Work Unit\Play_Main_Menu	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1843561328	MainVolume			\Default Work Unit\MainVolume	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	402808741	Main_Menu	C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\.cache\Windows\SFX\tanks main menu_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main_Menu		17422912
+

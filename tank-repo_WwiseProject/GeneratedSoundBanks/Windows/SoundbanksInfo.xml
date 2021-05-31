@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="2534763494">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1661994096" Language="SFX" Hash="2129776425">
+			<ObjectPath>\SoundBanks\Default Work Unit\SoundBank</ObjectPath>
+			<ShortName>SoundBank</ShortName>
+			<Path>SoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3306210749" Name="Play_Main_Menu" ObjectPath="\Events\Default Work Unit\Play_Main_Menu" DurationType="OneShot" DurationMin="98.768982" DurationMax="98.768982">
+					<IncludedMemoryFiles>
+						<File Id="402808741" Language="SFX">
+							<ShortName>tanks main menu.wav</ShortName>
+							<Path>SFX\tanks main menu_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="774860123" Name="Stop_Main_Menu" ObjectPath="\Events\Default Work Unit\Stop_Main_Menu" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="1843561328" Name="MainVolume" ObjectPath="\Game Parameters\Default Work Unit\MainVolume"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

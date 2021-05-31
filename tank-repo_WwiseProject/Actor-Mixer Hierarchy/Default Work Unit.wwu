@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A77F5E54-DC00-481A-BA05-EC1CF0095CA9}" SchemaVersion="103">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{A77F5E54-DC00-481A-BA05-EC1CF0095CA9}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Main_Menu" ID="{CF3D7746-ECE3-4D8B-85B1-E9AFB1226CD6}" ShortID="630422352">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-15</Value>
+							</ValueList>
+							<RTPCList>
+								<RTPC Name="" ID="{D31D5BBF-CF5D-4F78-889A-4B1987949398}" ShortID="738969662">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="MainVolume" ID="{1781B707-B38A-4DA8-B23B-47BF02FA3730}" WorkUnitID="{F1B985D6-D15B-450B-8F24-AD49A37EEC49}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{E90FD7E2-80FD-411A-9C59-107C530AAB2B}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-200</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E0F64C7-C2CA-408B-AA90-287EA80F757D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{33C50ACC-1220-4490-B372-D2844B1C9FC3}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="tanks main menu" ID="{BEFE021C-74BD-4320-8B0C-9DB627175217}">
+							<Language>SFX</Language>
+							<AudioFile>tanks main menu.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="402808741"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="tanks main menu" ID="{BEFE021C-74BD-4320-8B0C-9DB627175217}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
