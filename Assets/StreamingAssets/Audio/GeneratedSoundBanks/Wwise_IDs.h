@@ -18,12 +18,14 @@ namespace AK
         static const AkUniqueID PLAY_TANK_MOVING = 1849641471U;
         static const AkUniqueID PLAY_TANK_ROTATION = 425465487U;
         static const AkUniqueID PLAY_TANK_SHOOT = 2800788618U;
+        static const AkUniqueID STOP_MAIN_MENU = 774860123U;
         static const AkUniqueID STOP_TANK_MOVING = 769492269U;
         static const AkUniqueID STOP_TANK_ROTATION = 1109520597U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID MAINVOLUME = 1843561328U;
         static const AkUniqueID TANK_SPEED = 2362893381U;
     } // namespace GAME_PARAMETERS
 
