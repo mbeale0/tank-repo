@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb0245de-f3a3-4da6-a8e7-1ca556ac81c4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.tank-repo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tank-repo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tank.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tank.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjects/HomeBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjects/HomeBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tank/TankController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tank/TankController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset" afterDir="false" />
-    </list>
+    <list default="true" id="cb0245de-f3a3-4da6-a8e7-1ca556ac81c4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +9,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/Player.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -28,6 +24,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/FlagPickup.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tank/TankController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/HomeBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Player.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1t6tthtNcYHYk5PwgPUfxP0TZ40" />
