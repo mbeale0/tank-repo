@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="cb0245de-f3a3-4da6-a8e7-1ca556ac81c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Assets/FREE GatlingGun/Turrets/Gatling Gun/Scripts/GatlingGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FREE GatlingGun/Turrets/Gatling Gun/Scripts/GatlingGun.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map1.unity" afterDir="false" />
@@ -22,6 +23,9 @@
       <change beforePath="$PROJECT_DIR$/Assets/Wwise/API/Runtime/Plugins/Windows/x86/Profile/AkSoundEngine.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/API/Runtime/Plugins/Windows/x86/Profile/AkSoundEngine.dll.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Wwise/API/Runtime/Plugins/Windows/x86_64/Profile/AkSoundEngine.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/API/Runtime/Plugins/Windows/x86_64/Profile/AkSoundEngine.dll.meta" afterDir="false" />
     </list>
+=======
+    <list default="true" id="cb0245de-f3a3-4da6-a8e7-1ca556ac81c4" name="Default Changelist" comment="" />
+>>>>>>> Teams
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,11 +34,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/Player.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Tank/Health.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tank/Firing.cs" />
       <option value="$PROJECT_DIR$/Assets/FREE GatlingGun/Turrets/Gatling Gun/Scripts/GatlingGun.cs" />
+<<<<<<< HEAD
+=======
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/Base.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/Flag.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/PlayerPickupTheFlag.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/FlagPickup.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tank/TankController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/HomeBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Player.cs" />
+>>>>>>> Teams
     </changedPaths>
   </component>
   <component name="ProjectId" id="1t6tthtNcYHYk5PwgPUfxP0TZ40" />
