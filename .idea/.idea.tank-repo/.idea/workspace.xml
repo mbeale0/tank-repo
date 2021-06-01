@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="cb0245de-f3a3-4da6-a8e7-1ca556ac81c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/FREE GatlingGun/Turrets/Gatling Gun/Scripts/GatlingGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FREE GatlingGun/Turrets/Gatling Gun/Scripts/GatlingGun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/DecodedBanks.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/DecodedBanks/English(US).meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.bnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.bnk.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/PluginInfo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/PluginInfo.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/SoundbanksInfo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/SoundbanksInfo.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Tank.bnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Tank.bnk.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Tank.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Tank.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wwise/API/Runtime/Plugins/Windows/x86/Profile/AkSoundEngine.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/API/Runtime/Plugins/Windows/x86/Profile/AkSoundEngine.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wwise/API/Runtime/Plugins/Windows/x86_64/Profile/AkSoundEngine.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/API/Runtime/Plugins/Windows/x86_64/Profile/AkSoundEngine.dll.meta" afterDir="false" />
+    </list>
+=======
     <list default="true" id="cb0245de-f3a3-4da6-a8e7-1ca556ac81c4" name="Default Changelist" comment="" />
+>>>>>>> Teams
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,19 +35,23 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/MyNetworkManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/Player.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Tank/Health.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tank/Firing.cs" />
       <option value="$PROJECT_DIR$/Assets/FREE GatlingGun/Turrets/Gatling Gun/Scripts/GatlingGun.cs" />
+<<<<<<< HEAD
+=======
       <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/Base.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/Flag.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/PlayerPickupTheFlag.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/FlagPickup.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tank/TankController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameObjects/HomeBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Player.cs" />
+>>>>>>> Teams
     </changedPaths>
   </component>
   <component name="ProjectId" id="1t6tthtNcYHYk5PwgPUfxP0TZ40" />
@@ -79,6 +107,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

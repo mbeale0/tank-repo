@@ -29,16 +29,16 @@ namespace Tank {
             _turretRotate.Rotate();
         }
 
-       private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Flag")|| hasFlag) return;
             var otherTransform = other.transform;
             otherTransform.parent = flagMountPoint.transform;
             otherTransform.position = flagMountPoint.transform.position;
-            otherTransform.rotation = flagMountPoint.transform.rotation;
+            otherTransform.rotation = flagMountPoint.transform.rotation;       
             hasFlag = true;
 
-      }
+        }
     }
 }
 

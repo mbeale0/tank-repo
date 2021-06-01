@@ -1,0 +1,9 @@
+Event	ID	Name			Wwise Object Path	Notes
+	311910498	Play_Click			\Default Work Unit\Play_Click	
+	774860123	Stop_Main_Menu			\Default Work Unit\Stop_Main_Menu	
+	3306210749	Play_Main_Menu			\Default Work Unit\Play_Main_Menu	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	402808741	Main_Menu	C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\.cache\Windows\SFX\tanks main menu_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main_Menu		17422912
+	457774799	Click	C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\.cache\Windows\SFX\10e1076dfd6c701_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Click		24944
+

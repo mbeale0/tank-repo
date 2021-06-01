@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="Project" SchemaVersion="103" WwiseVersion="v2021.1.1" WwiseBuild="7601">
 	<ProjectInfo>
-		<Project Name="tank-repo_WwiseProject" ID="{5909666F-0777-4847-9F56-BF04078451BC}">
+		<Project Name="tank-repo_WwiseProject" ID="{D7EEAFDC-11EA-4351-8257-0A0752759017}">
 			<Platforms>
-				<Platform Name="Mac" ReferencePlatform="Mac" ID="{BE840671-367E-4C51-B43C-6568B96EC574}" />
-				<Platform Name="Windows" ReferencePlatform="Windows" ID="{076D9BB4-4721-426C-AB94-93A39F5EB217}" />
+				<Platform Name="Mac" ReferencePlatform="Mac" ID="{5BD56120-6820-4913-B27D-FF6D369AAD96}" />
+				<Platform Name="Windows" ReferencePlatform="Windows" ID="{9F03BA2C-0727-4327-A54C-5F7B1D64F419}" />
 			</Platforms>
 			<LanguageList>
-				<Language Name="English(US)" ID="{9C29168F-8BFF-4174-B66F-06D1C2C2CF9D}" />
-				<Language Name="External" ID="{1CDCB0DC-7577-4147-BFB5-90925523B385}" />
-				<Language Name="Mixed" ID="{10A1D6F3-4009-45BF-ABC0-5C0FC96A3101}" />
-				<Language Name="SFX" ID="{2BBB0441-7964-4B63-BB31-CE9BCF72D61F}" />
+				<Language Name="English(US)" ID="{E7CB0ADF-94FB-4173-9B70-B66175998E61}" />
+				<Language Name="External" ID="{6634CBAE-C314-4ADA-AFAD-58C41593506A}" />
+				<Language Name="Mixed" ID="{E127E20A-BC02-4721-9467-7F1C9BADA4C3}" />
+				<Language Name="SFX" ID="{9A19CDEE-1760-470C-9F61-BE3F8946ACAF}" />
 			</LanguageList>
 			<PropertyList>
 				<Property Name="ExternalSourcesInputPath" Type="string">
@@ -10405,6 +10405,60 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
+				<SharedPropertyList ClassName="ASIO Output" PluginType="7" CompanyID="0" PluginID="168">
+					<PropertyList>
+						<Property Name="BaseChannel" Type="int32">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="BypassEffect" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+						<Property Name="BypassEffect0" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+						<Property Name="BypassEffect1" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+						<Property Name="BypassEffect2" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+						<Property Name="BypassEffect3" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ChannelConfig" Type="int32">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Color" Type="int16">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Inclusion" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OverrideColor" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+				</SharedPropertyList>
 				<SharedPropertyList ClassName="Wwise Reflect" PluginType="3" CompanyID="0" PluginID="171">
 					<PropertyList>
 						<Property Name="BaseTextureFrequency" Type="Real32">
@@ -11305,6 +11359,20 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
+				<SharedPropertyList ClassName="ASIO Input" PluginType="2" CompanyID="0" PluginID="204">
+					<PropertyList>
+						<Property Name="BaseChannel" Type="int32">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ChannelConfig" Type="int32">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+				</SharedPropertyList>
 				<SharedPropertyList ClassName="Wwise Motion Generator (Deprecated)" PluginType="2" CompanyID="0" PluginID="405">
 					<PropertyList>
 						<Property Name="AttackTime" Type="Real32">
@@ -11758,7 +11826,7 @@
 					<Comment></Comment>
 					<ObsOccCurve CurveXType="Obstruction" CurveYType="Volume">
 						<PlatformCurve Platform="Linked" EnableCurve="true">
-							<Curve Name="" ID="{B39D910D-2EE8-46A8-B179-59EBB94D7B50}">
+							<Curve Name="" ID="{37DF4BF2-F6BD-4FF3-A2A7-F6DDEC3CEF72}">
 								<PropertyList>
 									<Property Name="Flags" Type="int32" Value="3" />
 								</PropertyList>
@@ -11779,7 +11847,7 @@
 					</ObsOccCurve>
 					<ObsOccCurve CurveXType="Obstruction" CurveYType="LPF">
 						<PlatformCurve Platform="Linked" EnableCurve="true">
-							<Curve Name="" ID="{D9E53517-6EDF-4329-9B9E-E4762494C131}">
+							<Curve Name="" ID="{D787564B-D358-47FC-931F-7E1034BCC190}">
 								<PropertyList>
 									<Property Name="Flags" Type="int32" Value="1" />
 								</PropertyList>
@@ -11800,7 +11868,7 @@
 					</ObsOccCurve>
 					<ObsOccCurve CurveXType="Obstruction" CurveYType="HPF">
 						<PlatformCurve Platform="Linked" EnableCurve="false">
-							<Curve Name="" ID="{E41B26D5-571A-41C0-B34E-5DC57FFD997E}">
+							<Curve Name="" ID="{DF6C8824-2869-4E17-82E9-58F49B764915}">
 								<PropertyList>
 									<Property Name="Flags" Type="int32" Value="1" />
 								</PropertyList>
@@ -11821,7 +11889,7 @@
 					</ObsOccCurve>
 					<ObsOccCurve CurveXType="Occlusion" CurveYType="Volume">
 						<PlatformCurve Platform="Linked" EnableCurve="true">
-							<Curve Name="" ID="{927BDD3B-F5D1-4976-8D4E-3A62F15A13C4}">
+							<Curve Name="" ID="{6CD3C5A3-AB3F-4E3B-8EEB-932D32DF152D}">
 								<PropertyList>
 									<Property Name="Flags" Type="int32" Value="3" />
 								</PropertyList>
@@ -11842,7 +11910,7 @@
 					</ObsOccCurve>
 					<ObsOccCurve CurveXType="Occlusion" CurveYType="LPF">
 						<PlatformCurve Platform="Linked" EnableCurve="true">
-							<Curve Name="" ID="{7F0B60A7-35B7-4CD0-A226-0D3EFDE6769B}">
+							<Curve Name="" ID="{3E8D010B-DBB4-4DDE-B3D8-094C7F92620C}">
 								<PropertyList>
 									<Property Name="Flags" Type="int32" Value="1" />
 								</PropertyList>
@@ -11863,7 +11931,7 @@
 					</ObsOccCurve>
 					<ObsOccCurve CurveXType="Occlusion" CurveYType="HPF">
 						<PlatformCurve Platform="Linked" EnableCurve="false">
-							<Curve Name="" ID="{3DB8A3FB-A7AE-4A76-9756-D647ED271F3D}">
+							<Curve Name="" ID="{2D55E113-FE6C-4DB3-8F6B-C54D99E684FE}">
 								<PropertyList>
 									<Property Name="Flags" Type="int32" Value="1" />
 								</PropertyList>

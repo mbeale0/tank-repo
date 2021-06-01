@@ -1,244 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{B85BAA13-2DD9-470A-BF68-AB73A5B8B5D3}" SchemaVersion="103">
+<WwiseDocument Type="WorkUnit" ID="{A77F5E54-DC00-481A-BA05-EC1CF0095CA9}" SchemaVersion="103">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{B85BAA13-2DD9-470A-BF68-AB73A5B8B5D3}" PersistMode="Standalone">
+		<WorkUnit Name="Default Work Unit" ID="{A77F5E54-DC00-481A-BA05-EC1CF0095CA9}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="Tank_Shoot" ID="{E24935CC-E871-46BA-86E7-ACEA60E71E2D}" ShortID="554340803">
+				<Sound Name="Main_Menu" ID="{CF3D7746-ECE3-4D8B-85B1-E9AFB1226CD6}" ShortID="630422352">
 					<PropertyList>
-						<Property Name="Highpass" Type="int16">
-							<ValueList>
-								<Value>13</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Lowpass" Type="int16">
-							<ValueList>
-								<Value>1</Value>
-							</ValueList>
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{2615BE71-3DE2-4B2C-8FF9-F209075AA86B}">
-										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="10"/>
-										</PropertyList>
-									</Modifier>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
-						<Property Name="Pitch" Type="int32">
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{BA0C80AB-0F63-48D6-B814-A73209263EAE}">
-										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="200"/>
-											<Property Name="Min" Type="Real64" Value="-200"/>
-										</PropertyList>
-									</Modifier>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-10</Value>
+								<Value>-15</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DADA4622-5785-46B6-BEE9-CE43CC3A870D}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E0F64C7-C2CA-408B-AA90-287EA80F757D}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{77B53B97-C2EF-470F-845B-3BFE4F1E2073}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{33C50ACC-1220-4490-B372-D2844B1C9FC3}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="f4ee46bb060c102" ID="{9E99CFCB-773F-44B3-8776-FA97A31A79E2}">
-							<PropertyList>
-								<Property Name="FadeOutDuration" Type="Real64" Value="1.2282907358527"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimEnd" Type="Real64" Value="1.39828808915785"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>f4ee46bb060c102.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="163324611"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ObjectLists/>
-					<ActiveSourceList>
-						<ActiveSource Name="f4ee46bb060c102" ID="{9E99CFCB-773F-44B3-8776-FA97A31A79E2}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Tank_Moving" ID="{FD628382-6C21-4715-87B6-EF56EE630900}" ShortID="36822539">
-					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-3</Value>
-							</ValueList>
-							<RTPCList>
-								<RTPC Name="" ID="{74E08D97-296B-48E1-92E3-FF390CEB0145}" ShortID="797683816">
-									<ReferenceList>
-										<Reference Name="ControlInput">
-											<ObjectRef Name="Tank_Speed" ID="{F65F3880-9AF1-4746-B887-76CE79FFE922}" WorkUnitID="{973D5732-6DF9-4E32-84FF-80B560F08D68}"/>
-										</Reference>
-									</ReferenceList>
-									<Curve Name="" ID="{53791C8A-B1D0-40D4-88A1-9F3DCE9B88CB}">
-										<PropertyList>
-											<Property Name="Flags" Type="int32" Value="3"/>
-										</PropertyList>
-										<PointList>
-											<Point>
-												<XPos>0</XPos>
-												<YPos>-200</YPos>
-												<Flags>5</Flags>
-											</Point>
-											<Point>
-												<XPos>8.81834</XPos>
-												<YPos>-6.15455</YPos>
-												<Flags>0</Flags>
-											</Point>
-											<Point>
-												<XPos>100</XPos>
-												<YPos>2</YPos>
-												<Flags>37</Flags>
-											</Point>
-										</PointList>
-									</Curve>
-								</RTPC>
-							</RTPCList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DADA4622-5785-46B6-BEE9-CE43CC3A870D}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{77B53B97-C2EF-470F-845B-3BFE4F1E2073}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="15779_1460487609" ID="{152BD63A-BE66-4917-92AC-51E6E344C4CC}">
-							<PropertyList>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimBegin" Type="Real64" Value="2.22779716302925"/>
-								<Property Name="TrimEnd" Type="Real64" Value="73.1560419751497"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>15779_1460487609.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="588723361"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ObjectLists/>
-					<ActiveSourceList>
-						<ActiveSource Name="15779_1460487609" ID="{152BD63A-BE66-4917-92AC-51E6E344C4CC}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Tank_Rotation" ID="{CD429ED1-1554-4589-8609-1EDC948762AD}" ShortID="935839143">
-					<PropertyList>
-						<Property Name="Highpass" Type="int16">
-							<ValueList>
-								<Value>38</Value>
-							</ValueList>
-						</Property>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Pitch" Type="int32">
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{8D5630EF-722D-42BD-8CE5-B2B8BB00869E}">
-										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="150"/>
-											<Property Name="Min" Type="Real64" Value="-150"/>
-										</PropertyList>
-									</Modifier>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-10</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DADA4622-5785-46B6-BEE9-CE43CC3A870D}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{77B53B97-C2EF-470F-845B-3BFE4F1E2073}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="z_uko_ye-effekty-po_orot-bashni-tanka" ID="{7DB99B12-DBAF-46B6-A12A-9195625F8608}">
-							<PropertyList>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimBegin" Type="Real64" Value="0.171320414601171"/>
-								<Property Name="TrimEnd" Type="Real64" Value="4.88263181613339"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>z_uko_ye-effekty-po_orot-bashni-tanka.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="426274905"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ObjectLists/>
-					<ActiveSourceList>
-						<ActiveSource Name="z_uko_ye-effekty-po_orot-bashni-tanka" ID="{7DB99B12-DBAF-46B6-A12A-9195625F8608}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Click" ID="{FE69A094-5691-411A-8CF5-88F3E4ECDA62}" ShortID="968797616">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DADA4622-5785-46B6-BEE9-CE43CC3A870D}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{77B53B97-C2EF-470F-845B-3BFE4F1E2073}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="20af166b0a13e92 (1)" ID="{B1A6BB88-19AB-4C1D-80ED-CBA47BA4F012}">
-							<Language>SFX</Language>
-							<AudioFile>20af166b0a13e92 (1).wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="322553246"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ObjectLists/>
-					<ActiveSourceList>
-						<ActiveSource Name="20af166b0a13e92 (1)" ID="{B1A6BB88-19AB-4C1D-80ED-CBA47BA4F012}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Main_Menu" ID="{B95DF6BA-D4DC-489F-9544-A9920012F02F}" ShortID="388524063">
-					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DADA4622-5785-46B6-BEE9-CE43CC3A870D}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{77B53B97-C2EF-470F-845B-3BFE4F1E2073}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="tanks main menu" ID="{B37A21F1-D39F-489C-91BF-995D8B912234}">
+						<AudioFileSource Name="tanks main menu" ID="{BEFE021C-74BD-4320-8B0C-9DB627175217}">
 							<Language>SFX</Language>
 							<AudioFile>tanks main menu.wav</AudioFile>
 							<MediaIDList>
-								<MediaID ID="430966633"/>
+								<MediaID ID="402808741"/>
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
 					<ObjectLists/>
 					<ActiveSourceList>
-						<ActiveSource Name="tanks main menu" ID="{B37A21F1-D39F-489C-91BF-995D8B912234}" Platform="Linked"/>
+						<ActiveSource Name="tanks main menu" ID="{BEFE021C-74BD-4320-8B0C-9DB627175217}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

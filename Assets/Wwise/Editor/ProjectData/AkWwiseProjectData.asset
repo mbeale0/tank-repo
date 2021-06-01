@@ -20,11 +20,11 @@ MonoBehaviour:
       guid: 00000000000000000000000000000000
     - ElementName: Default Work Unit
       ObjectType: 12
-      guid: 9dd9215beff91b458a8c4d44bf22546b
+      guid: c0eea6690151e24082802d10f3ec845a
     ParentPath: Virtual Acoustics\Default Work Unit
-    guid: 9dd9215beff91b458a8c4d44bf22546b
+    guid: c0eea6690151e24082802d10f3ec845a
     GuidInternal: 
-    m_lastTime: -8585795137597685834
+    m_lastTime: -8585790822490270919
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -34,11 +34,11 @@ MonoBehaviour:
       guid: 00000000000000000000000000000000
     - ElementName: Default Work Unit
       ObjectType: 12
-      guid: 973bb577efc20f47845b3bfe4f1e2073
+      guid: cc0ac53320129044b372d2844b1c9fc3
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
-    guid: 973bb577efc20f47845b3bfe4f1e2073
+    guid: cc0ac53320129044b372d2844b1c9fc3
     GuidInternal: 
-    m_lastTime: -8585795137598984370
+    m_lastTime: -8585790286924175559
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -49,7 +49,7 @@ MonoBehaviour:
         guid: 00000000000000000000000000000000
       - ElementName: Default Work Unit
         ObjectType: 12
-        guid: 973bb577efc20f47845b3bfe4f1e2073
+        guid: cc0ac53320129044b372d2844b1c9fc3
       - ElementName: Master Audio Bus
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -62,26 +62,30 @@ MonoBehaviour:
       guid: 00000000000000000000000000000000
     - ElementName: Default Work Unit
       ObjectType: 12
-      guid: 3d846a1d515f9742a94ea0e19aa8a541
+      guid: a26c5ef532e2d840adfc051e08ad3d4b
     ParentPath: SoundBanks\Default Work Unit
-    guid: 3d846a1d515f9742a94ea0e19aa8a541
+    guid: a26c5ef532e2d840adfc051e08ad3d4b
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8585791247441994370
+=======
+    m_lastTime: -8585790822490290865
+>>>>>>> 08c6f5f501fb76e6730a1909486856e426b0fe84
     List:
-    - name: Tank
-      guid: 454add07c41b4a41b2287db73da7ee1c
-      id: 3206747537
+    - name: SoundBank
+      guid: a95ca2cc34d7654d9f52497dc88bdafa
+      id: 1661994096
       PathAndIcons:
       - ElementName: SoundBanks
         ObjectType: 5
         guid: 00000000000000000000000000000000
       - ElementName: Default Work Unit
         ObjectType: 12
-        guid: 3d846a1d515f9742a94ea0e19aa8a541
-      - ElementName: Tank
+        guid: a26c5ef532e2d840adfc051e08ad3d4b
+      - ElementName: SoundBank
         ObjectType: 7
-        guid: 454add07c41b4a41b2287db73da7ee1c
-      Path: SoundBanks\Default Work Unit\Tank
+        guid: a95ca2cc34d7654d9f52497dc88bdafa
+      Path: SoundBanks\Default Work Unit\SoundBank
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -90,12 +94,13 @@ MonoBehaviour:
       guid: 00000000000000000000000000000000
     - ElementName: Default Work Unit
       ObjectType: 12
-      guid: be0622f8676b5a4c987c42d0178936e5
+      guid: 845bcc10497f63439b7ba0a146796bac
     ParentPath: Events\Default Work Unit
-    guid: be0622f8676b5a4c987c42d0178936e5
+    guid: 845bcc10497f63439b7ba0a146796bac
     GuidInternal: 
-    m_lastTime: -8585793423366286756
+    m_lastTime: -8585790822493349576
     List:
+<<<<<<< HEAD
     - name: Play_Click
       guid: 197f965117c07d4d974cf2538bf77c99
       id: 311910498
@@ -113,8 +118,10 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.319478
       minDuration: 0.319478
+=======
+>>>>>>> 08c6f5f501fb76e6730a1909486856e426b0fe84
     - name: Play_Main_Menu
-      guid: 94efa1dd480da84ab88210e171dc5130
+      guid: a5e3c9c7f7f11b498be902e561ba3518
       id: 3306210749
       PathAndIcons:
       - ElementName: Events
@@ -122,12 +129,13 @@ MonoBehaviour:
         guid: 00000000000000000000000000000000
       - ElementName: Default Work Unit
         ObjectType: 12
-        guid: be0622f8676b5a4c987c42d0178936e5
+        guid: 845bcc10497f63439b7ba0a146796bac
       - ElementName: Play_Main_Menu
         ObjectType: 3
-        guid: 94efa1dd480da84ab88210e171dc5130
+        guid: a5e3c9c7f7f11b498be902e561ba3518
       Path: Events\Default Work Unit\Play_Main_Menu
       maxAttenuation: 0
+<<<<<<< HEAD
       maxDuration: -1
       minDuration: -1
     - name: Play_Tank_Moving
@@ -181,8 +189,12 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.569525
       minDuration: 1.245733
+=======
+      maxDuration: 98.76898
+      minDuration: 98.76898
+>>>>>>> 08c6f5f501fb76e6730a1909486856e426b0fe84
     - name: Stop_Main_Menu
-      guid: 5a19d03fb25ded4fae087ff7a102e11b
+      guid: 63d7908039f1274b854b5900eeaab98a
       id: 774860123
       PathAndIcons:
       - ElementName: Events
@@ -190,12 +202,13 @@ MonoBehaviour:
         guid: 00000000000000000000000000000000
       - ElementName: Default Work Unit
         ObjectType: 12
-        guid: be0622f8676b5a4c987c42d0178936e5
+        guid: 845bcc10497f63439b7ba0a146796bac
       - ElementName: Stop_Main_Menu
         ObjectType: 3
-        guid: 5a19d03fb25ded4fae087ff7a102e11b
+        guid: 63d7908039f1274b854b5900eeaab98a
       Path: Events\Default Work Unit\Stop_Main_Menu
       maxAttenuation: 0
+<<<<<<< HEAD
       maxDuration: -1
       minDuration: -1
     - name: Stop_Tank_Moving
@@ -230,6 +243,8 @@ MonoBehaviour:
         guid: bc34e64caca86346bc56ff341340fba4
       Path: Events\Default Work Unit\Stop_Tank_Rotation
       maxAttenuation: 0
+=======
+>>>>>>> 08c6f5f501fb76e6730a1909486856e426b0fe84
       maxDuration: 0
       minDuration: 0
   RtpcWwu:
@@ -240,26 +255,30 @@ MonoBehaviour:
       guid: 00000000000000000000000000000000
     - ElementName: Default Work Unit
       ObjectType: 12
-      guid: 32573d97f96d324e84ff80b560f08d68
+      guid: d685b9f15bd10b458f24ad49a37eec49
     ParentPath: Game Parameters\Default Work Unit
-    guid: 32573d97f96d324e84ff80b560f08d68
+    guid: d685b9f15bd10b458f24ad49a37eec49
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8585791247445967235
+=======
+    m_lastTime: -8585790286924497975
+>>>>>>> 08c6f5f501fb76e6730a1909486856e426b0fe84
     List:
-    - name: Tank_Speed
-      guid: 80385ff6f19a4647b88776ce79ffe922
-      id: 2362893381
+    - name: MasterVolume
+      guid: 07b781178ab3a84db23b47bf02fa3730
+      id: 2918011349
       PathAndIcons:
       - ElementName: Game Parameters
         ObjectType: 5
         guid: 00000000000000000000000000000000
       - ElementName: Default Work Unit
         ObjectType: 12
-        guid: 32573d97f96d324e84ff80b560f08d68
-      - ElementName: Tank_Speed
+        guid: d685b9f15bd10b458f24ad49a37eec49
+      - ElementName: MasterVolume
         ObjectType: 13
-        guid: 80385ff6f19a4647b88776ce79ffe922
-      Path: Game Parameters\Default Work Unit\Tank_Speed
+        guid: 07b781178ab3a84db23b47bf02fa3730
+      Path: Game Parameters\Default Work Unit\MasterVolume
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -268,11 +287,11 @@ MonoBehaviour:
       guid: 00000000000000000000000000000000
     - ElementName: Default Work Unit
       ObjectType: 12
-      guid: 2f6ec83edbcbcd48a1ef2044517a987c
+      guid: 51734174b589ae469b59471928eb3824
     ParentPath: States\Default Work Unit
-    guid: 2f6ec83edbcbcd48a1ef2044517a987c
+    guid: 51734174b589ae469b59471928eb3824
     GuidInternal: 
-    m_lastTime: -8585795137597695807
+    m_lastTime: -8585790822490280894
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -282,11 +301,11 @@ MonoBehaviour:
       guid: 00000000000000000000000000000000
     - ElementName: Default Work Unit
       ObjectType: 12
-      guid: f4411a8eae866146becc399c3f986ea1
+      guid: 5cf366d356730b4388694e390da762a8
     ParentPath: Switches\Default Work Unit
-    guid: f4411a8eae866146becc399c3f986ea1
+    guid: 5cf366d356730b4388694e390da762a8
     GuidInternal: 
-    m_lastTime: -8585795137597685834
+    m_lastTime: -8585790822490280894
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -296,14 +315,14 @@ MonoBehaviour:
       guid: 00000000000000000000000000000000
     - ElementName: Default Work Unit
       ObjectType: 12
-      guid: 9a23faeef39e304a981a60f8facc7f2a
+      guid: da222e124a5e0446bed5257cb58f85c5
     ParentPath: Triggers\Default Work Unit
-    guid: 9a23faeef39e304a981a60f8facc7f2a
+    guid: da222e124a5e0446bed5257cb58f85c5
     GuidInternal: 
-    m_lastTime: -8585795137597685834
+    m_lastTime: -8585790822490270919
     List: []
-  ExpandedFileSystemItemIds: 0100000002000000030000000c0000000d0000000e0000000f0000001000000011000000
-  ExpandedWaapiItemIds: 0c0000000d0000000e0000000f000000
+  ExpandedFileSystemItemIds: 020000000300000004000000050000000a0000000b000000
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 1

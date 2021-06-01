@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{973D5732-6DF9-4E32-84FF-80B560F08D68}" SchemaVersion="103">
+<WwiseDocument Type="WorkUnit" ID="{F1B985D6-D15B-450B-8F24-AD49A37EEC49}" SchemaVersion="103">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{973D5732-6DF9-4E32-84FF-80B560F08D68}" PersistMode="Standalone">
+		<WorkUnit Name="Default Work Unit" ID="{F1B985D6-D15B-450B-8F24-AD49A37EEC49}" PersistMode="Standalone">
 			<ChildrenList>
-				<GameParameter Name="Tank_Speed" ID="{F65F3880-9AF1-4746-B887-76CE79FFE922}">
+				<GameParameter Name="MasterVolume" ID="{1781B707-B38A-4DA8-B23B-47BF02FA3730}">
 					<PropertyList>
-						<Property Name="InitialValue" Type="Real64" Value="30"/>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
 					</PropertyList>
 				</GameParameter>
 			</ChildrenList>
