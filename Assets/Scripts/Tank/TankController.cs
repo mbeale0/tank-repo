@@ -1,4 +1,5 @@
 using Complete;
+using GameObjects;
 using Mirror;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ namespace Tank {
 
     public class TankController : NetworkBehaviour
     {
+        public bool hasFlag = false;
         public GameObject flagMountPoint;
         private TankMovement _tankMovement;
         private TankMovement _tankMovement1;
@@ -27,13 +29,15 @@ namespace Tank {
             _turretRotate.Rotate();
         }
 
-       private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
-            if (!other.CompareTag("Flag")) return;
+            if (!other.CompareTag("Flag")|| hasFlag) return;
             var otherTransform = other.transform;
             otherTransform.parent = flagMountPoint.transform;
             otherTransform.position = flagMountPoint.transform.position;
-            otherTransform.rotation = flagMountPoint.transform.rotation;
+            otherTransform.rotation = flagMountPoint.transform.rotation;       
+            hasFlag = true;
+
         }
     }
 }

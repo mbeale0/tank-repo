@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &797599755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 797599756}
+  m_Layer: 0
+  m_Name: FlagMount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &797599756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797599755}
+  m_LocalRotation: {x: 0.15699543, y: 0.9875994, z: -0, w: 0}
+  m_LocalPosition: {x: 1.591, y: 1.4, z: 1.68}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4570810476499841567}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 18.065}
 --- !u!1 &42637315914028489
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,9 +228,11 @@ GameObject:
   - component: {fileID: 1409859461212321302}
   - component: {fileID: 2757809832437227644}
   - component: {fileID: 5093458132459880689}
+  - component: {fileID: 1078262266239170453}
+  - component: {fileID: 1656485170}
   m_Layer: 0
-  m_Name: Enemy Base
-  m_TagString: Building
+  m_Name: Home Base
+  m_TagString: HomeBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,6 +250,7 @@ Transform:
   m_Children:
   - {fileID: 7254713871705842272}
   - {fileID: 222884680135186481}
+  - {fileID: 797599756}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -246,7 +279,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4570810476499841566}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.9054146, y: 3.1532624, z: 5.901431}
@@ -269,10 +302,36 @@ MonoBehaviour:
   maxHealth: 100
   remainsPrefab: {fileID: 7279081621764097298, guid: 1efd3903df39ae14886498476dba1ae6,
     type: 3}
-  parentTransform: {fileID: 4570810476499841567}
-  parentRenderers: {fileID: 7254713871706340928}
   healthSlider: {fileID: 9044878866953966398}
   isDead: 0
+--- !u!114 &1078262266239170453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4570810476499841566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70793d697f9f1674cbb6ff7eb5eb7024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagMountPoint: {fileID: 0}
+  flagMountTransform: {fileID: 0}
+--- !u!114 &1656485170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4570810476499841566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70793d697f9f1674cbb6ff7eb5eb7024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagMountPoint: {fileID: 797599755}
+  flagMountTransform: {fileID: 0}
 --- !u!1 &5717758882288802203
 GameObject:
   m_ObjectHideFlags: 0
