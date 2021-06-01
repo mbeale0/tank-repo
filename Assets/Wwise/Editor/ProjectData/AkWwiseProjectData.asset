@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 3d846a1d515f9742a94ea0e19aa8a541
     GuidInternal: 
-    m_lastTime: -8585793423358956901
+    m_lastTime: -8585791247441994370
     List:
     - name: Tank
       guid: 454add07c41b4a41b2287db73da7ee1c
@@ -111,8 +111,8 @@ MonoBehaviour:
         guid: 197f965117c07d4d974cf2538bf77c99
       Path: Events\Default Work Unit\Play_Click
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.319478
+      minDuration: 0.319478
     - name: Play_Main_Menu
       guid: 94efa1dd480da84ab88210e171dc5130
       id: 3306210749
@@ -179,8 +179,8 @@ MonoBehaviour:
         guid: c98e8ea2a007fe4eb80a65d1b2af5d98
       Path: Events\Default Work Unit\Play_Tank_Shoot
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.569525
+      minDuration: 1.245733
     - name: Stop_Main_Menu
       guid: 5a19d03fb25ded4fae087ff7a102e11b
       id: 774860123
@@ -213,8 +213,8 @@ MonoBehaviour:
         guid: a2303c32941cfd438383a99614612156
       Path: Events\Default Work Unit\Stop_Tank_Moving
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Stop_Tank_Rotation
       guid: bc34e64caca86346bc56ff341340fba4
       id: 1109520597
@@ -230,8 +230,8 @@ MonoBehaviour:
         guid: bc34e64caca86346bc56ff341340fba4
       Path: Events\Default Work Unit\Stop_Tank_Rotation
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -244,7 +244,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 32573d97f96d324e84ff80b560f08d68
     GuidInternal: 
-    m_lastTime: -8585795137600566287
+    m_lastTime: -8585791247445967235
     List:
     - name: Tank_Speed
       guid: 80385ff6f19a4647b88776ce79ffe922
