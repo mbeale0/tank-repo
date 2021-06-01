@@ -9,6 +9,11 @@ public class SoundBankScript : MonoBehaviour
     {
         PlayMainMenu();
     }
+    public void OnClick()
+    {
+        StopMainMenu();
+    }
+
     public void SetVolume(float volume)
     {
         AkSoundEngine.SetRTPCValue("MainVolume", volume);
