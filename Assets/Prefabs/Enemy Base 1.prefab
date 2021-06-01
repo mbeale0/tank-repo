@@ -199,15 +199,7 @@ GameObject:
   - component: {fileID: 2757809832437227644}
   - component: {fileID: 5093458132459880689}
   m_Layer: 0
-<<<<<<< HEAD:Assets/Prefabs/Base.prefab
-  m_Name: Base
-=======
-<<<<<<< Updated upstream:Assets/Prefabs/EnemyBase 1.prefab
-  m_Name: EnemyBase 1
-=======
-  m_Name: Home Base
->>>>>>> Stashed changes:Assets/Prefabs/Home Base.prefab
->>>>>>> Teams:Assets/Prefabs/EnemyBase 1.prefab
+  m_Name: Enemy Base
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
