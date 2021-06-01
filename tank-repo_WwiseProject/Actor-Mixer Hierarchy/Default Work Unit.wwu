@@ -9,32 +9,6 @@
 							<ValueList>
 								<Value>-15</Value>
 							</ValueList>
-							<RTPCList>
-								<RTPC Name="" ID="{D31D5BBF-CF5D-4F78-889A-4B1987949398}" ShortID="738969662">
-									<ReferenceList>
-										<Reference Name="ControlInput">
-											<ObjectRef Name="MainVolume" ID="{1781B707-B38A-4DA8-B23B-47BF02FA3730}" WorkUnitID="{F1B985D6-D15B-450B-8F24-AD49A37EEC49}"/>
-										</Reference>
-									</ReferenceList>
-									<Curve Name="" ID="{E90FD7E2-80FD-411A-9C59-107C530AAB2B}">
-										<PropertyList>
-											<Property Name="Flags" Type="int32" Value="3"/>
-										</PropertyList>
-										<PointList>
-											<Point>
-												<XPos>0</XPos>
-												<YPos>-200</YPos>
-												<Flags>5</Flags>
-											</Point>
-											<Point>
-												<XPos>100</XPos>
-												<YPos>0</YPos>
-												<Flags>37</Flags>
-											</Point>
-										</PointList>
-									</Curve>
-								</RTPC>
-							</RTPCList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>

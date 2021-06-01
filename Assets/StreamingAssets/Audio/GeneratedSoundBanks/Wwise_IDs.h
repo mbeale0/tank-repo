@@ -13,13 +13,14 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_CLICK = 311910498U;
         static const AkUniqueID PLAY_MAIN_MENU = 3306210749U;
         static const AkUniqueID STOP_MAIN_MENU = 774860123U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS
     {
-        static const AkUniqueID MAINVOLUME = 1843561328U;
+        static const AkUniqueID MASTERVOLUME = 2918011349U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS

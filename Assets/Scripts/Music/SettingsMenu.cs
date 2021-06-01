@@ -7,18 +7,19 @@ using TMPro;
 [System.Serializable]
     public class SettingsMenu : MonoBehaviour
     {
-        private SoundBankScript _SoundBank;
-        Slider _Volume;
-        void Start()
-        {
-            _SoundBank = GameObject.Find("SoundBank").GetComponent<SoundBankScript>();
-            _Volume = GameObject.Find("Volume").GetComponent<Slider>();
-            _Volume.value = _SoundBank.GetVolume();
-        }
+    public Slider thisSlider;
+    public float masterVolume;
 
-        public void SetVolume()
+
+    public void SetSpecificVolume(string whatValue)
+    {
+        float sliderValue = thisSlider.value;
+        
+        if (whatValue == "Master")
         {
-            _SoundBank.SetVolume(_Volume.value);
+            masterVolume = thisSlider.value;
+            AkSoundEngine.SetRTPCValue("MasterVolume", masterVolume);
         }
+    }
     }
 

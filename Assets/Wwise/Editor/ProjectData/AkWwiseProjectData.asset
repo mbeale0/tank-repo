@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: cc0ac53320129044b372d2844b1c9fc3
     GuidInternal: 
-    m_lastTime: -8585790822491547503
+    m_lastTime: -8585790286924175559
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -142,11 +142,11 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: d685b9f15bd10b458f24ad49a37eec49
     GuidInternal: 
-    m_lastTime: -8585790822493349576
+    m_lastTime: -8585790286924497975
     List:
-    - name: MainVolume
+    - name: MasterVolume
       guid: 07b781178ab3a84db23b47bf02fa3730
-      id: 1843561328
+      id: 2918011349
       PathAndIcons:
       - ElementName: Game Parameters
         ObjectType: 5
@@ -154,10 +154,10 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: d685b9f15bd10b458f24ad49a37eec49
-      - ElementName: MainVolume
+      - ElementName: MasterVolume
         ObjectType: 13
         guid: 07b781178ab3a84db23b47bf02fa3730
-      Path: Game Parameters\Default Work Unit\MainVolume
+      Path: Game Parameters\Default Work Unit\MasterVolume
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:

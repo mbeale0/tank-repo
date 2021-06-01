@@ -11,21 +11,21 @@ public class SoundBankScript : MonoBehaviour
     }
     public void OnClick()
     {
-        StopMainMenu();
+        PlaySoundClick();
     }
 
     public void SetVolume(float volume)
     {
-        AkSoundEngine.SetRTPCValue("MainVolume", volume);
+        AkSoundEngine.SetRTPCValue("MasterVolume", volume);
     }
 
-    public float GetVolume()
+    /*public float GetVolume()
     {
         float volume;
         int type = 1;
-        AkSoundEngine.GetRTPCValue("MainVolume", 0, 0, out volume, ref type);
+        AkSoundEngine.GetRTPCValue("MasterVolume", 0, 0, out volume, ref type);
         return volume;
-    }
+    }*/
 
     public void PlayMainMenu()
     {
@@ -46,5 +46,9 @@ public class SoundBankScript : MonoBehaviour
     public void PlaySoundRotation()
     {
         AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
+    }
+    public void PlaySoundClick()
+    {
+        AkSoundEngine.PostEvent("Play_Click", gameObject);
     }
 }
