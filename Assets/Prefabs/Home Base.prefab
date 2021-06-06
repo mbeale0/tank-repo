@@ -228,8 +228,8 @@ GameObject:
   - component: {fileID: 1409859461212321302}
   - component: {fileID: 2757809832437227644}
   - component: {fileID: 5093458132459880689}
-  - component: {fileID: 1078262266239170453}
   - component: {fileID: 1656485170}
+  - component: {fileID: 6705291370381578882}
   m_Layer: 0
   m_Name: Home Base
   m_TagString: HomeBase
@@ -304,20 +304,6 @@ MonoBehaviour:
     type: 3}
   healthSlider: {fileID: 9044878866953966398}
   isDead: 0
---- !u!114 &1078262266239170453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4570810476499841566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70793d697f9f1674cbb6ff7eb5eb7024, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagMountPoint: {fileID: 0}
-  flagMountTransform: {fileID: 0}
 --- !u!114 &1656485170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,8 +316,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70793d697f9f1674cbb6ff7eb5eb7024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagMountPoint: {fileID: 797599755}
   flagMountTransform: {fileID: 0}
+--- !u!114 &6705291370381578882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4570810476499841566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1690302dd82ae44f8134e0a44449c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  colorRenderers:
+  - {fileID: 7254713871704072320}
 --- !u!1 &5717758882288802203
 GameObject:
   m_ObjectHideFlags: 0

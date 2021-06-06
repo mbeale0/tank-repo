@@ -4,7 +4,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace Managers
 {
-    public class Player : NetworkBehaviour
+    public class MyPlayer : NetworkBehaviour
     {
         private Color _teamColor = new Color();
 
