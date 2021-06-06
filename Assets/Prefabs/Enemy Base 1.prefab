@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 2757809832437227644}
   - component: {fileID: 5093458132459880689}
   m_Layer: 0
-  m_Name: Enemy Base
+  m_Name: Enemy Base 1
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,8 +269,6 @@ MonoBehaviour:
   maxHealth: 100
   remainsPrefab: {fileID: 7279081621764097298, guid: 1efd3903df39ae14886498476dba1ae6,
     type: 3}
-  parentTransform: {fileID: 4570810476499841567}
-  parentRenderers: {fileID: 7254713871706340928}
   healthSlider: {fileID: 9044878866953966398}
   isDead: 0
 --- !u!1 &5717758882288802203
