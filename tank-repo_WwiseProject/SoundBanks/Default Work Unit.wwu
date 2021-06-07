@@ -5,8 +5,11 @@
 			<ChildrenList>
 				<SoundBank Name="SoundBank" ID="{CCA25CA9-D734-4D65-9F52-497DC88BDAFA}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_Tank_Rotation" ID="{E10463E9-0EFE-427C-99FA-FCB1DA6F054A}" WorkUnitID="{10CC5B84-7F49-4363-9B7B-A0A146796BAC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Main_Menu" ID="{C7C9E3A5-F1F7-491B-8BE9-02E561BA3518}" WorkUnitID="{10CC5B84-7F49-4363-9B7B-A0A146796BAC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Main_Menu" ID="{8090D763-F139-4B27-854B-5900EEAAB98A}" WorkUnitID="{10CC5B84-7F49-4363-9B7B-A0A146796BAC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Tank_Shoot" ID="{CD1B7609-5B6E-4D53-B221-F1E60FC32C2A}" WorkUnitID="{10CC5B84-7F49-4363-9B7B-A0A146796BAC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Tank_Rotation" ID="{99AB0A69-3F82-4F85-BC20-315A140E2BB6}" WorkUnitID="{10CC5B84-7F49-4363-9B7B-A0A146796BAC}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

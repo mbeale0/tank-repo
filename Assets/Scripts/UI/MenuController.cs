@@ -64,7 +64,7 @@ public class MenuController : MonoBehaviour
     }
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        AkSoundEngine.SetRTPCValue("MasterVolume", volume);
     }
     public void SetQuality(int qualityIndex)
     {

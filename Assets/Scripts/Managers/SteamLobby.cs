@@ -36,7 +36,7 @@ public class SteamLobby : MonoBehaviour
         {
             buttons.SetActive(true);
             return;
-           
+            AkSoundEngine.PostEvent("Stop_Main_Menu", gameObject);
         }
         networkManager.StartHost();
 
@@ -54,6 +54,6 @@ public class SteamLobby : MonoBehaviour
         networkManager.networkAddress = hostAddress;
         networkManager.StartClient();
         buttons.SetActive(false);
-        AkSoundEngine.PostEvent("Stop_Main_Menu", gameObject);
+        
     }
 }

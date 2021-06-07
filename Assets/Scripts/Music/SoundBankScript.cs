@@ -47,6 +47,10 @@ public class SoundBankScript : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
     }
+    public void StopSoundRotation()
+    {
+        AkSoundEngine.PostEvent("Stop_Tank_Rotation", gameObject);
+    }
     public void PlaySoundClick()
     {
         AkSoundEngine.PostEvent("Play_Click", gameObject);

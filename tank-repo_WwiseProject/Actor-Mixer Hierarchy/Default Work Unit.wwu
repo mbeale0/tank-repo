@@ -5,9 +5,10 @@
 			<ChildrenList>
 				<Sound Name="Main_Menu" ID="{CF3D7746-ECE3-4D8B-85B1-E9AFB1226CD6}" ShortID="630422352">
 					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-15</Value>
+								<Value>-17</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -21,6 +22,11 @@
 					</ReferenceList>
 					<ChildrenList>
 						<AudioFileSource Name="tanks main menu" ID="{BEFE021C-74BD-4320-8B0C-9DB627175217}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="1.59626633683777"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="2.69369944341373"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>tanks main menu.wav</AudioFile>
 							<MediaIDList>
@@ -31,6 +37,114 @@
 					<ObjectLists/>
 					<ActiveSourceList>
 						<ActiveSource Name="tanks main menu" ID="{BEFE021C-74BD-4320-8B0C-9DB627175217}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Tank_Shoot" ID="{4BE2A112-9DEA-4E09-B9C7-B9384BD80514}" ShortID="698388657">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>26</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>15</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{2A83994C-A88C-400D-BB78-29403B20F863}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="200"/>
+											<Property Name="Min" Type="Real64" Value="-200"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="SpeakerPanning" Type="int16" Value="2"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E0F64C7-C2CA-408B-AA90-287EA80F757D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{33C50ACC-1220-4490-B372-D2844B1C9FC3}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="f4ee46bb060c102 (1)" ID="{FEA903FF-F68B-4FB1-A438-6ECCEE35AE53}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="1.20913610449438"/>
+								<Property Name="FadeOutShape" Type="int16" Value="7"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="1.20913610449438"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>f4ee46bb060c102 (1).wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="506851642"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<PositioningInfo>
+						<Panner Name="" ID="{2FE7EDB1-B5F1-41B6-9FC2-53787F1EFD0B}">
+							<PropertyList>
+								<Property Name="PanX" Type="Real64" Value="0.208986415882945"/>
+								<Property Name="PanY" Type="Real64" Value="37.0122630992196"/>
+							</PropertyList>
+						</Panner>
+						<Position Name="" ID="{3A6D76EB-7DAA-497E-8E00-9D33DE16B71E}"/>
+					</PositioningInfo>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="f4ee46bb060c102 (1)" ID="{FEA903FF-F68B-4FB1-A438-6ECCEE35AE53}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Tank_Rotation" ID="{6BDD9897-22C5-4733-B5EC-C3700713501C}" ShortID="631990381">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E0F64C7-C2CA-408B-AA90-287EA80F757D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{33C50ACC-1220-4490-B372-D2844B1C9FC3}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="z_uko_ye-effekty-po_orot-bashni-tanka" ID="{E453C1C9-3619-4459-A581-90D16E9734E0}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.134608897186635"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.465012553917466"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.183557587072684"/>
+								<Property Name="TrimEnd" Type="Real64" Value="5.07842657567759"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>z_uko_ye-effekty-po_orot-bashni-tanka.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="24040415"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="z_uko_ye-effekty-po_orot-bashni-tanka" ID="{E453C1C9-3619-4459-A581-90D16E9734E0}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

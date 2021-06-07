@@ -13,9 +13,11 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_CLICK = 311910498U;
         static const AkUniqueID PLAY_MAIN_MENU = 3306210749U;
+        static const AkUniqueID PLAY_TANK_ROTATION = 425465487U;
+        static const AkUniqueID PLAY_TANK_SHOOT = 2800788618U;
         static const AkUniqueID STOP_MAIN_MENU = 774860123U;
+        static const AkUniqueID STOP_TANK_ROTATION = 1109520597U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS

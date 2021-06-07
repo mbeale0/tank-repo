@@ -1,9 +1,12 @@
 Event	ID	Name			Wwise Object Path	Notes
-	311910498	Play_Click			\Default Work Unit\Play_Click	
+	425465487	Play_Tank_Rotation			\Default Work Unit\Play_Tank_Rotation	
 	774860123	Stop_Main_Menu			\Default Work Unit\Stop_Main_Menu	
+	1109520597	Stop_Tank_Rotation			\Default Work Unit\Stop_Tank_Rotation	
+	2800788618	Play_Tank_Shoot			\Default Work Unit\Play_Tank_Shoot	
 	3306210749	Play_Main_Menu			\Default Work Unit\Play_Main_Menu	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	402808741	Main_Menu	C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\.cache\Windows\SFX\tanks main menu_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main_Menu		17422912
-	457774799	Click	C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\.cache\Windows\SFX\10e1076dfd6c701_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Click		24944
+	24040415	Tank_Rotation	C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\.cache\Windows\SFX\z_uko_ye-effekty-po_orot-bashni-tanka_59D641EE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank_Rotation		863520
+	402808741	Main_Menu	C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\.cache\Windows\SFX\tanks main menu_BC81F53B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main_Menu		17422912
+	506851642	Tank_Shoot	C:\Users\Asus\Documents\GitHub\Level\tank-repo\tank-repo_WwiseProject\.cache\Windows\SFX\f4ee46bb060c102 (1)_52F0C61E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank_Shoot		106710
 

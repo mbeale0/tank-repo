@@ -19,28 +19,37 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\MasterVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1661994096" Language="SFX" Hash="2902763391">
+		<SoundBank Id="1661994096" Language="SFX" Hash="1950170439">
 			<ObjectPath>\SoundBanks\Default Work Unit\SoundBank</ObjectPath>
 			<ShortName>SoundBank</ShortName>
 			<Path>SoundBank.bnk</Path>
 			<IncludedEvents>
-				<Event Id="311910498" Name="Play_Click" ObjectPath="\Events\Default Work Unit\Play_Click" DurationType="OneShot" DurationMin="0.282086" DurationMax="0.282086">
-					<IncludedMemoryFiles>
-						<File Id="457774799" Language="SFX">
-							<ShortName>10e1076dfd6c701.wav</ShortName>
-							<Path>SFX\10e1076dfd6c701_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="3306210749" Name="Play_Main_Menu" ObjectPath="\Events\Default Work Unit\Play_Main_Menu" DurationType="OneShot" DurationMin="98.768982" DurationMax="98.768982">
+				<Event Id="3306210749" Name="Play_Main_Menu" ObjectPath="\Events\Default Work Unit\Play_Main_Menu" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="402808741" Language="SFX">
 							<ShortName>tanks main menu.wav</ShortName>
-							<Path>SFX\tanks main menu_10C4C929.wem</Path>
+							<Path>SFX\tanks main menu_BC81F53B.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="425465487" Name="Play_Tank_Rotation" ObjectPath="\Events\Default Work Unit\Play_Tank_Rotation" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="24040415" Language="SFX">
+							<ShortName>z_uko_ye-effekty-po_orot-bashni-tanka.wav</ShortName>
+							<Path>SFX\z_uko_ye-effekty-po_orot-bashni-tanka_59D641EE.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2800788618" Name="Play_Tank_Shoot" ObjectPath="\Events\Default Work Unit\Play_Tank_Shoot" DurationType="OneShot" DurationMin="1.077218" DurationMax="1.357209">
+					<IncludedMemoryFiles>
+						<File Id="506851642" Language="SFX">
+							<ShortName>f4ee46bb060c102 (1).wav</ShortName>
+							<Path>SFX\f4ee46bb060c102 (1)_52F0C61E.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="774860123" Name="Stop_Main_Menu" ObjectPath="\Events\Default Work Unit\Stop_Main_Menu" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1109520597" Name="Stop_Tank_Rotation" ObjectPath="\Events\Default Work Unit\Stop_Tank_Rotation" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 		</SoundBank>
 	</SoundBanks>
