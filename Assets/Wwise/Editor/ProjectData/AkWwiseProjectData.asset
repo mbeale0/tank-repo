@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: a26c5ef532e2d840adfc051e08ad3d4b
     GuidInternal: 
-    m_lastTime: -8585785149043984621
+    m_lastTime: -8585783044237570926
     List:
     - name: SoundBank
       guid: a95ca2cc34d7654d9f52497dc88bdafa
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 845bcc10497f63439b7ba0a146796bac
     GuidInternal: 
-    m_lastTime: -8585785147563918662
+    m_lastTime: -8585783044241051387
     List:
     - name: Play_Main_Menu
       guid: a5e3c9c7f7f11b498be902e561ba3518
@@ -113,9 +113,9 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_Tank_Rotating
+    - name: Play_Tank_Rotation
       guid: e96304e1fe0e7c4299fafcb1da6f054a
-      id: 408687913
+      id: 425465487
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -123,10 +123,10 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 845bcc10497f63439b7ba0a146796bac
-      - ElementName: Play_Tank_Rotating
+      - ElementName: Play_Tank_Rotation
         ObjectType: 3
         guid: e96304e1fe0e7c4299fafcb1da6f054a
-      Path: Events\Default Work Unit\Play_Tank_Rotating
+      Path: Events\Default Work Unit\Play_Tank_Rotation
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -145,8 +145,8 @@ MonoBehaviour:
         guid: 09761bcd6e5b534db221f1e60fc32c2a
       Path: Events\Default Work Unit\Play_Tank_Shoot
       maxAttenuation: 0
-      maxDuration: 1.357209
-      minDuration: 1.077218
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_Main_Menu
       guid: 63d7908039f1274b854b5900eeaab98a
       id: 774860123
@@ -162,11 +162,11 @@ MonoBehaviour:
         guid: 63d7908039f1274b854b5900eeaab98a
       Path: Events\Default Work Unit\Stop_Main_Menu
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Stop_Tank_Rotating
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Tank_Rotation
       guid: 690aab99823f854fbc20315a140e2bb6
-      id: 1092742991
+      id: 1109520597
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -174,13 +174,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 845bcc10497f63439b7ba0a146796bac
-      - ElementName: Stop_Tank_Rotating
+      - ElementName: Stop_Tank_Rotation
         ObjectType: 3
         guid: 690aab99823f854fbc20315a140e2bb6
-      Path: Events\Default Work Unit\Stop_Tank_Rotating
+      Path: Events\Default Work Unit\Stop_Tank_Rotation
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
