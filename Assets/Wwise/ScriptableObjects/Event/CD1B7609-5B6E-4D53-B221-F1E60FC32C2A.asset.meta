@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Wwise/ScriptableObjects/Event/CD1B7609-5B6E-4D53-B221-F1E60FC32C2A.asset.meta
 guid: 2d3ca22e057e8514e86b1aa9b230dbba
 NativeFormatImporter:
+=======
+guid: b93cef47fa1499344a98eea6003045ce
+PrefabImporter:
+>>>>>>> Stashed changes:Assets/Prefabs/Player.prefab.meta
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 
