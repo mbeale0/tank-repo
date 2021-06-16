@@ -11,14 +11,18 @@ public class PlayerCameraMounting : NetworkBehaviour
 
     void Start()
     {
-        if (isLocalPlayer)
+        print("HERE0");
+        if (!hasAuthority)
         {
-            Transform cameraTransform = Camera.main.gameObject.transform;  //Find main camera which is part of the scene instead of the prefab
-            cameraTransform.parent = CameraMountPoint.transform;  //Make the camera a child of the mount point
-            cameraTransform.position = CameraMountPoint.transform.position;  //Set position/rotation same as the mount point
-            cameraTransform.rotation = CameraMountPoint.transform.rotation;
-
+            return;
+            print("HERE");
+            
+            print("HERE2");
         }
+        Transform cameraTransform = Camera.main.gameObject.transform;  //Find main camera which is part of the scene instead of the prefab
+        cameraTransform.parent = CameraMountPoint.transform;  //Make the camera a child of the mount point
+        cameraTransform.position = CameraMountPoint.transform.position;  //Set position/rotation same as the mount point
+        cameraTransform.rotation = CameraMountPoint.transform.rotation;
     }
 
     private void OnDisable()

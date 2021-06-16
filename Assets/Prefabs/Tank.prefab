@@ -5667,7 +5667,6 @@ MonoBehaviour:
   - {fileID: 938947275849773034}
   - {fileID: 938947275849769244}
   - {fileID: 938947275850250166}
-  player: {fileID: 384421972612098679}
 --- !u!114 &384421972612098679
 MonoBehaviour:
   m_ObjectHideFlags: 0

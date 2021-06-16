@@ -7,6 +7,7 @@ using UnityEngine;
 public class VehicleViewer : NetworkBehaviour
 {
     [SerializeField] private GameObject[] characterSelectDisplayPanels = default;
+    [SerializeField] private GameObject characterSelectDisplay = default;
     [SerializeField] private Transform[] characterPreviewParents = default;
     [SerializeField] private TMP_Text characterNameText = default;
     [SerializeField] private float turnSpeed = 90f;
@@ -31,6 +32,19 @@ public class VehicleViewer : NetworkBehaviour
 
         characterSelectDisplayPanels[currentCharacterIndex].transform.GetComponent<Renderer>().material.SetFloat("_Metallic", .45f); ;
 
+    }
+
+    public void Select()
+    {
+        CmdSelect(currentCharacterIndex);
+        characterSelectDisplay.SetActive(false);
+    }
+
+    [Command(requiresAuthority = false)] 
+    public void CmdSelect(int characterIndex, NetworkConnectionToClient sender = null)
+    {
+        GameObject characterInstance = Instantiate(characters[characterIndex].GameplayCharacterPrefab);
+        NetworkServer.Spawn(characterInstance, sender);
     }
     public void Right()
     {
