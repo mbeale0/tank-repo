@@ -210,7 +210,10 @@ namespace Mirror.FizzySteam
         server.Send(connectionId, data, channelId);
       }
     }
-    public override bool ServerDisconnect(int connectionId) => ServerActive() && server.Disconnect(connectionId);
+  
+        
+
+    // public override void ServerDisconnect(int connectionId) => ServerActive() && server.Disconnect(connectionId);
     public override string ServerGetClientAddress(int connectionId) => ServerActive() ? server.ServerGetClientAddress(connectionId) : string.Empty;
     public override void ServerStop()
     {
@@ -282,5 +285,10 @@ namespace Mirror.FizzySteam
     {
       Shutdown();
     }
-  }
+
+        public override void ServerDisconnect(int connectionId)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
