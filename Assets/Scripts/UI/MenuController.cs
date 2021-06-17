@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using System.Linq;
+using Mirror;
+
 public class MenuController : MonoBehaviour
 {
     /* 
@@ -14,9 +16,9 @@ public class MenuController : MonoBehaviour
 
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] Dropdown resolutionDropdown;
-    [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject landingPagePanel;
     [SerializeField] GameObject optionsMenu;
-    [SerializeField] GameObject networkMenu;
+    
 
     Resolution[] resolutions;
 
@@ -24,12 +26,15 @@ public class MenuController : MonoBehaviour
     {
         SetupResolutionDropdown();
         // activate necassary menus
-        mainMenu.SetActive(true);
-        if(networkMenu != null)
-        {
-            networkMenu.SetActive(true);
-        }       
+        landingPagePanel.SetActive(true);     
         optionsMenu.SetActive(false);       
+    }
+
+    public void HostLobby()
+    {
+        landingPagePanel.SetActive(false);
+
+        MyNetworkManager.singleton.StartHost();
     }
 
     private void SetupResolutionDropdown()
@@ -82,19 +87,13 @@ public class MenuController : MonoBehaviour
     public void MainMenu()
     {
         optionsMenu.SetActive(false);
-        if (networkMenu != null)
-        {
-            networkMenu.SetActive(true);
-        }
-        mainMenu.SetActive(true);       
+
+        landingPagePanel.SetActive(true);       
     }
     public void OptionsMenu()
     {
-        mainMenu.SetActive(false);
-        if (networkMenu != null)
-        {
-            networkMenu.SetActive(false);
-        }
+        landingPagePanel.SetActive(false);
+
         optionsMenu.SetActive(true);
     }
 }

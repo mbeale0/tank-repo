@@ -8,14 +8,14 @@ public class VehicleViewer : NetworkBehaviour
 {
     [SerializeField] private GameObject[] characterSelectDisplayPanels = default;
     [SerializeField] private GameObject characterSelectDisplay = default;
-    [SerializeField] private Transform[] characterPreviewParents = default;
+
     [SerializeField] private TMP_Text characterNameText = default;
-    [SerializeField] private float turnSpeed = 90f;
+
     [SerializeField] private Character[] characters = default;
 
     private int currentCharacterIndex = 0;
     private List<GameObject> characterInstances = new List<GameObject>();
-
+    
     public override void OnStartClient()
     {
         characterNameText.text = "  ";
@@ -44,7 +44,8 @@ public class VehicleViewer : NetworkBehaviour
     public void CmdSelect(int characterIndex, NetworkConnectionToClient sender = null)
     {
         GameObject characterInstance = Instantiate(characters[characterIndex].GameplayCharacterPrefab);
-        NetworkServer.Spawn(characterInstance, sender);
+        GetComponent<MyNetworkManager>().SetStartVehicle(characterInstance, sender);
+        
     }
     public void Right()
     {
