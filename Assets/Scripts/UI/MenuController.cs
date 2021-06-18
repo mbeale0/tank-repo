@@ -18,7 +18,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] Dropdown resolutionDropdown;
     [SerializeField] GameObject landingPagePanel;
     [SerializeField] GameObject optionsMenu;
-    
+    [SerializeField] GameObject vehicleSelection = null;
 
     Resolution[] resolutions;
 
@@ -26,15 +26,17 @@ public class MenuController : MonoBehaviour
     {
         SetupResolutionDropdown();
         // activate necassary menus
+        optionsMenu.SetActive(false);
+        vehicleSelection.SetActive(false);
         landingPagePanel.SetActive(true);     
-        optionsMenu.SetActive(false);       
     }
 
     public void HostLobby()
     {
         landingPagePanel.SetActive(false);
-
-        MyNetworkManager.singleton.StartHost();
+        vehicleSelection.SetActive(true);
+        NetworkManager.singleton.StartHost();
+        
     }
 
     private void SetupResolutionDropdown()

@@ -51,7 +51,7 @@ MonoBehaviour:
   serverTickRate: 30
   serverBatching: 1
   serverBatchInterval: 0
-  offlineScene: Assets/Mirror/Examples/Chat/Scenes/Main.unity
+  offlineScene: Assets/Scenes/Main Menu.unity
   onlineScene: 
   transport: {fileID: 6426539279419765902}
   networkAddress: localhost

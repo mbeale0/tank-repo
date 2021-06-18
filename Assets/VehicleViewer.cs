@@ -43,8 +43,9 @@ public class VehicleViewer : NetworkBehaviour
     [Command(requiresAuthority = false)] 
     public void CmdSelect(int characterIndex, NetworkConnectionToClient sender = null)
     {
-        GameObject characterInstance = Instantiate(characters[characterIndex].GameplayCharacterPrefab);
-        GetComponent<MyNetworkManager>().SetStartVehicle(characterInstance, sender);
+
+        FindObjectOfType<MyNetworkManager>().SetStartVehicle(characters[characterIndex].GameplayCharacterPrefab, sender);
+        
         
     }
     public void Right()

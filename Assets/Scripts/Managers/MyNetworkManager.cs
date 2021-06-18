@@ -61,7 +61,7 @@ public class MyNetworkManager : NetworkManager
     }
     public void StartGame()
     {
-        if(Players.Count < 2) { return; }
+        if (Players.Count < 2) { return; }
         isGameStarted = true;
         // this is used instead of offline/online scene from network manager
         ServerChangeScene("Scene_Map01");
@@ -69,8 +69,8 @@ public class MyNetworkManager : NetworkManager
 
     public override void OnServerChangeScene(string newSceneName)
     {
-
-        NetworkServer.Spawn(playerVehicle, playerSender);
+        GameObject playerVehicleInstance = (playerVehicle); 
+        NetworkServer.Spawn(playerVehicleInstance, playerSender);
     }
     public override void OnStopServer()
     {

@@ -37,7 +37,7 @@ namespace Managers
         [Command]
         public void CmdStartGame()
         {
-            // should use here to determine if everyone has picked vehicle
+            // should use here to determine if everyone has picked vehicle maybe
             if (!isPartyOwner) { return; }
 
             ((MyNetworkManager)NetworkManager.singleton).StartGame();

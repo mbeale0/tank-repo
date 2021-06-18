@@ -10,6 +10,7 @@ public class JoinLobbbyMenu : MonoBehaviour
     [SerializeField] private GameObject landingPanel = null;
     [SerializeField] private TMP_InputField addressInput = null;
     [SerializeField] private Button joinButton = null;
+    [SerializeField] private GameObject vehicleSelection = null;
 
     private void OnEnable()
     {
@@ -36,6 +37,7 @@ public class JoinLobbbyMenu : MonoBehaviour
         joinButton.interactable = true;
         gameObject.SetActive(false);
         landingPanel.SetActive(false);
+        vehicleSelection.SetActive(true);
     }
     private void HandleClientDisconnected()
     {

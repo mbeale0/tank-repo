@@ -1,5 +1,4 @@
 using Managers;
-using Mirror;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,8 +6,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Mirror;
 
-public class LobbyMenu : NetworkBehaviour
+public class LobbyMenu : MonoBehaviour
 {
     [SerializeField] private GameObject lobbyUI = null;
     [SerializeField] private Button startGameButton = null;
