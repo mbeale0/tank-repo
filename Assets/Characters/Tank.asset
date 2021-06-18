@@ -15,5 +15,5 @@ MonoBehaviour:
   characterName: Tank
   characterPreviewPrefab: {fileID: 100112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd,
     type: 3}
-  gameplayCharacterPrefab: {fileID: 938947275852223064, guid: b93cef47fa1499344a98eea6003045ce,
+  gameplayCharacterPrefab: {fileID: 938947275852223064, guid: 8d1c400fbe8866a48938cb4fa28ebb4b,
     type: 3}

@@ -11,13 +11,10 @@ public class PlayerCameraMounting : NetworkBehaviour
 
     void Start()
     {
-        print("HERE0");
         if (!hasAuthority)
         {
             return;
-            print("HERE");
-            
-            print("HERE2");
+
         }
         Transform cameraTransform = Camera.main.gameObject.transform;  //Find main camera which is part of the scene instead of the prefab
         cameraTransform.parent = CameraMountPoint.transform;  //Make the camera a child of the mount point

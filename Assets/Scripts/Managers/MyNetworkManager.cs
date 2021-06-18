@@ -67,11 +67,11 @@ public class MyNetworkManager : NetworkManager
         ServerChangeScene("Scene_Map01");
     }
 
-    public override void OnServerChangeScene(string newSceneName)
+    /*public override void OnServerChangeScene(string newSceneName)
     {
         GameObject playerVehicleInstance = (playerVehicle); 
         NetworkServer.Spawn(playerVehicleInstance, playerSender);
-    }
+    }*/
     public override void OnStopServer()
     {
         Players.Clear();
