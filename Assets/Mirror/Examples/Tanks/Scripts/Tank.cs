@@ -9,6 +9,9 @@ namespace Mirror.Examples.Tanks
         public NavMeshAgent agent;
         public Animator animator;
 
+        [Header("Movement")]
+        public float rotationSpeed = 100;
+
         [Header("Firing")]
         public KeyCode shootKey = KeyCode.Space;
         public GameObject projectilePrefab;
@@ -20,7 +23,9 @@ namespace Mirror.Examples.Tanks
             if (!isLocalPlayer) return;
 
             // rotate
-        
+            float horizontal = Input.GetAxis("Horizontal");
+            transform.Rotate(0, horizontal * rotationSpeed * Time.deltaTime, 0);
+
             // move
             float vertical = Input.GetAxis("Vertical");
             Vector3 forward = transform.TransformDirection(Vector3.forward);

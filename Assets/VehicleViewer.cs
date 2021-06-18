@@ -1,29 +1,76 @@
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class VehicleViewer : MonoBehaviour
+public class VehicleViewer : NetworkBehaviour
 {
-    [SerializeField] string vehicleType = null;
-    private void OnMouseOver()
-    {
-        transform.GetComponent<Renderer>().material.SetFloat("_Metallic", .45f);
-        /*/
-         * TODO using the above string we can possibly call some function that chooses that prefab
-         * Basic controls are implemented for each vehicle, enough to where they can move around and be tested
-         * I don't know how to choose player vehicle from code(since it is mirror stuff) Or even where it happens, 
-         * but if told I may be able to figure out how to connect to this
-         * In order to test vehicles I found they can be switched with the tank prefav under player object in networkmanager script on menu
-         /*/
+    [SerializeField] private GameObject[] characterSelectDisplayPanels = default;
+    [SerializeField] private GameObject characterSelectDisplay = default;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Debug.Log("User selected: " + vehicleType);
-        }
-    }
-    private void OnMouseExit()
+    [SerializeField] private TMP_Text characterNameText = default;
+
+    [SerializeField] private Character[] characters = default;
+
+    private int currentCharacterIndex = 0;
+    private List<GameObject> characterInstances = new List<GameObject>();
+    
+    public override void OnStartClient()
     {
-        transform.GetComponent<Renderer>().material.SetFloat("_Metallic", 1f);
+        characterNameText.text = "  ";
+        /*foreach(var character in characters)
+        {
+            GameObject characterInstance = Instantiate(character.CharacterPreviewPrefab, characterPreviewParents[currentCharacterIndex]);
+
+            //characterInstance.SetActive(false);
+            characterInstances.Add(character);
+        }
+        // Might leave this part off b/c want them on by default. We will see
+        characterInstances[currentCharacterIndex].SetActive(true);*/
+        characterNameText.text = characters[currentCharacterIndex].CharacterName;
+
+        characterSelectDisplayPanels[currentCharacterIndex].transform.GetComponent<Renderer>().material.SetFloat("_Metallic", .45f); ;
+
+    }
+
+    public void Select()
+    {
+        CmdSelect(currentCharacterIndex);
+        characterSelectDisplay.SetActive(false);
+    }
+
+    [Command(requiresAuthority = false)] 
+    public void CmdSelect(int characterIndex, NetworkConnectionToClient sender = null)
+    {
+        GameObject characterInstance = Instantiate(characters[characterIndex].GameplayCharacterPrefab);
+        NetworkServer.Spawn(characterInstance, sender);
+
+    }
+    public void Right()
+    {
+        characterSelectDisplayPanels[currentCharacterIndex].transform.GetComponent<Renderer>().material.SetFloat("_Metallic", 1f);
+
+        // This is supposed to use characterinstances.count, not characters.length. Instnaces were for the visual though so I am not using them
+        currentCharacterIndex = (currentCharacterIndex + 1) % characters.Length;
+
+        characterSelectDisplayPanels[currentCharacterIndex].transform.GetComponent<Renderer>().material.SetFloat("_Metallic", .45f);
+        characterNameText.text = characters[currentCharacterIndex].CharacterName;
+    }
+
+    public void Left()
+    {
+        characterSelectDisplayPanels[currentCharacterIndex].transform.GetComponent<Renderer>().material.SetFloat("_Metallic", 1f);
+
+        // This is supposed to use characterinstances.count, not characters.length. Instnaces were for the visual though so I am not using them
+        currentCharacterIndex--;
+        if(currentCharacterIndex < 0)
+        {
+            currentCharacterIndex += characters.Length;
+        }
+
+        characterSelectDisplayPanels[currentCharacterIndex].transform.GetComponent<Renderer>().material.SetFloat("_Metallic", .45f);
+        characterNameText.text = characters[currentCharacterIndex].CharacterName;
     }
 
 }

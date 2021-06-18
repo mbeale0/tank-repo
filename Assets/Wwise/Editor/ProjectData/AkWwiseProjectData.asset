@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: c0eea6690151e24082802d10f3ec845a
     GuidInternal: 
-    m_lastTime: -8585790822490270919
+    m_lastTime: -8585790239095237085
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -66,11 +66,15 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: a26c5ef532e2d840adfc051e08ad3d4b
     GuidInternal: 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     m_lastTime: -8585783039942173239
 =======
     m_lastTime: -8585782164615981918
 >>>>>>> Stashed changes
+=======
+    m_lastTime: -8585776595424362651
+>>>>>>> PlayerSelection
     List:
     - name: SoundBank
       guid: a95ca2cc34d7654d9f52497dc88bdafa
@@ -98,11 +102,15 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 845bcc10497f63439b7ba0a146796bac
     GuidInternal: 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     m_lastTime: -8585783039946114019
 =======
     m_lastTime: -8585782164618056369
 >>>>>>> Stashed changes
+=======
+    m_lastTime: -8585776595426506931
+>>>>>>> PlayerSelection
     List:
     - name: Play_Main_Menu
       guid: a5e3c9c7f7f11b498be902e561ba3518
@@ -119,6 +127,7 @@ MonoBehaviour:
         guid: a5e3c9c7f7f11b498be902e561ba3518
       Path: Events\Default Work Unit\Play_Main_Menu
       maxAttenuation: 0
+<<<<<<< HEAD
       maxDuration: -1
       minDuration: -1
     - name: Play_Tank_Rotation
@@ -155,6 +164,10 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+=======
+      maxDuration: 98.76898
+      minDuration: 98.76898
+>>>>>>> PlayerSelection
     - name: Stop_Main_Menu
       guid: 63d7908039f1274b854b5900eeaab98a
       id: 774860123
@@ -170,6 +183,7 @@ MonoBehaviour:
         guid: 63d7908039f1274b854b5900eeaab98a
       Path: Events\Default Work Unit\Stop_Main_Menu
       maxAttenuation: 0
+<<<<<<< HEAD
       maxDuration: -1
       minDuration: -1
     - name: Stop_Tank_Rotation
@@ -189,6 +203,10 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+=======
+      maxDuration: 0
+      minDuration: 0
+>>>>>>> PlayerSelection
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -229,7 +247,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 51734174b589ae469b59471928eb3824
     GuidInternal: 
-    m_lastTime: -8585790822490280894
+    m_lastTime: -8585790239095247062
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -243,7 +261,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 5cf366d356730b4388694e390da762a8
     GuidInternal: 
-    m_lastTime: -8585790822490280894
+    m_lastTime: -8585790239095247062
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -257,7 +275,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: da222e124a5e0446bed5257cb58f85c5
     GuidInternal: 
-    m_lastTime: -8585790822490270919
+    m_lastTime: -8585790239095237085
     List: []
   ExpandedFileSystemItemIds: 0200000003000000
   ExpandedWaapiItemIds: 02000000030000000500000006000000070000000f00000010000000
