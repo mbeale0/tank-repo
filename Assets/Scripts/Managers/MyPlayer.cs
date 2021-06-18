@@ -11,21 +11,13 @@ namespace Managers
         private Color _teamColor = new Color();
         [SyncVar(hook = nameof(AuthorityHandlePartyOwnerState))]
         private bool isPartyOwner = false;
-        [SyncVar(hook =nameof(ClientHandledisplayNameUpdated))]
+        [SyncVar(hook = nameof(ClientHandledisplayNameUpdated))]
         private string displayName;
 
 
-<<<<<<< HEAD
-        private void Start()
-        {
-            cachedNetworkConnection = connectionToClient;
-            NetworkServer.RemovePlayerForConnection(connectionToClient, false);
-            NetworkServer.AddPlayerForConnection(cachedNetworkConnection, gameObject);
-        }
-
-=======
         public static event Action ClientOnInfoUpdated;
         public static event Action<bool> AuthorityOnPartyOwnerStateUpdated;
+
         public string GetDisplayName()
         {
             return displayName;
@@ -34,7 +26,17 @@ namespace Managers
         {
             return isPartyOwner;
         }
-        [Server] 
+        public Color GetTeamColor()
+        {
+            return _teamColor;
+        }
+
+        [Server]
+        public void SetTeamColor(Color newTeamColor)
+        {
+            _teamColor = newTeamColor;
+        }
+        [Server]
         public void SetPartyOwner(bool state)
         {
             isPartyOwner = state;
@@ -44,10 +46,17 @@ namespace Managers
         {
             this.displayName = newDisplayname;
         }
+
+        private void Start()
+        {
+            cachedNetworkConnection = connectionToClient;
+            NetworkServer.RemovePlayerForConnection(connectionToClient, false);
+            NetworkServer.AddPlayerForConnection(cachedNetworkConnection, gameObject);
+        }
+
         [Command]
         public void CmdStartGame()
         {
-            // should use here to determine if everyone has picked vehicle maybe
             if (!isPartyOwner) { return; }
 
             ((MyNetworkManager)NetworkManager.singleton).StartGame();
@@ -73,20 +82,8 @@ namespace Managers
         {
             ClientOnInfoUpdated?.Invoke();
             if (!isClientOnly) { return; }
-            
-            ((MyNetworkManager)NetworkManager.singleton).Players.Remove(this);
-        }
-        
->>>>>>> PlayerSelection
-        public Color GetTeamColor()
-        {
-            return _teamColor;
-        }
 
-        [Server]
-        public void SetTeamColor(Color newTeamColor)
-        {
-            _teamColor = newTeamColor;
+            ((MyNetworkManager)NetworkManager.singleton).Players.Remove(this);
         }
     }
 }

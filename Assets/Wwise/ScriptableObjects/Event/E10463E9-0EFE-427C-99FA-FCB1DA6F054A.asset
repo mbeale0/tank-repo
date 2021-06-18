@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c9f0e915bbc694da2f7d52786a6aad, type: 3}
   m_Name: E10463E9-0EFE-427C-99FA-FCB1DA6F054A
   m_EditorClassIdentifier: 
-  objectName: Play_Tank_Rotating
-  id: 408687913
+  objectName: Play_Tank_Rotation
+  id: 425465487
   guid: E10463E9-0EFE-427C-99FA-FCB1DA6F054A

@@ -6898,7 +6898,6 @@ MonoBehaviour:
   landingPanel: {fileID: 573858835}
   addressInput: {fileID: 1897144885}
   joinButton: {fileID: 1687853226}
-  vehicleSelection: {fileID: 0}
 --- !u!1001 &1638987107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8487,7 +8486,6 @@ MonoBehaviour:
   resolutionDropdown: {fileID: 471777350}
   landingPagePanel: {fileID: 573858835}
   optionsMenu: {fileID: 137869360}
-  vehicleSelection: {fileID: 0}
 --- !u!114 &2021605884
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 228705359}
   - component: {fileID: 228705360}
   - component: {fileID: 228705362}
+  - component: {fileID: 228705361}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Untagged
@@ -169,6 +170,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f84591ce72545258ea98cb7518d8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &228705361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228705358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4047fe9e7aa7c547a2929cb9f2b42ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+  MultiPositionType: 1
+  multiPositionTypeLabel: 0
+  attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
+  LargeModePositions: []
+  multiPositionArray: []
 --- !u!114 &228705362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,8 +226,6 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
-<<<<<<< HEAD:Assets/Scenes/Map1.unity
-=======
 --- !u!1001 &266507640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -374,7 +407,6 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
->>>>>>> PlayerSelection:Assets/Scenes/Scene_Map01.unity
 --- !u!1 &683545002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,7 +2506,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Options
-
 '
 --- !u!224 &3382420296310090427
 RectTransform:
@@ -3803,7 +3834,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Back
-
 '
 --- !u!224 &3382420296817762617
 RectTransform:
