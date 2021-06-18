@@ -7,19 +7,15 @@ using UnityEngine;
 
 public class MyNetworkManager : NetworkManager
 {
+    [SerializeField] GameObject homeBasePrefab = null;
+
     public List<MyPlayer> Players { get; } = new List<MyPlayer>();
 
     public static event Action ClientOnConnected;
     public static event Action ClientOnDisconnected;
 
     private bool isGameStarted = false;
-    private GameObject playerVehicle = null;
-    private NetworkConnectionToClient playerSender = null;
-    public void SetStartVehicle(GameObject playerInstance, NetworkConnectionToClient sender)
-    {
-        playerVehicle = playerInstance;
-        playerSender = sender;
-    }
+
     
 
     public override void OnServerConnect(NetworkConnection conn)
@@ -38,6 +34,9 @@ public class MyNetworkManager : NetworkManager
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
         base.OnServerAddPlayer(conn);
+
+        GameObject homeBaseInstance = Instantiate(homeBasePrefab, conn.identity.transform.position, conn.identity.transform.rotation);
+        NetworkServer.Spawn(homeBaseInstance, conn);
 
         MyPlayer player = conn.identity.GetComponent<MyPlayer>();
         Players.Add(player);
@@ -67,11 +66,6 @@ public class MyNetworkManager : NetworkManager
         ServerChangeScene("Scene_Map01");
     }
 
-    /*public override void OnServerChangeScene(string newSceneName)
-    {
-        GameObject playerVehicleInstance = (playerVehicle); 
-        NetworkServer.Spawn(playerVehicleInstance, playerSender);
-    }*/
     public override void OnStopServer()
     {
         Players.Clear();

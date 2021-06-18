@@ -47,13 +47,6 @@ namespace Managers
             this.displayName = newDisplayname;
         }
 
-        private void Start()
-        {
-            cachedNetworkConnection = connectionToClient;
-            NetworkServer.RemovePlayerForConnection(connectionToClient, false);
-            NetworkServer.AddPlayerForConnection(cachedNetworkConnection, gameObject);
-        }
-
         [Command]
         public void CmdStartGame()
         {
@@ -73,6 +66,9 @@ namespace Managers
         public override void OnStartClient()
         {
             ClientOnInfoUpdated?.Invoke();
+
+            MyPlayer player = connectionToClient.identity.GetComponent<MyPlayer>();
+            _teamColor = player.GetTeamColor();
 
             if (NetworkServer.active) { return; }
 
