@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class MyNetworkManager : NetworkManager
 {
-    [SerializeField] GameObject homeBasePrefab = null;
 
     public List<MyPlayer> Players { get; } = new List<MyPlayer>();
 
@@ -35,8 +34,7 @@ public class MyNetworkManager : NetworkManager
     {
         base.OnServerAddPlayer(conn);
 
-        GameObject homeBaseInstance = Instantiate(homeBasePrefab, conn.identity.transform.position, conn.identity.transform.rotation);
-        NetworkServer.Spawn(homeBaseInstance, conn);
+     
 
         MyPlayer player = conn.identity.GetComponent<MyPlayer>();
         Players.Add(player);
@@ -64,6 +62,7 @@ public class MyNetworkManager : NetworkManager
         isGameStarted = true;
         // this is used instead of offline/online scene from network manager
         ServerChangeScene("Scene_Map01");
+ 
     }
 
     public override void OnStopServer()
@@ -77,7 +76,8 @@ public class MyNetworkManager : NetworkManager
         base.OnClientConnect(conn);
 
         ClientOnConnected?.Invoke();
-    }
+
+     }
 
     public override void OnClientDisconnect(NetworkConnection conn)
     {
