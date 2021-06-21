@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6426539279419765900}
   - component: {fileID: 6426539279419765903}
   - component: {fileID: 6426539279419765902}
+  - component: {fileID: 1936421781}
+  - component: {fileID: 1936421780}
   m_Layer: 0
   m_Name: MyNetworkManager
   m_TagString: Untagged
@@ -72,6 +74,7 @@ MonoBehaviour:
   - {fileID: 938947275852223064, guid: e3ae3b0ce12af7a49bf58ac9b3728af2, type: 3}
   - {fileID: 938947275852223064, guid: 30231a86b686b6743b73a8f8e49970d5, type: 3}
   - {fileID: 938947275852223064, guid: 8d1c400fbe8866a48938cb4fa28ebb4b, type: 3}
+  - {fileID: 4570810476499841566, guid: e391bed4f4d364f4996afce8beb99a36, type: 3}
 --- !u!114 &6426539279419765902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,3 +98,33 @@ MonoBehaviour:
   debugLog: 0
   statisticsGUI: 0
   statisticsLog: 0
+--- !u!114 &1936421781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6426539279419765889}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea368fb6f27ec2f40a40e20977992b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Channels: 0200000001000000
+  Timeout: 25
+  SteamAppID: 480
+  AllowSteamRelay: 1
+  UseNextGenSteamNetworking: 1
+  SteamUserID: 0
+--- !u!114 &1936421780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6426539279419765889}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4bffeda13d7a748973ff9204401c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
