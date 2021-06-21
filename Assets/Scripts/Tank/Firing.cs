@@ -41,10 +41,11 @@ public class Firing :NetworkBehaviour
     }
     private void Start()
     {
+        if (!hasAuthority) { return; }
         audioSource = GetComponent<AudioSource>();
         timerSlider.maxValue = cannonRechargeTime;
         timerSlider.value = cannonRechargeTime;
-        timerSlider.gameObject.SetActive(isLocalPlayer);
+        timerSlider.gameObject.SetActive(true);
     }
     [Command]
     public void CmdFire()

@@ -7,6 +7,8 @@ namespace Tank {
 
     public class TankController : NetworkBehaviour
     {
+        [SerializeField] private GameObject playerMinmap = null;
+
         public bool hasFlag = false;
         public GameObject flagMountPoint;
         private TankMovement _tankMovement;
@@ -18,6 +20,9 @@ namespace Tank {
             _turretRotate = GetComponent<TurretRotate>();
             _tankMovement1 = GetComponent<TankMovement>();
             _tankMovement = GetComponent<TankMovement>();
+            if (!hasAuthority) { return; }
+
+            playerMinmap.SetActive(true);
         }
 
         private void FixedUpdate()

@@ -26,9 +26,13 @@ namespace Tank
         public override void OnStartClient()
         {
             healthSlider.value = currentHealth;
-            healthSlider.gameObject.SetActive(isLocalPlayer);
         }
- 
+
+        private void Start()
+        {
+            if (!hasAuthority) { return; }
+            healthSlider.gameObject.SetActive(true);
+        }
         void SetHealthHook(int oldHealth, int newHealth)
         {
             healthSlider.value = currentHealth;

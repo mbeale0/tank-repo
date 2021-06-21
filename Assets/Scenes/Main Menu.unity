@@ -8161,6 +8161,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921248323}
   m_CullTransparentMesh: 1
+--- !u!1 &1936421779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6426539279419765889, guid: df51c1847cf2f0a49b78bb6b6f4c394d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6426539279829996806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1936421780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936421779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4bffeda13d7a748973ff9204401c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1936421781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936421779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea368fb6f27ec2f40a40e20977992b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Channels: 0200000001000000
+  Timeout: 25
+  SteamAppID: 480
+  AllowSteamRelay: 1
+  UseNextGenSteamNetworking: 1
+  SteamUserID: 0
 --- !u!1 &1945738938
 GameObject:
   m_ObjectHideFlags: 0
@@ -8486,6 +8522,7 @@ MonoBehaviour:
   resolutionDropdown: {fileID: 471777350}
   landingPagePanel: {fileID: 573858835}
   optionsMenu: {fileID: 137869360}
+  useSteam: 0
 --- !u!114 &2021605884
 MonoBehaviour:
   m_ObjectHideFlags: 0

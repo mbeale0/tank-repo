@@ -37,7 +37,6 @@ public class JoinLobbbyMenu : MonoBehaviour
         joinButton.interactable = true;
         gameObject.SetActive(false);
         landingPanel.SetActive(false);
-        //vehicleSelection.SetActive(true);
     }
     private void HandleClientDisconnected()
     {
