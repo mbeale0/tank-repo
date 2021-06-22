@@ -28,15 +28,17 @@ public class LobbyMenu : MonoBehaviour
     }
    
     public void ClientHandleInfoUpdated()
-    {
+    { 
         List<MyPlayer> players = ((MyNetworkManager)NetworkManager.singleton).Players;
         for(int i = 0; i < players.Count; i++)
         {
+            Debug.Log("Adding Players");
             playerNameTexts[i].text = players[i].GetDisplayName();
         }
 
         for(int i = players.Count; i < playerNameTexts.Length; i++)
         {
+            Debug.Log("Waiting adding");
             playerNameTexts[i].text = "Waiting For Player...";
         }
 

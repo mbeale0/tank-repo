@@ -51,7 +51,7 @@ public class Firing :NetworkBehaviour
     public void CmdFire()
     {
         AkSoundEngine.PostEvent("Play_Tank_Shoot", gameObject);
-        audioSource.PlayOneShot(shotFiringClip, shotFiringVolume);
+        //audioSource.PlayOneShot(shotFiringClip, shotFiringVolume);
         GameObject projectile = Instantiate(projectilePrefab, projectileMount.position, projectileMount.rotation);
         NetworkServer.Spawn(projectile);
         
