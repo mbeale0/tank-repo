@@ -9,11 +9,12 @@ public class TeamColorSetter : NetworkBehaviour
     [SyncVar(hook = nameof(HandleTeamColorUpdated))]
     private Color teamColor = new Color();
 
- #region Server
-    
+    #region Server
+
     public override void OnStartServer()
-    { MyPlayer player = connectionToClient.identity.GetComponent<MyPlayer>();
-      teamColor = player.GetTeamColor();
+    {
+        MyPlayer player = connectionToClient.identity.GetComponent<MyPlayer>();
+        teamColor = player.GetTeamColor();
     }
     #endregion
 

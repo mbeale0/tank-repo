@@ -4,7 +4,7 @@ using UnityEngine;
 using Steamworks;
 using Mirror;
 
-public class SteamLobby : MonoBehaviour
+public class SteamLobby_OLD : MonoBehaviour
 {
     [SerializeField] private GameObject buttons = null;
     private NetworkManager networkManager;

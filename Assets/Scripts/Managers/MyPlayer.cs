@@ -64,9 +64,7 @@ namespace Managers
             ClientOnInfoUpdated?.Invoke();
         }
         public override void OnStartClient()
-        {
-            ClientOnInfoUpdated?.Invoke();
-
+        { 
             MyPlayer player = connectionToClient.identity.GetComponent<MyPlayer>();
             _teamColor = player.GetTeamColor();
 

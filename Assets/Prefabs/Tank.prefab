@@ -5556,9 +5556,9 @@ MonoBehaviour:
   m_EngineIdling: {fileID: 8300000, guid: 4932ab25b84dd7649b80af68a9660ddc, type: 3}
   m_EngineDriving: {fileID: 8300000, guid: d7ca9fb5aa30155449192b23d7fb3336, type: 3}
   m_PitchRange: 0.1
-  m_MovementAxisName: 
-  m_TurnAxisName: 
-  m_Rigidbody: {fileID: 0}
+  m_MovementAxisName: MovementAxis
+  m_TurnAxisName: TurnAxis
+  m_Rigidbody: {fileID: 938947275847070930}
   m_MovementInputValue: 0
   m_TurnInputValue: 0
   currentFuel: 100
@@ -5616,6 +5616,8 @@ MonoBehaviour:
   remainsPrefab: {fileID: 3915631344924530330, guid: 1955945f986fece47b746f6f1c2b0c5f,
     type: 3}
   healthSlider: {fileID: 1970896369317087581}
+  mainCameraPrefab: {fileID: 7785804568343872525, guid: e4a25aa91e51cfb4a8a6bba5a35eda87,
+    type: 3}
   isDead: 0
 --- !u!114 &3716252263390049881
 MonoBehaviour:
