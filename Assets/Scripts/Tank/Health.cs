@@ -12,7 +12,6 @@ namespace Tank
  
         [SerializeField] private int maxHealth = 100;
         [SerializeField] private GameObject remainsPrefab;
-        //[SerializeField] private Transform parentTransform;
         [SerializeField] private Slider healthSlider;
         public bool isDead = false;
  
@@ -45,9 +44,7 @@ namespace Tank
             // if this is a player object, RemovePlayerForConnection to take it off of clients
             // for buildings, UnSpawn it to take it off clients
             if (connectionToClient != null)
-                NetworkServer.RemovePlayerForConnection(connectionToClient, false);
-            else
-                NetworkServer.Destroy(gameObject);
+                NetworkServer.RemovePlayerForConnection(connectionToClient, false);;
  
             // spawn the remains prefab for this object in either case
             NetworkServer.Spawn(Instantiate(remainsPrefab, transform.position, transform.rotation));
@@ -71,14 +68,27 @@ namespace Tank
             // bail out here for non-player objects, e.g. buildings
             if (cachedNetworkConnection == null) 
                 yield break;
- 
-            yield return new WaitForEndOfFrame();
- 
-            ReLocate();
+
+            GameObject characterSelect = FindObjectOfType<VehicleViewer>().gameObject;
+
+            int childCount = characterSelect.transform.childCount;
+            for (int i = 0; i < childCount; i++)
+            {
+                Transform child = characterSelect.transform.GetChild(i);
+                child.gameObject.SetActive(true);
+            }
+
+            yield return new WaitForEndOfFrame(); 
+
+            //Destroy(gameObject);
+
+            ServerHandlePlayerDie();
+            
+            /*ReLocate();
             currentHealth = maxHealth;
             yield return new WaitForSeconds(2f);
  
-            NetworkServer.AddPlayerForConnection(cachedNetworkConnection, gameObject);
+            NetworkServer.AddPlayerForConnection(cachedNetworkConnection, gameObject);*/
         }
  
         [ServerCallback]
@@ -86,6 +96,11 @@ namespace Tank
         {
             // leaving this in assuming more complex relocation is planned
             transform.position = Vector3.zero;
+        }
+        [Server]
+        private void ServerHandlePlayerDie()
+        {
+            NetworkServer.Destroy(gameObject);
         }
     }
 }

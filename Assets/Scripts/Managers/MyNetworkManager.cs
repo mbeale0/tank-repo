@@ -34,8 +34,6 @@ public class MyNetworkManager : NetworkManager
     {
         base.OnServerAddPlayer(conn);
 
-     
-
         MyPlayer player = conn.identity.GetComponent<MyPlayer>();
         Players.Add(player);
 

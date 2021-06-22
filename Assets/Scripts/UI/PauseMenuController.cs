@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
+using Mirror;
+
 public class PauseMenuController : MonoBehaviour
 {
     /* TODO: Possibly add saving system so settings don't have to be changed every game launch(not sure how it works yet)
@@ -19,7 +22,6 @@ public class PauseMenuController : MonoBehaviour
 
     private void Start()
     {
-
         SetupResolutionDropdown();
         // deactivate necassary menus
         pauseMenu.SetActive(false);
@@ -81,7 +83,7 @@ public class PauseMenuController : MonoBehaviour
         pauseMenu.SetActive(false);
         optionsMenu.SetActive(false);
     }
-    public void MainMenu()
+    public void PauseMenu()
     {
         optionsMenu.SetActive(false);
         pauseMenu.SetActive(true);       
@@ -90,6 +92,18 @@ public class PauseMenuController : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         optionsMenu.SetActive(true);
+    }
+    public void ExitToMainMenu()
+    {
+        if (NetworkServer.active && NetworkClient.isConnected)
+        {
+            NetworkManager.singleton.StopHost();
+        }
+        else
+        {
+            NetworkManager.singleton.StopClient();
+        }
+        SceneManager.LoadScene(0);
     }
     public void ExitGame()
     {

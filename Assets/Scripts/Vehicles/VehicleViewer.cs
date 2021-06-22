@@ -8,26 +8,18 @@ public class VehicleViewer : NetworkBehaviour
 {
     [SerializeField] private GameObject[] characterSelectDisplayPanels = default;
     [SerializeField] private GameObject characterSelectDisplay = default;
+    [SerializeField] private GameObject mainCamera = null;
 
     [SerializeField] private TMP_Text characterNameText = default;
 
     [SerializeField] private Character[] characters = default;
 
     private int currentCharacterIndex = 0;
-    private List<GameObject> characterInstances = new List<GameObject>();
     
     public override void OnStartClient()
     {
         characterNameText.text = "  ";
-        /*foreach(var character in characters)
-        {
-            GameObject characterInstance = Instantiate(character.CharacterPreviewPrefab, characterPreviewParents[currentCharacterIndex]);
 
-            //characterInstance.SetActive(false);
-            characterInstances.Add(character);
-        }
-        // Might leave this part off b/c want them on by default. We will see
-        characterInstances[currentCharacterIndex].SetActive(true);*/
         characterNameText.text = characters[currentCharacterIndex].CharacterName;
 
         characterSelectDisplayPanels[currentCharacterIndex].transform.GetComponent<Renderer>().material.SetFloat("_Metallic", .45f); ;
@@ -37,13 +29,26 @@ public class VehicleViewer : NetworkBehaviour
     public void Select()
     {
         CmdSelect(currentCharacterIndex);
-        characterSelectDisplay.SetActive(false);
+
+        int childCount = transform.childCount;
+        for(int i = 0; i < childCount; i++)
+        {
+            Transform child = transform.GetChild(i);
+            child.gameObject.SetActive(false);
+        }
+
     }
 
     [Command(requiresAuthority = false)] 
     public void CmdSelect(int characterIndex, NetworkConnectionToClient sender = null)
     {
         GameObject characterInstance = Instantiate(characters[characterIndex].GameplayCharacterPrefab);
+        Instantiate(mainCamera, new Vector3(0, 10, 0), Quaternion.identity);
+        float timeStart = 0;
+        while(timeStart < 1)
+        {
+            timeStart += Time.deltaTime;
+        }
         NetworkServer.Spawn(characterInstance, sender);
 
     }
