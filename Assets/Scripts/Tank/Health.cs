@@ -13,6 +13,7 @@ namespace Tank
         [SerializeField] private int maxHealth = 100;
         [SerializeField] private GameObject remainsPrefab;
         [SerializeField] private Slider healthSlider;
+        [SerializeField] private GameObject mainCameraPrefab = null;
         public bool isDead = false;
  
         NetworkConnection cachedNetworkConnection;
@@ -83,7 +84,7 @@ namespace Tank
             //Destroy(gameObject);
 
             ServerHandlePlayerDie();
-            
+            Instantiate(mainCameraPrefab);
             /*ReLocate();
             currentHealth = maxHealth;
             yield return new WaitForSeconds(2f);

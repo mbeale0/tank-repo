@@ -43,12 +43,12 @@ public class VehicleViewer : NetworkBehaviour
     public void CmdSelect(int characterIndex, NetworkConnectionToClient sender = null)
     {
         GameObject characterInstance = Instantiate(characters[characterIndex].GameplayCharacterPrefab);
-        Instantiate(mainCamera, new Vector3(0, 10, 0), Quaternion.identity);
+        /*Instantiate(mainCamera, new Vector3(0, 10, 0), Quaternion.identity);
         float timeStart = 0;
         while(timeStart < 1)
         {
             timeStart += Time.deltaTime;
-        }
+        }*/
         NetworkServer.Spawn(characterInstance, sender);
 
     }

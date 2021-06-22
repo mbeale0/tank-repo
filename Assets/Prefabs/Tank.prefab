@@ -5616,6 +5616,8 @@ MonoBehaviour:
   remainsPrefab: {fileID: 3915631344924530330, guid: 1955945f986fece47b746f6f1c2b0c5f,
     type: 3}
   healthSlider: {fileID: 1970896369317087581}
+  mainCameraPrefab: {fileID: 7785804568343872525, guid: e4a25aa91e51cfb4a8a6bba5a35eda87,
+    type: 3}
   isDead: 0
 --- !u!114 &3716252263390049881
 MonoBehaviour:
