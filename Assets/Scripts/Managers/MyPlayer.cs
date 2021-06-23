@@ -79,5 +79,6 @@ namespace Managers
 
             ((MyNetworkManager)NetworkManager.singleton).Players.Remove(this);
         }
+        
     }
 }
