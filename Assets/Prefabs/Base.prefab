@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 6705291370381578882}
   m_Layer: 0
   m_Name: Base
-  m_TagString: HomeBase
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,6 +303,7 @@ MonoBehaviour:
   remainsPrefab: {fileID: 7279081621764097298, guid: 1efd3903df39ae14886498476dba1ae6,
     type: 3}
   healthSlider: {fileID: 9044878866953966398}
+  mainCameraPrefab: {fileID: 0}
   isDead: 0
 --- !u!114 &1656485170
 MonoBehaviour:
@@ -316,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70793d697f9f1674cbb6ff7eb5eb7024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagMountTransform: {fileID: 0}
+  flagMountTransform: {fileID: 797599756}
 --- !u!114 &6705291370381578882
 MonoBehaviour:
   m_ObjectHideFlags: 0

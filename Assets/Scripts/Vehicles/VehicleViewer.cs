@@ -36,7 +36,6 @@ public class VehicleViewer : NetworkBehaviour
             Transform child = transform.GetChild(i);
             child.gameObject.SetActive(false);
         }
-
     }
 
     [Command(requiresAuthority = false)] 

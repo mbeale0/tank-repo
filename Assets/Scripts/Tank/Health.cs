@@ -55,7 +55,7 @@ namespace Tank
         public void DealDamage(int damageAmount)
         {
             currentHealth -= damageAmount;
- 
+          
             if (currentHealth == 0)
                 StartCoroutine(Respawn());
         }
@@ -65,7 +65,11 @@ namespace Tank
         {
             // this will nullify connectionToClient so use cachedNetworkConnection after this
             SpawnRemains();
- 
+            if (gameObject.tag == "Building")
+            {
+                Destroy(gameObject);
+            }
+
             // bail out here for non-player objects, e.g. buildings
             if (cachedNetworkConnection == null) 
                 yield break;
