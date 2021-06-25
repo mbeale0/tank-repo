@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class VehicleViewer : NetworkBehaviour
 {
+    [SerializeField] public GameObject canvas;
     [SerializeField] private GameObject[] characterSelectDisplayPanels = default;
     [SerializeField] private GameObject characterSelectDisplay = default;
     [SerializeField] private GameObject mainCamera = null;
@@ -18,6 +19,10 @@ public class VehicleViewer : NetworkBehaviour
     
     public override void OnStartClient()
     {
+        if (hasAuthority)
+        {
+            canvas.SetActive(true);
+        }
         characterNameText.text = "  ";
 
         characterNameText.text = characters[currentCharacterIndex].CharacterName;
@@ -30,11 +35,15 @@ public class VehicleViewer : NetworkBehaviour
     {
         CmdSelect(currentCharacterIndex);
 
-        int childCount = transform.childCount;
-        for(int i = 0; i < childCount; i++)
+        /* int childCount = transform.childCount;
+         for(int i = 0; i < childCount; i++)
+         {
+             Transform child = transform.GetChild(i);
+             child.gameObject.SetActive(false);
+         }*/
+        if (isLocalPlayer)
         {
-            Transform child = transform.GetChild(i);
-            child.gameObject.SetActive(false);
+            canvas.SetActive(false);
         }
     }
 
@@ -49,7 +58,8 @@ public class VehicleViewer : NetworkBehaviour
             timeStart += Time.deltaTime;
         }*/
         NetworkServer.Spawn(characterInstance, sender);
-
+     
+       
     }
     public void Right()
     {
