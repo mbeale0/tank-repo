@@ -8,7 +8,9 @@ using UnityEngine;
 public class MyNetworkManager : NetworkManager
 {
 
-    public List<MyPlayer> Players { get; } = new List<MyPlayer>();
+    public readonly List<MyPlayer> Players = new List<MyPlayer>();
+
+
 
     public static event Action ClientOnConnected;
     public static event Action ClientOnDisconnected;

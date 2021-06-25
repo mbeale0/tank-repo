@@ -15,6 +15,7 @@ namespace Managers
         private string displayName;
 
 
+
         public static event Action ClientOnInfoUpdated;
         public static event Action<bool> AuthorityOnPartyOwnerStateUpdated;
 
