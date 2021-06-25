@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Managers;
 using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,7 +16,7 @@ namespace Tank
         [SerializeField] private Slider healthSlider;
         [SerializeField] private GameObject mainCameraPrefab = null;
         public bool isDead = false;
-        private GameObject canvas;
+        private GameObject myPlayerObject;
 
 
         NetworkConnection cachedNetworkConnection;
@@ -25,7 +26,10 @@ namespace Tank
             cachedNetworkConnection = connectionToClient;
             if (isLocalPlayer)
             {
-                canvas = GetComponent<VehicleViewer>().canvas;
+                if (hasAuthority)
+                {
+                    myPlayerObject = GetComponent<MyPlayer>().gameObject;
+                }  
             }
         }
 
@@ -72,16 +76,14 @@ namespace Tank
             SpawnRemains();
             NetworkServer.Destroy(gameObject);
 
-            /*  GameObject characterSelect = FindObjectOfType<VehicleViewer>().gameObject;
 
-              int childCount = characterSelect.transform.childCount;
+              int childCount = myPlayerObject.transform.childCount;
               for (int i = 0; i < childCount; i++)
               {
-                  Transform child = characterSelect.transform.GetChild(i);
+                  Transform child = myPlayerObject.transform.GetChild(i);
                   child.gameObject.SetActive(true);
               }
-            */
-            canvas.SetActive(true);
+            
             yield return new WaitForEndOfFrame();
 
         }
