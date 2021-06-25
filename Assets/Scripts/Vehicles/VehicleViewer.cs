@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class VehicleViewer : NetworkBehaviour
 {
-    [SerializeField] private GameObject canvas;
+    [SerializeField] public GameObject canvas;
     [SerializeField] private GameObject[] characterSelectDisplayPanels = default;
     [SerializeField] private GameObject characterSelectDisplay = default;
     [SerializeField] private GameObject mainCamera = null;
@@ -19,7 +19,10 @@ public class VehicleViewer : NetworkBehaviour
     
     public override void OnStartClient()
     {
-        canvas.SetActive(true);
+        if (hasAuthority)
+        {
+            canvas.SetActive(true);
+        }
         characterNameText.text = "  ";
 
         characterNameText.text = characters[currentCharacterIndex].CharacterName;
@@ -32,12 +35,16 @@ public class VehicleViewer : NetworkBehaviour
     {
         CmdSelect(currentCharacterIndex);
 
-       /* int childCount = transform.childCount;
-        for(int i = 0; i < childCount; i++)
+        /* int childCount = transform.childCount;
+         for(int i = 0; i < childCount; i++)
+         {
+             Transform child = transform.GetChild(i);
+             child.gameObject.SetActive(false);
+         }*/
+        if (isLocalPlayer)
         {
-            Transform child = transform.GetChild(i);
-            child.gameObject.SetActive(false);
-        }*/
+            canvas.SetActive(false);
+        }
     }
 
     [Command(requiresAuthority = false)] 
@@ -51,7 +58,8 @@ public class VehicleViewer : NetworkBehaviour
             timeStart += Time.deltaTime;
         }*/
         NetworkServer.Spawn(characterInstance, sender);
-        CmdDisableCanvas();
+     
+       
     }
     public void Right()
     {
@@ -77,18 +85,6 @@ public class VehicleViewer : NetworkBehaviour
 
         characterSelectDisplayPanels[currentCharacterIndex].transform.GetComponent<Renderer>().material.SetFloat("_Metallic", .45f);
         characterNameText.text = characters[currentCharacterIndex].CharacterName;
-    }
-
-    [TargetRpc]
-    public void TargetDisableCanvas(NetworkConnection target)
-    {
-        canvas.SetActive(false);
-    }
-
-    [Command]
-    void CmdDisableCanvas()
-    {
-        TargetDisableCanvas(connectionToClient);
     }
 
 }

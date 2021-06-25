@@ -15,6 +15,7 @@ namespace Tank
         [SerializeField] private Slider healthSlider;
         [SerializeField] private GameObject mainCameraPrefab = null;
         public bool isDead = false;
+        private GameObject canvas;
 
 
         NetworkConnection cachedNetworkConnection;
@@ -22,6 +23,10 @@ namespace Tank
         public override void OnStartServer()
         {
             cachedNetworkConnection = connectionToClient;
+            if (isLocalPlayer)
+            {
+                canvas = GetComponent<VehicleViewer>().canvas;
+            }
         }
 
         public override void OnStartClient()
@@ -67,15 +72,16 @@ namespace Tank
             SpawnRemains();
             NetworkServer.Destroy(gameObject);
 
-          /*  GameObject characterSelect = FindObjectOfType<VehicleViewer>().gameObject;
+            /*  GameObject characterSelect = FindObjectOfType<VehicleViewer>().gameObject;
 
-            int childCount = characterSelect.transform.childCount;
-            for (int i = 0; i < childCount; i++)
-            {
-                Transform child = characterSelect.transform.GetChild(i);
-                child.gameObject.SetActive(true);
-            }
-          */
+              int childCount = characterSelect.transform.childCount;
+              for (int i = 0; i < childCount; i++)
+              {
+                  Transform child = characterSelect.transform.GetChild(i);
+                  child.gameObject.SetActive(true);
+              }
+            */
+            canvas.SetActive(true);
             yield return new WaitForEndOfFrame();
 
         }
