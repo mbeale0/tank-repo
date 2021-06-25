@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Managers;
 using Mirror;
 using UnityEngine;
@@ -16,7 +17,7 @@ namespace Tank
         [SerializeField] private Slider healthSlider;
         [SerializeField] private GameObject mainCameraPrefab = null;
         public bool isDead = false;
-        private GameObject myPlayerObject;
+        //private GameObject myPlayerObject;
 
 
         NetworkConnection cachedNetworkConnection;
@@ -24,13 +25,13 @@ namespace Tank
         public override void OnStartServer()
         {
             cachedNetworkConnection = connectionToClient;
-            if (isLocalPlayer)
+            /*if (isLocalPlayer)
             {
                 if (hasAuthority)
                 {
                     myPlayerObject = GetComponent<MyPlayer>().gameObject;
                 }  
-            }
+            }*/
         }
 
         public override void OnStartClient()
@@ -74,23 +75,21 @@ namespace Tank
         IEnumerator Respawn()
         {
             SpawnRemains();
+
+            GameObject player = connectionToClient.identity.GetComponent<MyPlayer>().gameObject;
+            int childCount = player.transform.childCount;
+            for (int i = 0; i < childCount; i++)
+            {
+                Transform child = player.transform.GetChild(i);
+                child.gameObject.SetActive(true);
+            }
+            
+            // muust be called after so the script can continue to run
             NetworkServer.Destroy(gameObject);
 
-
-              int childCount = myPlayerObject.transform.childCount;
-              for (int i = 0; i < childCount; i++)
-              {
-                  Transform child = myPlayerObject.transform.GetChild(i);
-                  child.gameObject.SetActive(true);
-              }
-            
             yield return new WaitForEndOfFrame();
 
         }
-
-    
-
-
 
     }
 }
