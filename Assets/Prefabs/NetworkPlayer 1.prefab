@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  canvas: {fileID: 7002848273546192167}
+  vehicleViewer: {fileID: 7002848273546192167}
   characterSelectDisplayPanels:
   - {fileID: 9090596916332768786}
   - {fileID: 9090596917328734871}
