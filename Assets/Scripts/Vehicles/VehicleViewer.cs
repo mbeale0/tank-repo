@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Tank;
 
 public class VehicleViewer : NetworkBehaviour
 {
@@ -16,6 +17,7 @@ public class VehicleViewer : NetworkBehaviour
     [SerializeField] private Character[] characters = default;
 
     private int currentCharacterIndex = 0;
+    
     
     public override void OnStartClient()
     {

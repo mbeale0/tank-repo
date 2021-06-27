@@ -14,20 +14,20 @@ namespace Tank
         [SerializeField] private GameObject remainsPrefab;
         [SerializeField] private Slider healthSlider;
         [SerializeField] private GameObject mainCameraPrefab = null;
-        public bool isDead = false;
+        [SyncVar] public bool isDead = false;
         private GameObject vehicleViewer;
 
 
         NetworkConnection cachedNetworkConnection;
         
-        void update()
+        void Update()
         {
-            
-            if (isLocalPlayer&&isDead)
-            {
+            if (currentHealth==0 && hasAuthority){
                 vehicleViewer = FindObjectOfType<VehicleViewer>().vehicleViewer;
                 vehicleViewer.SetActive(true);
+                isDead=true;
             }
+            
 
         }
         public override void OnStartServer()
@@ -43,6 +43,7 @@ namespace Tank
 
         private void Start()
         {
+            
             if (!hasAuthority) { return; }
             healthSlider.gameObject.SetActive(true);
         }
@@ -69,7 +70,7 @@ namespace Tank
         {
             currentHealth -= damageAmount;
 
-            if (currentHealth == 0)
+            if (currentHealth == 0 && isDead)
                 StartCoroutine(Respawn());
         }
 
@@ -77,7 +78,7 @@ namespace Tank
         IEnumerator Respawn()
         {
             SpawnRemains();
-            isDead = true;
+            
             NetworkServer.Destroy(gameObject);
 
             /*  GameObject characterSelect = FindObjectOfType<VehicleViewer>().gameObject;
