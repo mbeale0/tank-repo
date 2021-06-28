@@ -20,20 +20,9 @@ namespace Tank
 
         NetworkConnection cachedNetworkConnection;
         
-        void Update()
-        {
-            if (currentHealth==0 && hasAuthority){
-                vehicleViewer = FindObjectOfType<VehicleViewer>().vehicleViewer;
-                vehicleViewer.SetActive(true);
-                isDead=true;
-            }
-            
-
-        }
         public override void OnStartServer()
         {
             cachedNetworkConnection = connectionToClient;
-            
         }
 
         public override void OnStartClient()
@@ -51,8 +40,6 @@ namespace Tank
         {
             healthSlider.value = currentHealth;
         }
-
-
         [ServerCallback]
         void SpawnRemains()
         {
@@ -69,16 +56,18 @@ namespace Tank
         public void DealDamage(int damageAmount)
         {
             currentHealth -= damageAmount;
-
-            if (currentHealth == 0 && isDead)
-                StartCoroutine(Respawn());
+            if (currentHealth==0)
+            {
+               StartCoroutine(Respawn());
+            }
         }
 
         [ServerCallback]
         IEnumerator Respawn()
         {
             SpawnRemains();
-            
+            CmdVehicleViewer();
+            RpcVehicleViewer();
             NetworkServer.Destroy(gameObject);
 
             /*  GameObject characterSelect = FindObjectOfType<VehicleViewer>().gameObject;
@@ -93,10 +82,24 @@ namespace Tank
             yield return new WaitForEndOfFrame();
 
         }
-
-    
-
-
-
+        [Command]
+        void CmdVehicleViewer()
+        {
+            if (hasAuthority)
+            {
+                vehicleViewer = FindObjectOfType<VehicleViewer>().vehicleViewer;
+                vehicleViewer.SetActive(true);
+            }
+        
+        }
+        [ClientRpc]
+        void RpcVehicleViewer()
+        {
+            if (hasAuthority)
+            {
+                vehicleViewer = FindObjectOfType<VehicleViewer>().vehicleViewer;
+                vehicleViewer.SetActive(true);
+            }
+        }
     }
 }
