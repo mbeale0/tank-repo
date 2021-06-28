@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using Managers;
 using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,22 +14,15 @@ namespace Tank
         [SerializeField] private GameObject remainsPrefab;
         [SerializeField] private Slider healthSlider;
         [SerializeField] private GameObject mainCameraPrefab = null;
-        public bool isDead = false;
-        //private GameObject myPlayerObject;
+        [SyncVar] public bool isDead = false;
+        private GameObject vehicleViewer;
 
 
         NetworkConnection cachedNetworkConnection;
-
+        
         public override void OnStartServer()
         {
             cachedNetworkConnection = connectionToClient;
-            /*if (isLocalPlayer)
-            {
-                if (hasAuthority)
-                {
-                    myPlayerObject = GetComponent<MyPlayer>().gameObject;
-                }  
-            }*/
         }
 
         public override void OnStartClient()
@@ -41,6 +32,7 @@ namespace Tank
 
         private void Start()
         {
+            
             if (!hasAuthority) { return; }
             healthSlider.gameObject.SetActive(true);
         }
@@ -48,8 +40,6 @@ namespace Tank
         {
             healthSlider.value = currentHealth;
         }
-
-
         [ServerCallback]
         void SpawnRemains()
         {
@@ -66,30 +56,50 @@ namespace Tank
         public void DealDamage(int damageAmount)
         {
             currentHealth -= damageAmount;
-
-            if (currentHealth == 0)
-                StartCoroutine(Respawn());
+            if (currentHealth==0)
+            {
+               StartCoroutine(Respawn());
+            }
         }
 
         [ServerCallback]
         IEnumerator Respawn()
         {
             SpawnRemains();
-
-            GameObject player = connectionToClient.identity.GetComponent<MyPlayer>().gameObject;
-            int childCount = player.transform.childCount;
-            for (int i = 0; i < childCount; i++)
-            {
-                Transform child = player.transform.GetChild(i);
-                child.gameObject.SetActive(true);
-            }
-            
-            // muust be called after so the script can continue to run
+            CmdVehicleViewer();
+            RpcVehicleViewer();
             NetworkServer.Destroy(gameObject);
 
+            /*  GameObject characterSelect = FindObjectOfType<VehicleViewer>().gameObject;
+
+              int childCount = characterSelect.transform.childCount;
+              for (int i = 0; i < childCount; i++)
+              {
+                  Transform child = characterSelect.transform.GetChild(i);
+                  child.gameObject.SetActive(true);
+              }
+            */
             yield return new WaitForEndOfFrame();
 
         }
-
+        [Command]
+        void CmdVehicleViewer()
+        {
+            if (hasAuthority)
+            {
+                vehicleViewer = FindObjectOfType<VehicleViewer>().vehicleViewer;
+                vehicleViewer.SetActive(true);
+            }
+        
+        }
+        [ClientRpc]
+        void RpcVehicleViewer()
+        {
+            if (hasAuthority)
+            {
+                vehicleViewer = FindObjectOfType<VehicleViewer>().vehicleViewer;
+                vehicleViewer.SetActive(true);
+            }
+        }
     }
 }

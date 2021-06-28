@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Tank;
 
 public class VehicleViewer : NetworkBehaviour
 {
-    [SerializeField] public GameObject canvas;
+    [SerializeField] public GameObject vehicleViewer;
     [SerializeField] private GameObject[] characterSelectDisplayPanels = default;
     [SerializeField] private GameObject characterSelectDisplay = default;
     [SerializeField] private GameObject mainCamera = null;
@@ -17,11 +18,12 @@ public class VehicleViewer : NetworkBehaviour
 
     private int currentCharacterIndex = 0;
     
+    
     public override void OnStartClient()
     {
         if (hasAuthority)
         {
-            canvas.SetActive(true);
+            vehicleViewer.SetActive(true);
         }
         characterNameText.text = "  ";
 
@@ -43,7 +45,7 @@ public class VehicleViewer : NetworkBehaviour
          }*/
         if (isLocalPlayer)
         {
-            canvas.SetActive(false);
+            vehicleViewer.SetActive(false);
         }
     }
 
