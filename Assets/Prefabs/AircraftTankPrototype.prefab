@@ -4941,6 +4941,7 @@ Transform:
   - {fileID: 6846100982888092950}
   - {fileID: 4564725549368490096}
   - {fileID: 1457377727398095857}
+  - {fileID: 4717436518179836123}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5205,7 +5206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcff2cc44d61dc5429e959b3e60bbeed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 0}
+  turret: {fileID: 1457377727398431075}
 --- !u!114 &966085030510419840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5223,7 +5224,7 @@ MonoBehaviour:
   shootKey: 32
   projectilePrefab: {fileID: 2565721997620015117, guid: 01155c166e347d34c81fc7d27ca9f2c1,
     type: 3}
-  projectileMount: {fileID: 0}
+  projectileMount: {fileID: 4717436518179836123}
   shotFiringClip: {fileID: 8300000, guid: cc4fdfbd402a7c842ac0f125c6086c15, type: 3}
   shotFiringVolume: 10
   cannonRechargeTime: 1
@@ -11125,6 +11126,36 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1753875359198561526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4717436518179836123}
+  m_Layer: 0
+  m_Name: Projectile Mount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4717436518179836123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753875359198561526}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.638518, y: 5.268, z: 2.273}
+  m_LocalScale: {x: 1.6666665, y: 1.6666665, z: 1.6666665}
+  m_Children: []
+  m_Father: {fileID: 938947275851987210}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2025741531008820545
 GameObject:
   m_ObjectHideFlags: 0
