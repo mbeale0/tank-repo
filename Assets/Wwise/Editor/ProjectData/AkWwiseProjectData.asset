@@ -145,8 +145,8 @@ MonoBehaviour:
         guid: 09761bcd6e5b534db221f1e60fc32c2a
       Path: Events\Default Work Unit\Play_Tank_Shoot
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.357209
+      minDuration: 1.077218
     - name: Stop_Main_Menu
       guid: 63d7908039f1274b854b5900eeaab98a
       id: 774860123
@@ -162,8 +162,8 @@ MonoBehaviour:
         guid: 63d7908039f1274b854b5900eeaab98a
       Path: Events\Default Work Unit\Stop_Main_Menu
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Stop_Tank_Rotation
       guid: 690aab99823f854fbc20315a140e2bb6
       id: 1109520597
@@ -179,8 +179,8 @@ MonoBehaviour:
         guid: 690aab99823f854fbc20315a140e2bb6
       Path: Events\Default Work Unit\Stop_Tank_Rotation
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:

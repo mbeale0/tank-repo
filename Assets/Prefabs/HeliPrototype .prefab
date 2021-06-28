@@ -270,8 +270,8 @@ GameObject:
   - component: {fileID: 2691014721684132837}
   - component: {fileID: 8814510079438543220}
   - component: {fileID: 1711636247754386380}
-  - component: {fileID: 3716252263390049881}
   - component: {fileID: 966085030510419840}
+  - component: {fileID: 7911614411755471670}
   m_Layer: 9
   m_Name: 'HeliPrototype '
   m_TagString: Player
@@ -287,13 +287,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938947275852223064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.66, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4326367067135105624}
   - {fileID: 3345183688836292494}
   - {fileID: 8684084683709381139}
   - {fileID: 3226327439701000177}
+  - {fileID: 5595653201431659189}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -544,20 +545,8 @@ MonoBehaviour:
   remainsPrefab: {fileID: 3915631344924530330, guid: 1955945f986fece47b746f6f1c2b0c5f,
     type: 3}
   healthSlider: {fileID: 1970896369317087581}
+  mainCameraPrefab: {fileID: 0}
   isDead: 0
---- !u!114 &3716252263390049881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938947275852223064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcff2cc44d61dc5429e959b3e60bbeed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turret: {fileID: 0}
 --- !u!114 &966085030510419840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,6 +569,23 @@ MonoBehaviour:
   shotFiringVolume: 10
   cannonRechargeTime: 1
   timerSlider: {fileID: 3276833678499275587}
+--- !u!114 &7911614411755471670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938947275852223064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe45f3292caf6949a52ba78c0d06b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  heliBlades: {fileID: 5595653201431437691}
+  heliTailRotor: {fileID: 5595653201431449621}
+  rotateSpeed: 15
 --- !u!1 &1150543543094423038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,6 +2145,93 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!1001 &5595653201431599165
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 938947275851987210}
+    m_Modifications:
+    - target: {fileID: 147514, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_Name
+      value: SK_Veh_Attack_Heli_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ae4b8d90450391640addee2b41d60938, type: 3}
+--- !u!4 &5595653201431659189 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 465544, guid: ae4b8d90450391640addee2b41d60938,
+    type: 3}
+  m_PrefabInstance: {fileID: 5595653201431599165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5595653201431437691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 178502, guid: ae4b8d90450391640addee2b41d60938,
+    type: 3}
+  m_PrefabInstance: {fileID: 5595653201431599165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5595653201431449621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 182312, guid: ae4b8d90450391640addee2b41d60938,
+    type: 3}
+  m_PrefabInstance: {fileID: 5595653201431599165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7855832971619011995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2150,6 +2243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Heli Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715245949702362618, guid: 5f63688ff8e21bb4d8c95715b1d4c766,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4857691438590431765, guid: 5f63688ff8e21bb4d8c95715b1d4c766,
         type: 3}
