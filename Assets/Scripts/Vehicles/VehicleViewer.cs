@@ -46,6 +46,7 @@ public class VehicleViewer : NetworkBehaviour
         if (isLocalPlayer)
         {
             vehicleViewer.SetActive(false);
+            FindObjectOfType<PlayerCameraMounting>().MountCamera();
         }
     }
 

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Mirror;
 
 
@@ -10,6 +7,11 @@ public class PlayerCameraMounting : NetworkBehaviour
     [SerializeField] GameObject CameraMountPoint;
 
     void Start()
+    {
+        MountCamera();
+    }
+
+    public void MountCamera()
     {
         if (!hasAuthority)
         {
@@ -24,10 +26,13 @@ public class PlayerCameraMounting : NetworkBehaviour
 
     private void OnDisable()
     {
-        if (isLocalPlayer)
-        {
+        DismountCamera();
+    }
+
+    public void DismountCamera()
+    {
+        if (!hasAuthority) return;
             Transform cameraTransform = Camera.main.gameObject.transform;
             cameraTransform.parent = null;
-        }
     }
 }

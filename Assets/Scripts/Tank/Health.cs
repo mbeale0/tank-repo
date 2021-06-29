@@ -68,6 +68,7 @@ namespace Tank
             SpawnRemains();
             CmdVehicleViewer();
             RpcVehicleViewer();
+            GetComponent<PlayerCameraMounting>().DismountCamera();
             NetworkServer.Destroy(gameObject);
 
             /*  GameObject characterSelect = FindObjectOfType<VehicleViewer>().gameObject;
