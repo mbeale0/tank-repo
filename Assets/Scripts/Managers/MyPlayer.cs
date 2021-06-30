@@ -1,5 +1,6 @@
 using Mirror;
 using System;
+using Tank;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -7,6 +8,7 @@ namespace Managers
 {
     public class MyPlayer : NetworkBehaviour
     {
+        [SerializeField] private GameObject vehicleViewer = null;
         NetworkConnection cachedNetworkConnection;
         private Color _teamColor = new Color();
         [SyncVar(hook = nameof(AuthorityHandlePartyOwnerState))]
@@ -14,9 +16,8 @@ namespace Managers
         [SyncVar(hook = nameof(ClientHandledisplayNameUpdated))]
         private string displayName;
 
-
-
         public static event Action ClientOnInfoUpdated;
+        
         public static event Action<bool> AuthorityOnPartyOwnerStateUpdated;
 
         public string GetDisplayName()
@@ -31,7 +32,6 @@ namespace Managers
         {
             return _teamColor;
         }
-
         [Server]
         public void SetTeamColor(Color newTeamColor)
         {
@@ -65,10 +65,11 @@ namespace Managers
             ClientOnInfoUpdated?.Invoke();
         }
         public override void OnStartClient()
-        { 
-            MyPlayer player = connectionToClient.identity.GetComponent<MyPlayer>();
-            _teamColor = player.GetTeamColor();
-
+        {
+            //Why are you referencing this own script to call a function you can call naturally?
+            //MyPlayer player = connectionToClient.identity.GetComponent<MyPlayer>();
+            //_teamColor = player.GetTeamColor();
+            _teamColor = GetTeamColor();
             if (NetworkServer.active) { return; }
 
             ((MyNetworkManager)NetworkManager.singleton).Players.Add(this);

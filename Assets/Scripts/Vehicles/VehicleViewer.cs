@@ -4,21 +4,29 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Tank;
+using System;
 
 public class VehicleViewer : NetworkBehaviour
 {
-    [SerializeField] public GameObject vehicleViewer;
+    [SerializeField] private GameObject vehicleViewer = null;
     [SerializeField] private GameObject[] characterSelectDisplayPanels = default;
-    [SerializeField] private GameObject characterSelectDisplay = default;
-    [SerializeField] private GameObject mainCamera = null;
 
     [SerializeField] private TMP_Text characterNameText = default;
 
     [SerializeField] private Character[] characters = default;
 
     private int currentCharacterIndex = 0;
-    
-    
+
+    [TargetRpc]
+    public void TargetEnableVehicleViewer(NetworkConnection target, bool enableObject)
+    {
+        vehicleViewer.SetActive(enableObject);
+    }
+    [TargetRpc]
+    public void TargetDisableVehicleViewer(NetworkConnection target, bool enableObject)
+    {
+        vehicleViewer.SetActive(enableObject);
+    }
     public override void OnStartClient()
     {
         if (hasAuthority)
@@ -29,40 +37,46 @@ public class VehicleViewer : NetworkBehaviour
 
         characterNameText.text = characters[currentCharacterIndex].CharacterName;
 
-        characterSelectDisplayPanels[currentCharacterIndex].transform.GetComponent<Renderer>().material.SetFloat("_Metallic", .45f); ;
+        characterSelectDisplayPanels[currentCharacterIndex].transform.GetComponent<Renderer>().material.SetFloat("_Metallic", .45f);
 
+        Health.OnHealthUpdated += HandleHealthUpdates;
+    }
+
+
+    public override void OnStopClient()
+    {
+        Health.OnHealthUpdated -= HandleHealthUpdates;
+    }
+
+    private void HandleHealthUpdates()
+    {
+        if (hasAuthority)
+        {
+            vehicleViewer.SetActive(true);
+        }
     }
 
     public void Select()
     {
         CmdSelect(currentCharacterIndex);
 
-        /* int childCount = transform.childCount;
-         for(int i = 0; i < childCount; i++)
-         {
-             Transform child = transform.GetChild(i);
-             child.gameObject.SetActive(false);
-         }*/
-        if (isLocalPlayer)
+        /*NetworkIdentity thisObject = GetComponent<NetworkIdentity>();
+        TargetDisableVehicleViewer(thisObject.connectionToClient, false);*/
+        TargetDisableVehicleViewer(connectionToClient, false);
+s        FindObjectOfType<PlayerCameraMounting>().MountCamera();
+        if (hasAuthority)
         {
             vehicleViewer.SetActive(false);
-            FindObjectOfType<PlayerCameraMounting>().MountCamera();
         }
+
     }
 
     [Command(requiresAuthority = false)] 
     public void CmdSelect(int characterIndex, NetworkConnectionToClient sender = null)
     {
         GameObject characterInstance = Instantiate(characters[characterIndex].GameplayCharacterPrefab);
-        /*Instantiate(mainCamera, new Vector3(0, 10, 0), Quaternion.identity);
-        float timeStart = 0;
-        while(timeStart < 1)
-        {
-            timeStart += Time.deltaTime;
-        }*/
-        NetworkServer.Spawn(characterInstance, sender);
-     
-       
+
+        NetworkServer.Spawn(characterInstance, sender);     
     }
     public void Right()
     {
