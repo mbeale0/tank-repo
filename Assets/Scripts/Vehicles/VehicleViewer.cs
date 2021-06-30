@@ -17,7 +17,16 @@ public class VehicleViewer : NetworkBehaviour
 
     private int currentCharacterIndex = 0;
 
-
+    [TargetRpc]
+    public void TargetEnableVehicleViewer(NetworkConnection target, bool enableObject)
+    {
+        vehicleViewer.SetActive(enableObject);
+    }
+    [TargetRpc]
+    public void TargetDisableVehicleViewer(NetworkConnection target, bool enableObject)
+    {
+        vehicleViewer.SetActive(enableObject);
+    }
     public override void OnStartClient()
     {
         if (hasAuthority)
@@ -32,6 +41,8 @@ public class VehicleViewer : NetworkBehaviour
 
         Health.OnHealthUpdated += HandleHealthUpdates;
     }
+
+
     public override void OnStopClient()
     {
         Health.OnHealthUpdated -= HandleHealthUpdates;
@@ -49,12 +60,15 @@ public class VehicleViewer : NetworkBehaviour
     {
         CmdSelect(currentCharacterIndex);
 
+        /*NetworkIdentity thisObject = GetComponent<NetworkIdentity>();
+        TargetDisableVehicleViewer(thisObject.connectionToClient, false);*/
+        TargetDisableVehicleViewer(connectionToClient, false);
+s        FindObjectOfType<PlayerCameraMounting>().MountCamera();
         if (hasAuthority)
         {
             vehicleViewer.SetActive(false);
-            FindObjectOfType<PlayerCameraMounting>().MountCamera();
-            //Destroy(gameObject);
         }
+
     }
 
     [Command(requiresAuthority = false)] 

@@ -59,8 +59,10 @@ namespace Tank
             currentHealth = Mathf.Max(currentHealth - damageAmount, 0);
             if (currentHealth==0)
             {
-               StartCoroutine(Respawn());
-               OnHealthUpdated?.Invoke();
+                StartCoroutine(Respawn());
+                NetworkIdentity thisObject = GetComponent<NetworkIdentity>();
+                FindObjectOfType<VehicleViewer>().TargetEnableVehicleViewer(thisObject.connectionToClient, true);
+                //OnHealthUpdated?.Invoke();
             }
         }
 
