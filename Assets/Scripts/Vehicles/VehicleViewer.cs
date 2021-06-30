@@ -22,11 +22,6 @@ public class VehicleViewer : NetworkBehaviour
     {
         vehicleViewer.SetActive(enableObject);
     }
-    [TargetRpc]
-    public void TargetDisableVehicleViewer(NetworkConnection target, bool enableObject)
-    {
-        vehicleViewer.SetActive(enableObject);
-    }
     public override void OnStartClient()
     {
         if (hasAuthority)
@@ -62,8 +57,7 @@ public class VehicleViewer : NetworkBehaviour
 
         /*NetworkIdentity thisObject = GetComponent<NetworkIdentity>();
         TargetDisableVehicleViewer(thisObject.connectionToClient, false);*/
-        TargetDisableVehicleViewer(connectionToClient, false);
-        FindObjectOfType<PlayerCameraMounting>().MountCamera();
+        //FindObjectOfType<PlayerCameraMounting>().MountCamera();
         if (hasAuthority)
         {
             vehicleViewer.SetActive(false);
