@@ -5317,6 +5317,8 @@ MonoBehaviour:
     type: 3}
   healthSlider: {fileID: 1970896369317087581}
   mainCameraPrefab: {fileID: 0}
+  vehicleSelectionPrefab: {fileID: 1516431622540406107, guid: ebb750d2171c6f445aceca1818ee97cb,
+    type: 3}
   isDead: 0
 --- !u!114 &3716252263390049881
 MonoBehaviour:

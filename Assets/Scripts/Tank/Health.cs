@@ -14,12 +14,13 @@ namespace Tank
         [SerializeField] private GameObject remainsPrefab;
         [SerializeField] private Slider healthSlider;
         [SerializeField] private GameObject mainCameraPrefab = null;
+        [SerializeField] private GameObject vehicleSelectionPrefab = null;
         [SyncVar] public bool isDead = false;
-        private GameObject vehicleViewer;
 
 
         NetworkConnection cachedNetworkConnection;
-        
+        public static event Action OnHealthUpdated;
+
         public override void OnStartServer()
         {
             cachedNetworkConnection = connectionToClient;
@@ -55,10 +56,11 @@ namespace Tank
         [ServerCallback]
         public void DealDamage(int damageAmount)
         {
-            currentHealth -= damageAmount;
+            currentHealth = Mathf.Max(currentHealth - damageAmount, 0);
             if (currentHealth==0)
             {
                StartCoroutine(Respawn());
+               OnHealthUpdated?.Invoke();
             }
         }
 
@@ -66,24 +68,19 @@ namespace Tank
         IEnumerator Respawn()
         {
             SpawnRemains();
-            CmdVehicleViewer();
-            RpcVehicleViewer();
+            /*CmdVehicleViewer();
+            RpcVehicleViewer();*/
+            //Instantiate(vehicleSelectionPrefab);
+            
+            //NetworkServer.Spawn(vehicleSelectionInstance, connectionToClient);
             GetComponent<PlayerCameraMounting>().DismountCamera();
+
             NetworkServer.Destroy(gameObject);
 
-            /*  GameObject characterSelect = FindObjectOfType<VehicleViewer>().gameObject;
-
-              int childCount = characterSelect.transform.childCount;
-              for (int i = 0; i < childCount; i++)
-              {
-                  Transform child = characterSelect.transform.GetChild(i);
-                  child.gameObject.SetActive(true);
-              }
-            */
             yield return new WaitForEndOfFrame();
 
         }
-        [Command]
+        /*[Command]
         void CmdVehicleViewer()
         {
             if (hasAuthority)
@@ -101,6 +98,6 @@ namespace Tank
                 vehicleViewer = FindObjectOfType<VehicleViewer>().vehicleViewer;
                 vehicleViewer.SetActive(true);
             }
-        }
+        }*/
     }
 }
