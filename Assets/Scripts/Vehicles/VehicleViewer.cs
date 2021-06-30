@@ -63,8 +63,12 @@ public class VehicleViewer : NetworkBehaviour
         /*NetworkIdentity thisObject = GetComponent<NetworkIdentity>();
         TargetDisableVehicleViewer(thisObject.connectionToClient, false);*/
         TargetDisableVehicleViewer(connectionToClient, false);
-s        FindObjectOfType<PlayerCameraMounting>().MountCamera();
+        FindObjectOfType<PlayerCameraMounting>().MountCamera();
         if (hasAuthority)
+        {
+            vehicleViewer.SetActive(false);
+        }
+        else
         {
             vehicleViewer.SetActive(false);
         }
