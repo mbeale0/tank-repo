@@ -294,6 +294,7 @@ Transform:
   - {fileID: 8684084683709381139}
   - {fileID: 3226327439701000177}
   - {fileID: 5595653201431659189}
+  - {fileID: 866871566027971396}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -516,7 +517,7 @@ MonoBehaviour:
   shootKey: 32
   projectilePrefab: {fileID: 2565721997620015117, guid: 01155c166e347d34c81fc7d27ca9f2c1,
     type: 3}
-  projectileMount: {fileID: 0}
+  projectileMount: {fileID: 866871566027971396}
   shotFiringClip: {fileID: 8300000, guid: cc4fdfbd402a7c842ac0f125c6086c15, type: 3}
   shotFiringVolume: 10
   cannonRechargeTime: 1
@@ -569,6 +570,7 @@ MonoBehaviour:
   fuelConsumption: 1
   fuelGauge: {fileID: 5129057220883184603}
   heliGameObject: {fileID: 5595653201431484423}
+  rotationLock: 0.25
 --- !u!114 &5804915866719710164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,6 +1059,36 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &2922935218905462677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 866871566027971396}
+  m_Layer: 0
+  m_Name: ProjectileMount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &866871566027971396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922935218905462677}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.003, y: 9.162, z: 2.559}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 938947275851987210}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3471105097029139016
 GameObject:
   m_ObjectHideFlags: 0
