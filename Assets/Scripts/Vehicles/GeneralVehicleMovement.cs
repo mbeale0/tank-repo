@@ -4,9 +4,9 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;
 using Mirror;
 
-namespace Tank
+namespace Vehicles
 {
-    public class TankMovement : NetworkBehaviour
+    public class GeneralVehicleMovement : NetworkBehaviour
     {
         public int m_PlayerNumber = 1;              // Used to identify which tank belongs to which player.  This is set by this tank's manager.
         public float m_Speed = 12f;                 // How fast the tank moves forward and back.
@@ -29,12 +29,12 @@ namespace Tank
         [SerializeField] float fuelConsumption; 
         [SerializeField] Slider fuelGauge;
        
-        private void Awake ()
+        protected virtual void Awake ()
         {
             m_Rigidbody = GetComponent<Rigidbody> (); 
         }
 
-        private void OnEnable ()
+        protected virtual void OnEnable ()
         {
             // When the tank is turned on, make sure it's not kinematic.
             m_Rigidbody.isKinematic = false;
@@ -54,7 +54,7 @@ namespace Tank
         }
 
 
-        private void OnDisable ()
+        protected virtual void OnDisable ()
         {
             // When the tank is turned off, set it to kinematic so it stops moving.
             m_Rigidbody.isKinematic = true;
@@ -67,7 +67,7 @@ namespace Tank
         }
 
 
-        private void Start ()
+        protected virtual void Start ()
         {
             if (!hasAuthority) { return; }
             // The axes names are based on player number.
@@ -83,7 +83,7 @@ namespace Tank
         }
 
 
-        private void Update ()
+        protected virtual void Update ()
         {
             if (Input.GetKey(KeyCode.W) | Input.GetKey(KeyCode.S))
             {
@@ -99,7 +99,7 @@ namespace Tank
         }
 
 
-        private void EngineAudio ()
+        protected virtual void EngineAudio ()
         {
             // If there is no input (the tank is stationary)...
             if (Mathf.Abs (m_MovementInputValue) < 0.1f && Mathf.Abs (m_TurnInputValue) < 0.1f)
@@ -126,7 +126,7 @@ namespace Tank
             }
         }
 
-        public void Move ()
+        public virtual void Move ()
         {
             if(currentFuel<=0) return;
             
@@ -140,7 +140,7 @@ namespace Tank
         }
 
 
-        public void Turn ()
+        public virtual void Turn ()
         {
             if(currentFuel<=0) return;
             // Determine the number of degrees to be turned based on the input, speed and time between frames.

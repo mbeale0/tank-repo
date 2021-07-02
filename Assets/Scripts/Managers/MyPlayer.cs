@@ -8,7 +8,6 @@ namespace Managers
 {
     public class MyPlayer : NetworkBehaviour
     {
-        [SerializeField] private GameObject vehicleViewer = null;
         NetworkConnection cachedNetworkConnection;
         private Color _teamColor = new Color();
         [SyncVar(hook = nameof(AuthorityHandlePartyOwnerState))]

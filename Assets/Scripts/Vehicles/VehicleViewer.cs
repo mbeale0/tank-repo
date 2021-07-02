@@ -34,14 +34,9 @@ public class VehicleViewer : NetworkBehaviour
 
         characterSelectDisplayPanels[currentCharacterIndex].transform.GetComponent<Renderer>().material.SetFloat("_Metallic", .45f);
 
-        Health.OnHealthUpdated += HandleHealthUpdates;
     }
 
 
-    public override void OnStopClient()
-    {
-        Health.OnHealthUpdated -= HandleHealthUpdates;
-    }
 
     private void HandleHealthUpdates()
     {
