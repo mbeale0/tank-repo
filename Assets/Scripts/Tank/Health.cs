@@ -57,7 +57,11 @@ namespace Tank
         public void DealDamage(int damageAmount)
         {
             currentHealth = Mathf.Max(currentHealth - damageAmount, 0);
-            if (currentHealth==0)
+            if (currentHealth==0 && gameObject.tag == "Building")
+            {
+                StartCoroutine(Respawn());
+            }
+            else if (currentHealth==0)
             {
                 StartCoroutine(Respawn());
                 NetworkIdentity thisObject = GetComponent<NetworkIdentity>();
@@ -70,14 +74,19 @@ namespace Tank
         IEnumerator Respawn()
         {
             SpawnRemains();
-            /*CmdVehicleViewer();
-            RpcVehicleViewer();*/
-            //Instantiate(vehicleSelectionPrefab);
-            
-            //NetworkServer.Spawn(vehicleSelectionInstance, connectionToClient);
-            GetComponent<PlayerCameraMounting>().DismountCamera();
+            if (gameObject.tag == "Building")
+            {
+                Destroy(gameObject);
+            }
+                /*CmdVehicleViewer();
+                RpcVehicleViewer();*/
+                //Instantiate(vehicleSelectionPrefab);
+
+                //NetworkServer.Spawn(vehicleSelectionInstance, connectionToClient);
+                GetComponent<PlayerCameraMounting>().DismountCamera();
 
             NetworkServer.Destroy(gameObject);
+            
 
             yield return new WaitForEndOfFrame();
 
