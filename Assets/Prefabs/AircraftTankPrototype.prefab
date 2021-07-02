@@ -4910,12 +4910,12 @@ GameObject:
   - component: {fileID: 938947275844139218}
   - component: {fileID: 4240186484102755110}
   - component: {fileID: 2691014721684132837}
-  - component: {fileID: 938947275840957490}
-  - component: {fileID: 8814510079438543220}
   - component: {fileID: 1711636247754386380}
   - component: {fileID: 529701309319719024}
   - component: {fileID: 3716252263390049881}
   - component: {fileID: 966085030510419840}
+  - component: {fileID: 2583519413049482098}
+  - component: {fileID: 2943993236082670580}
   m_Layer: 9
   m_Name: AircraftTankPrototype
   m_TagString: Player
@@ -4932,7 +4932,7 @@ Transform:
   m_GameObject: {fileID: 938947275852223064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 938947275852008854}
   - {fileID: 938947275852071574}
@@ -5111,53 +5111,6 @@ MonoBehaviour:
   interpolateRotation: 1
   interpolatePosition: 1
   syncScale: 1
---- !u!114 &938947275840957490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938947275852223064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e4cc0827b572b5408b2cd8eb8b456b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  m_PlayerNumber: 1
-  m_Speed: 12
-  m_TurnSpeed: 180
-  m_MovementAudio: {fileID: 938947275844139218}
-  m_EngineIdling: {fileID: 8300000, guid: 4932ab25b84dd7649b80af68a9660ddc, type: 3}
-  m_EngineDriving: {fileID: 8300000, guid: d7ca9fb5aa30155449192b23d7fb3336, type: 3}
-  m_PitchRange: 0.1
-  m_MovementAxisName: 
-  m_TurnAxisName: 
-  m_Rigidbody: {fileID: 0}
-  m_MovementInputValue: 0
-  m_TurnInputValue: 0
-  currentFuel: 100
-  maxFuel: 100
-  fuelConsumption: 1
-  fuelGauge: {fileID: 2604902615553864853}
---- !u!114 &8814510079438543220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938947275852223064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e1b429482107d438d74a60b3d08db2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  playerMinmap: {fileID: 6498526585086208679}
-  hasFlag: 0
-  flagMountPoint: {fileID: 0}
 --- !u!114 &1711636247754386380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5178,8 +5131,6 @@ MonoBehaviour:
     type: 3}
   healthSlider: {fileID: 8670111738222773779}
   mainCameraPrefab: {fileID: 0}
-  vehicleSelectionPrefab: {fileID: 1516431622540406107, guid: ebb750d2171c6f445aceca1818ee97cb,
-    type: 3}
   isDead: 0
 --- !u!114 &529701309319719024
 MonoBehaviour:
@@ -5231,6 +5182,53 @@ MonoBehaviour:
   shotFiringVolume: 10
   cannonRechargeTime: 1
   timerSlider: {fileID: 5652525095261465613}
+--- !u!114 &2583519413049482098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938947275852223064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d323f39c5cdc445a5b3be4f8461bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  playerMinmap: {fileID: 6498526585086208679}
+  hasFlag: 0
+  flagMountPoint: {fileID: 0}
+--- !u!114 &2943993236082670580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938947275852223064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7972a242eeb05849806b550fb1e7d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  m_PlayerNumber: 1
+  m_Speed: 12
+  m_TurnSpeed: 180
+  m_MovementAudio: {fileID: 938947275844139218}
+  m_EngineIdling: {fileID: 8300000, guid: 4932ab25b84dd7649b80af68a9660ddc, type: 3}
+  m_EngineDriving: {fileID: 8300000, guid: d7ca9fb5aa30155449192b23d7fb3336, type: 3}
+  m_PitchRange: 0.2
+  m_MovementAxisName: 
+  m_TurnAxisName: 
+  m_Rigidbody: {fileID: 0}
+  m_MovementInputValue: 0
+  m_TurnInputValue: 0
+  currentFuel: 100
+  maxFuel: 100
+  fuelConsumption: 1
+  fuelGauge: {fileID: 2604902615553864853}
 --- !u!1 &938947275852227022
 GameObject:
   m_ObjectHideFlags: 0
@@ -10746,7 +10744,7 @@ Transform:
   m_GameObject: {fileID: 1457377727398427653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 1457377727398107739}
   - {fileID: 1457377727398145295}
@@ -10821,7 +10819,7 @@ GameObject:
   - component: {fileID: 1457377727397251521}
   - component: {fileID: 1457377727396201921}
   m_Layer: 0
-  m_Name: SK_Veh_Apc_01_Turret_01
+  m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
