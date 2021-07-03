@@ -8,8 +8,8 @@ namespace Vehicles
     {
         [SerializeField] private GameObject heliGameObject = null;
         [Tooltip("The rotation in code as of now is only between -1 and 1, so this number is small")]
-        [SerializeField] private float rotationLock = .25f;
-        
+        [SerializeField][Range(0, 1)] private float rotationLock = .18f;
+        [SerializeField] [Range(0, 1)] private float leanSpeed = .05f;
 
         float speed = 1f;
         float rotation = 0f;
@@ -34,45 +34,60 @@ namespace Vehicles
             base.Update();   
 
             UpdateHeliLean();
-
         }
-
         private void UpdateHeliLean()
         {
             if (Input.GetKey("e"))
             {
-                heliGameObject.transform.Rotate(new Vector3(0, 0, -.2f));
-                if (heliGameObject.transform.rotation.z < -rotationLock)
-                {
-                    var rot = heliGameObject.transform.rotation;
-                    rot.z = -rotationLock;
-                    heliGameObject.transform.rotation = rot;
-                }
-                else if (heliGameObject.transform.rotation.z > rotationLock)
-                {
-                    var rot = heliGameObject.transform.rotation;
-                    rot.z = rotationLock;
-
-                }
+                LeanRight();
             }
-            if (Input.GetKey("q"))
+            else if (Input.GetKey("q"))
+            {
+                LeanLeft();
+            }
+            else if (heliGameObject.transform.localRotation.z < 0)
             {
                 heliGameObject.transform.Rotate(new Vector3(0, 0, .2f));
-                if (heliGameObject.transform.rotation.z < -rotationLock)
-                {
-                    var rot = heliGameObject.transform.rotation;
-                    rot.z = -rotationLock;
-                    heliGameObject.transform.rotation = rot;
-                }
-                else if (heliGameObject.transform.rotation.z > rotationLock)
-                {
-                    var rot = heliGameObject.transform.rotation;
-                    rot.z = rotationLock;
-                    heliGameObject.transform.rotation = rot;
-                }
+            }
+            else if (heliGameObject.transform.localRotation.z > 0)
+            {
+                heliGameObject.transform.Rotate(new Vector3(0, 0, -.2f));
             }
         }
-
+        private void LeanRight()
+        {
+            heliGameObject.transform.Rotate(new Vector3(0, 0, -.4f));
+            transform.Translate(new Vector3(leanSpeed, 0f, 0f));
+            if (heliGameObject.transform.localRotation.z < -rotationLock)
+            {
+                var rot = heliGameObject.transform.localRotation;
+                rot.z = -rotationLock;
+                heliGameObject.transform.localRotation = rot;
+            }
+            else if (heliGameObject.transform.localRotation.z > rotationLock)
+            {
+                var rot = heliGameObject.transform.localRotation;
+                rot.z = rotationLock;
+                heliGameObject.transform.localRotation = rot;
+            }
+        }
+        private void LeanLeft()
+        {
+            heliGameObject.transform.Rotate(new Vector3(0, 0, .4f));
+            transform.Translate(new Vector3(-leanSpeed, 0f, 0f));
+            if (heliGameObject.transform.localRotation.z < -rotationLock)
+            {
+                var rot = heliGameObject.transform.localRotation;
+                rot.z = -rotationLock;
+                heliGameObject.transform.localRotation = rot;
+            }
+            else if (heliGameObject.transform.localRotation.z > rotationLock)
+            {
+                var rot = heliGameObject.transform.localRotation;
+                rot.z = rotationLock;
+                heliGameObject.transform.localRotation = rot;
+            }
+        }
         protected override void EngineAudio()
         {
             base.EngineAudio();

@@ -13,13 +13,11 @@ namespace Vehicles
         public bool hasFlag = false;
         public GameObject flagMountPoint;
         private HeliMovement _heliMovement;
-        private HeliMovement _heliMovement1;
         private TurretRotate _turretRotate;
 
         private void Start()
         {
             //_turretRotate = GetComponent<TurretRotate>(); // temporarily turned off
-            _heliMovement1 = GetComponent<HeliMovement>();
             _heliMovement = GetComponent<HeliMovement>();
             if (!hasAuthority) { return; }
 
