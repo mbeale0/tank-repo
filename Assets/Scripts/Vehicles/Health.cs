@@ -14,12 +14,10 @@ namespace Tank
         [SerializeField] private GameObject remainsPrefab;
         [SerializeField] private Slider healthSlider;
         [SerializeField] private GameObject mainCameraPrefab = null;
-        [SerializeField] private GameObject vehicleSelectionPrefab = null;
         [SyncVar] public bool isDead = false;
 
 
         NetworkConnection cachedNetworkConnection;
-        public static event Action OnHealthUpdated;
 
         public override void OnStartServer()
         {
@@ -91,24 +89,5 @@ namespace Tank
             yield return new WaitForEndOfFrame();
 
         }
-        /*[Command]
-        void CmdVehicleViewer()
-        {
-            if (hasAuthority)
-            {
-                vehicleViewer = FindObjectOfType<VehicleViewer>().vehicleViewer;
-                vehicleViewer.SetActive(true);
-            }
-        
-        }
-        [ClientRpc]
-        void RpcVehicleViewer()
-        {
-            if (hasAuthority)
-            {
-                vehicleViewer = FindObjectOfType<VehicleViewer>().vehicleViewer;
-                vehicleViewer.SetActive(true);
-            }
-        }*/
     }
 }
