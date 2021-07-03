@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 4240186484102755110}
   - component: {fileID: 529701309319719024}
   - component: {fileID: 2691014721684132837}
+  - component: {fileID: 2100528784791923600}
   - component: {fileID: 1711636247754386380}
   - component: {fileID: 966085030510419840}
   - component: {fileID: 7911614411755471670}
@@ -479,6 +480,30 @@ MonoBehaviour:
   interpolateRotation: 1
   interpolatePosition: 1
   syncScale: 1
+--- !u!114 &2100528784791923600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938947275852223064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734b48bea0b204338958ee3d885e11f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 1
+  localPositionSensitivity: 0.01
+  localRotationSensitivity: 0.01
+  localScaleSensitivity: 0.01
+  compressRotation: 0
+  interpolateScale: 1
+  interpolateRotation: 1
+  interpolatePosition: 1
+  syncScale: 1
+  target: {fileID: 5595653201431659189}
 --- !u!114 &1711636247754386380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,8 +585,8 @@ MonoBehaviour:
   m_EngineIdling: {fileID: 8300000, guid: 4932ab25b84dd7649b80af68a9660ddc, type: 3}
   m_EngineDriving: {fileID: 8300000, guid: d7ca9fb5aa30155449192b23d7fb3336, type: 3}
   m_PitchRange: 0.2
-  m_MovementAxisName: 
-  m_TurnAxisName: 
+  m_MovementAxisName: HeliMovement
+  m_TurnAxisName: HeliTurnAxis
   m_Rigidbody: {fileID: 0}
   m_MovementInputValue: 0
   m_TurnInputValue: 0
@@ -570,7 +595,8 @@ MonoBehaviour:
   fuelConsumption: 1
   fuelGauge: {fileID: 5129057220883184603}
   heliGameObject: {fileID: 5595653201431484423}
-  rotationLock: 0.25
+  rotationLock: 0.18
+  leanSpeed: 0.05
 --- !u!114 &5804915866719710164
 MonoBehaviour:
   m_ObjectHideFlags: 0
