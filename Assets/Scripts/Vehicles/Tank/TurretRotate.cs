@@ -7,16 +7,18 @@ namespace Complete
     {
         [SerializeField] GameObject turret;
         [SerializeField] GameObject barrel;
+        [SerializeField] Quaternion barrelQuaternionRotation;
 
         public void Rotate()
         {
+
             if (Input.GetKey("e"))
             {
-                turret.transform.Rotate(new Vector3(0f, 1f, 0f)); 
+                turret.transform.Rotate(new Vector3(0f, 1f, 0f));
             }
             if (Input.GetKey("q"))
             {
-                turret.transform.Rotate(new Vector3(0f, -1f, 0f));  
+                turret.transform.Rotate(new Vector3(0f, -1f, 0f));
             }
             if (Input.GetKeyDown("q"))
             {
@@ -34,18 +36,32 @@ namespace Complete
             {
                 AkSoundEngine.PostEvent("Stop_Tank_Rotation", gameObject);
             }
-            if (Input.GetKey("z")) 
+            var barrelVectorRotation = barrel.transform.localRotation.eulerAngles;
+            var smoothTime = 1f;
+            //Rotating the temp value
+            if (Input.GetKey("z"))
             {
-                if (barrel.transform.rotation.x >= 0) return;
-                    barrel.transform.Rotate(new Vector3(1f, 0, 0f));
+                barrelVectorRotation.x=-35;
+                //Actually doing the rotation and making it smooth
+                barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
+               
             }
             if (Input.GetKey("x"))
             {
-                if (barrel.transform.rotation.x <= -35) return;
-                barrel.transform.Rotate(new Vector3(-1f, 0, 0f));
+                barrelVectorRotation.x= 0;
+                //Actually doing the rotation and making it smooth
+                barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
+               
             }
+            //Clamping the value so it will be between -35 and 0 
+            // barrelVectorRotation.x = Mathf.Clamp(barrelVectorRotation.x, -35, 0);
+
+            barrelQuaternionRotation = Quaternion.Euler(barrelVectorRotation);
+         
+            //Actually doing the rotation and making it smooth
+
 
         }
-    
+
     }
 }
