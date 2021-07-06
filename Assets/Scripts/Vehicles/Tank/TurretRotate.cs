@@ -8,10 +8,9 @@ namespace Complete
         [SerializeField] GameObject turret;
         [SerializeField] GameObject barrel;
         [SerializeField] Quaternion barrelQuaternionRotation;
-
+        bool rotateUp = false;
         public void Rotate()
         {
-
             if (Input.GetKey("e"))
             {
                 turret.transform.Rotate(new Vector3(0f, 1f, 0f));
@@ -38,29 +37,33 @@ namespace Complete
             }
             var barrelVectorRotation = barrel.transform.localRotation.eulerAngles;
             var smoothTime = 1f;
-            //Rotating the temp value
             if (Input.GetKey("z"))
+            {
+                rotateUp = true;
+            }
+            if (Input.GetKey("x"))
+            {
+                rotateUp = false;
+            }
+            
+            if (rotateUp)
             {
                 barrelVectorRotation.x = -35;
                 //Actually doing the rotation and making it smooth
                 barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
-
             }
-            if (Input.GetKey("x"))
+            else if (!rotateUp)
             {
                 barrelVectorRotation.x = 0;
                 //Actually doing the rotation and making it smooth
                 barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
-
             }
-            //Clamping the value so it will be between -35 and 0 
-            // barrelVectorRotation.x = Mathf.Clamp(barrelVectorRotation.x, -35, 0);
 
-            barrelQuaternionRotation = Quaternion.Euler(barrelVectorRotation);
+            //Clamping the value so it will be between -35 and 0 
+            //barrelVectorRotation.x = Mathf.Clamp(barrelVectorRotation.x, -35, 0);
 
             //Actually doing the rotation and making it smooth
-
-
+            barrelQuaternionRotation = Quaternion.Euler(barrelVectorRotation);
         }
 
     }
