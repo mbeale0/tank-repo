@@ -39,11 +39,11 @@ namespace Complete
             var smoothTime = 1f;
             if (Input.GetKey("z"))
             {
-                rotateUp = true;
+                rotateUp = false;
             }
             if (Input.GetKey("x"))
             {
-                rotateUp = false;
+                rotateUp = true;
             }
             
             if (rotateUp)
