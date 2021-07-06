@@ -110,7 +110,7 @@ public class MenuController : MonoBehaviour
     }
     public void SetVolume(float volume)
     {
-        AkSoundEngine.SetRTPCValue("MasterVolume", volume);
+        //AkSoundEngine.SetRTPCValue("MasterVolume", volume);
     }
     public void SetQuality(int qualityIndex)
     {

@@ -18,7 +18,7 @@ using TMPro;
         if (whatValue == "Master")
         {
             masterVolume = thisSlider.value;
-            AkSoundEngine.SetRTPCValue("MasterVolume", masterVolume);
+            //AkSoundEngine.SetRTPCValue("MasterVolume", masterVolume);
         }
     }
     }

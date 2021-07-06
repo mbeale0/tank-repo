@@ -16,7 +16,7 @@ public class SoundBankScript : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        AkSoundEngine.SetRTPCValue("MasterVolume", volume);
+        //AkSoundEngine.SetRTPCValue("MasterVolume", volume);
     }
 
     /*public float GetVolume()
@@ -29,30 +29,30 @@ public class SoundBankScript : MonoBehaviour
 
     public void PlayMainMenu()
     {
-        AkSoundEngine.PostEvent("Play_Main_Menu", gameObject);
+        //AkSoundEngine.PostEvent("Play_Main_Menu", gameObject);
     }
     public void StopMainMenu()
     {
-        AkSoundEngine.PostEvent("Stop_Main_Menu", gameObject);
+        //AkSoundEngine.PostEvent("Stop_Main_Menu", gameObject);
     }
     public void PlaySoundFire()
     {
-        AkSoundEngine.PostEvent("Play_Tank_Shoot", gameObject);
+        //AkSoundEngine.PostEvent("Play_Tank_Shoot", gameObject);
     }
     public void PlaySoundMoving()
     {
-        AkSoundEngine.PostEvent("Play_Tank_Moving", gameObject);
+        //AkSoundEngine.PostEvent("Play_Tank_Moving", gameObject);
     }
     public void PlaySoundRotation()
     {
-        AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
+        //AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
     }
     public void StopSoundRotation()
     {
-        AkSoundEngine.PostEvent("Stop_Tank_Rotation", gameObject);
+        //AkSoundEngine.PostEvent("Stop_Tank_Rotation", gameObject);
     }
     public void PlaySoundClick()
     {
-        AkSoundEngine.PostEvent("Play_Click", gameObject);
+        //AkSoundEngine.PostEvent("Play_Click", gameObject);
     }
 }

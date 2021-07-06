@@ -5850,6 +5850,7 @@ MonoBehaviour:
   turret: {fileID: 489806629534330833}
   barrel: {fileID: 489806629534364807}
   barrelQuaternionRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationLock: 0.18
 --- !u!114 &966085030510419840
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ public class SteamLobby_OLD : MonoBehaviour
         {
             buttons.SetActive(true);
             return;
-            AkSoundEngine.PostEvent("Stop_Main_Menu", gameObject);
+            //AkSoundEngine.PostEvent("Stop_Main_Menu", gameObject);
         }
         networkManager.StartHost();
 
