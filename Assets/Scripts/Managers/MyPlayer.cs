@@ -19,6 +19,16 @@ namespace Managers
         
         public static event Action<bool> AuthorityOnPartyOwnerStateUpdated;
 
+        private int numLives = 3;
+
+        public void ReduceLives()
+        {
+            numLives -= 1;
+        }
+        public int GetLives()
+        {
+            return numLives;
+        }
         public string GetDisplayName()
         {
             return displayName;
@@ -80,6 +90,13 @@ namespace Managers
 
             ((MyNetworkManager)NetworkManager.singleton).Players.Remove(this);
         }
-        
+        public void Update()
+        {
+            if(numLives != 0) { return; }
+            else
+            {
+                Debug.Log("all lives gone!");
+            }
+        }
     }
 }

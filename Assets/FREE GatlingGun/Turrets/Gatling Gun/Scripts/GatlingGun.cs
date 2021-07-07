@@ -6,7 +6,7 @@ using Mirror;
 public class GatlingGun : NetworkBehaviour
 {
     // target the gun will aim at
-    Transform go_target;
+    public Transform go_target = null;
 
     // Gameobjects need to control rotation and aiming
     public Transform go_baseRotation;
@@ -39,12 +39,24 @@ public class GatlingGun : NetworkBehaviour
     
     void Start()
     {
+        if (muzzelFlash.isPlaying)
+        {
+            muzzelFlash.Stop();
+        }
         // Set the firing range distance
         this.GetComponent<SphereCollider>().radius = firingRange;
     }
 
     void Update()
     {
+        if(go_target == null) 
+        {
+            if (muzzelFlash.isPlaying)
+            {
+                muzzelFlash.Stop();
+            }
+            return; 
+        }
         AimAndFire();
     }
 
@@ -63,6 +75,7 @@ public class GatlingGun : NetworkBehaviour
             go_target = other.transform;
             canFire = true;
         }
+
 
     }
     // Stop firing
@@ -97,6 +110,7 @@ public class GatlingGun : NetworkBehaviour
             if (!muzzelFlash.isPlaying)
             {
                 muzzelFlash.Play();
+                
                 audioSource.PlayOneShot(shotFiringClip, shotFiringVolume);
             }
             

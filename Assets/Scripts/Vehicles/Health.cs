@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections;
+using Managers;
 using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
- 
+
 namespace Tank
 {
     public class Health : NetworkBehaviour
     {
-        [SyncVar(hook = nameof(SetHealthHook))] public int currentHealth = 100;
-
-        [SerializeField] private int maxHealth = 100;
         [SerializeField] private GameObject remainsPrefab;
         [SerializeField] private Slider healthSlider;
-        [SerializeField] private GameObject mainCameraPrefab = null;
+        [SerializeField] private GameObject[] healthCanvasObjects = null;
         [SyncVar] public bool isDead = false;
 
+        [SyncVar(hook = nameof(SetHealthHook))] public int currentHealth = 100;
 
         NetworkConnection cachedNetworkConnection;
 
@@ -31,9 +30,18 @@ namespace Tank
 
         private void Start()
         {
-            
             if (!hasAuthority) { return; }
             healthSlider.gameObject.SetActive(true);
+
+            int lives = connectionToClient.identity.GetComponent<MyPlayer>().GetLives();
+            foreach (GameObject heart in healthCanvasObjects)
+            {
+                if(lives > 0)
+                {
+                    heart.SetActive(true);
+                }
+                lives--;
+            }
         }
         void SetHealthHook(int oldHealth, int newHealth)
         {
@@ -55,16 +63,19 @@ namespace Tank
         public void DealDamage(int damageAmount)
         {
             currentHealth = Mathf.Max(currentHealth - damageAmount, 0);
-            if (currentHealth==0 && gameObject.tag == "Building")
+            if (currentHealth == 0 && gameObject.tag == "Building")
             {
                 StartCoroutine(Respawn());
             }
-            else if (currentHealth==0)
+            else if (currentHealth == 0)
             {
                 StartCoroutine(Respawn());
                 NetworkIdentity thisObject = GetComponent<NetworkIdentity>();
+
+                MyPlayer player = connectionToClient.identity.GetComponent<MyPlayer>();
+                player.ReduceLives();
+                if (player.GetLives() == 0) { return; }
                 FindObjectOfType<VehicleViewer>().TargetEnableVehicleViewer(thisObject.connectionToClient, true);
-                //OnHealthUpdated?.Invoke();
             }
         }
 
@@ -76,18 +87,13 @@ namespace Tank
             {
                 Destroy(gameObject);
             }
-                /*CmdVehicleViewer();
-                RpcVehicleViewer();*/
-                //Instantiate(vehicleSelectionPrefab);
-
-                //NetworkServer.Spawn(vehicleSelectionInstance, connectionToClient);
-                GetComponent<PlayerCameraMounting>().DismountCamera();
+            GetComponent<PlayerCameraMounting>().DismountCamera();
 
             NetworkServer.Destroy(gameObject);
-            
+
 
             yield return new WaitForEndOfFrame();
-
         }
     }
+
 }
