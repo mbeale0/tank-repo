@@ -8,7 +8,10 @@ namespace Complete
         [SerializeField] GameObject turret;
         [SerializeField] GameObject barrel;
         [SerializeField] Quaternion barrelQuaternionRotation;
-        bool rotateUp = false;
+        [SerializeField] Firing firingScript;
+        
+        private bool rotateUp = false;
+        private bool hasFired = false;
         public void Rotate()
         {
             if (Input.GetKey("e"))
@@ -40,10 +43,12 @@ namespace Complete
             if (Input.GetKey("z"))
             {
                 rotateUp = false;
+                hasFired = false;
             }
             if (Input.GetKey("x"))
             {
                 rotateUp = true;
+                hasFired = false;
             }
             
             if (rotateUp)
@@ -64,6 +69,16 @@ namespace Complete
 
             //Actually doing the rotation and making it smooth
             barrelQuaternionRotation = Quaternion.Euler(barrelVectorRotation);
+
+
+            // eulerangle for barrel starts at 360, and the negative 
+            // rotation is the same as subtracting the rotation from 360
+            if (Mathf.Round(barrel.transform.eulerAngles.x) == (360 + barrelVectorRotation.x) && !hasFired)
+            {
+                hasFired = true;
+                firingScript.CmdFire();
+                
+            }
         }
 
     }
