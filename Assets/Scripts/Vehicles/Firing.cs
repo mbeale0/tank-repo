@@ -16,9 +16,15 @@ public class Firing :NetworkBehaviour
     [SerializeField] private float cannonRechargeTime = 1f;
     public Slider timerSlider;
     private bool canShoot=true;
-
     AudioSource audioSource;
-  
+    private void Start()
+    {
+        if (!hasAuthority) { return; }
+        audioSource = GetComponent<AudioSource>(); 
+        timerSlider.maxValue = cannonRechargeTime;
+        timerSlider.value = cannonRechargeTime;
+        timerSlider.gameObject.SetActive(true);
+    }
     private void Update()
     {
         if (!hasAuthority) return;
@@ -39,14 +45,7 @@ public class Firing :NetworkBehaviour
         yield return new WaitForSeconds(cannonRechargeTime);
         canShoot = true;
     }
-    private void Start()
-    {
-        if (!hasAuthority) { return; }
-        audioSource = GetComponent<AudioSource>();
-        timerSlider.maxValue = cannonRechargeTime;
-        timerSlider.value = cannonRechargeTime;
-        timerSlider.gameObject.SetActive(true);
-    }
+
     [Command]
     public void CmdFire()
     {
