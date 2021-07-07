@@ -9,9 +9,14 @@ namespace Complete
         [SerializeField] GameObject barrel;
         [SerializeField] Quaternion barrelQuaternionRotation;
         [SerializeField] Firing firingScript;
-        
+
+        AudioSource audioSource;
         private bool rotateUp = false;
         private bool hasFired = false;
+        private void Start()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
         public void Rotate()
         {
             if (Input.GetKey("e"))
