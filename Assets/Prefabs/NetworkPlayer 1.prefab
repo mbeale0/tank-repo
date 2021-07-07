@@ -3807,7 +3807,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  vehicleViewer: {fileID: 7002848273546192167}
 --- !u!114 &5929567299305272024
 MonoBehaviour:
   m_ObjectHideFlags: 0

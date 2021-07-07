@@ -11,8 +11,6 @@ namespace Vehicles
         [SerializeField][Range(0, 1)] private float rotationLock = .18f;
         [SerializeField] [Range(0, 1)] private float leanSpeed = .05f;
 
-        float speed = 1f;
-        float rotation = 0f;
         protected override void Awake()
         {
             base.Awake();
