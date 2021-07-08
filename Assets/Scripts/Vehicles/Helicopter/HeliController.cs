@@ -17,7 +17,7 @@ namespace Vehicles
 
         private void Start()
         {
-            //_turretRotate = GetComponent<TurretRotate>(); // temporarily turned off
+            _turretRotate = GetComponent<TurretRotate>(); 
             _heliMovement = GetComponent<HeliMovement>();
             if (!hasAuthority) { return; }
 
@@ -30,7 +30,7 @@ namespace Vehicles
 
             _heliMovement.Move();
             _heliMovement.Turn();
-            //_turretRotate.Rotate();
+            _turretRotate.Rotate();
         }
 
         private void OnTriggerEnter(Collider other)
