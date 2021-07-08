@@ -5118,6 +5118,7 @@ GameObject:
   - component: {fileID: 966085030510419840}
   - component: {fileID: -944917735111854182}
   - component: {fileID: 8148881275393627466}
+  - component: {fileID: 1314190739577259368}
   m_Layer: 9
   m_Name: JeepPrototype
   m_TagString: Player
@@ -5140,7 +5141,6 @@ Transform:
   - {fileID: 4326367067135105624}
   - {fileID: 6513403485934860826}
   - {fileID: 3403364496651946371}
-  - {fileID: 6962014700284935750}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5347,7 +5347,7 @@ MonoBehaviour:
   - {fileID: 674689848279679777}
   - {fileID: 4218048784136098616}
   isDead: 0
-  currentHealth: 100
+  currentHealth: 1000
 --- !u!114 &3716252263390049881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5360,7 +5360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcff2cc44d61dc5429e959b3e60bbeed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 3403364496651617881}
+  turret: {fileID: 3403364496651638301}
   barrel: {fileID: 0}
   barrelQuaternionRotation: {x: 0, y: 0, z: 0, w: 0}
   firingScript: {fileID: 0}
@@ -5379,14 +5379,14 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   shootKey: 32
-  projectilePrefab: {fileID: 2565721997620015117, guid: 01155c166e347d34c81fc7d27ca9f2c1,
+  projectilePrefab: {fileID: 2565721997620015117, guid: 6e4fe2b89aa11564190706b8258c46e1,
     type: 3}
   projectileMount: {fileID: 6962014700284935750}
   timerSlider: {fileID: 3276833678499275587}
   shotFiringClip: {fileID: 8300000, guid: cc4fdfbd402a7c842ac0f125c6086c15, type: 3}
   shotFiringVolume: 10
-  cannonRechargeTime: 1
-  maxAmmo: 10
+  cannonRechargeTime: 0.01
+  maxAmmo: 1000
   ammoText: {fileID: 1329702186570269793}
 --- !u!114 &-944917735111854182
 MonoBehaviour:
@@ -5435,6 +5435,30 @@ MonoBehaviour:
   maxFuel: 100
   fuelConsumption: 0
   fuelGauge: {fileID: 5129057220883184603}
+--- !u!114 &1314190739577259368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938947275852223064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734b48bea0b204338958ee3d885e11f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 1
+  localPositionSensitivity: 0.01
+  localRotationSensitivity: 0.01
+  localScaleSensitivity: 0.01
+  compressRotation: 0
+  interpolateScale: 1
+  interpolateRotation: 1
+  interpolatePosition: 1
+  syncScale: 1
+  target: {fileID: 3403364496651858693}
 --- !u!1 &938947275852227022
 GameObject:
   m_ObjectHideFlags: 0
@@ -11275,7 +11299,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.729335e-16, y: 3.5368068, z: 1.0485965}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6962014700284935750}
   m_Father: {fileID: 3403364496651946371}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11931,11 +11956,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4455174937426448302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.027, y: 2.315, z: 1.638}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.044999998, y: 0.35652614, z: 1.4097368}
+  m_LocalScale: {x: 1.6666665, y: 1.6666665, z: 1.6666665}
   m_Children: []
-  m_Father: {fileID: 938947275851987210}
-  m_RootOrder: 4
+  m_Father: {fileID: 3403364496651858693}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4619812130484147366
 GameObject:

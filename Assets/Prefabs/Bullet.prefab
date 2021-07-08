@@ -14736,7 +14736,7 @@ MonoBehaviour:
   damageAmount: 1
   destroyAfter: 5
   rigidBody: {fileID: 2565721997620015182}
-  force: 2500
+  force: 5000
 --- !u!1 &2565721997620015118
 GameObject:
   m_ObjectHideFlags: 0
