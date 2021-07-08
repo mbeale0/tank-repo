@@ -14,6 +14,7 @@ public class TeamColorSetter : NetworkBehaviour
     public override void OnStartServer()
     {
         MyPlayer player = connectionToClient.identity.GetComponent<MyPlayer>();
+        if(player == null) { return; }
         teamColor = player.GetTeamColor();
     }
     #endregion
