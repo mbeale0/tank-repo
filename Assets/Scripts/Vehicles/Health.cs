@@ -54,12 +54,7 @@ namespace Tank
             float healthPercent = (currentHealth / maxHealth);
             healthSlider.value = healthPercent * 100;
         }
-        private void ReduceLocalPlayerLives()
-        {
-            Debug.Log("start");
-            NetworkClient.localPlayer.GetComponent<MyPlayer>().ReduceLives();
-            Debug.Log("end");
-        }
+
         [ServerCallback]
         void SpawnRemains()
         {
@@ -72,21 +67,19 @@ namespace Tank
             NetworkServer.Spawn(Instantiate(remainsPrefab, transform.position, transform.rotation));
         }
 
-
+        [ServerCallback]
         public void DealDamage(int damageAmount)
         {
-            Debug.Log("first");
             currentHealth = Mathf.Max(currentHealth - damageAmount, 0);
             if (currentHealth <= 0 && gameObject.tag == "Building")
             {
-                Debug.Log("second");
                 StartCoroutine(Respawn());
             }
             else if (currentHealth <= 0)
             {
-                Debug.Log("third");
-                ReduceLocalPlayerLives();
-                //if (player.GetLives() == 0) { return; }
+                MyPlayer player = NetworkClient.localPlayer.GetComponent<MyPlayer>();
+                player.ReduceLives();
+                if (player.GetLives() == 0) { return; }
                 NetworkIdentity thisObject = GetComponent<NetworkIdentity>();
                 FindObjectOfType<VehicleViewer>().TargetEnableVehicleViewer(thisObject.connectionToClient, true);
                 StartCoroutine(Respawn());
