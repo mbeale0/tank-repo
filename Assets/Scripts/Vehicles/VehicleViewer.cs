@@ -36,23 +36,10 @@ public class VehicleViewer : NetworkBehaviour
 
     }
 
-
-
-    private void HandleHealthUpdates()
-    {
-        if (hasAuthority)
-        {
-            vehicleViewer.SetActive(true);
-        }
-    }
-
     public void Select()
     {
         CmdSelect(currentCharacterIndex);
 
-        /*NetworkIdentity thisObject = GetComponent<NetworkIdentity>();
-        TargetDisableVehicleViewer(thisObject.connectionToClient, false);*/
-        //FindObjectOfType<PlayerCameraMounting>().MountCamera();
         if (hasAuthority)
         {
             vehicleViewer.SetActive(false);
