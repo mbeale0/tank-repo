@@ -62,11 +62,15 @@ namespace Complete
 
                 if (rotateUp)
                 {
-                    if (gameObject.tag == "Helicannon")
+                    if (CompareTag("Helicopter"))
                     {
+                    
                         barrelVectorRotation.x = 35;
                     }
-                    barrelVectorRotation.x = -35;
+                    if (!CompareTag("Helicopter"))
+                    {
+                        barrelVectorRotation.x = -35;
+                    }
                     //Actually doing the rotation and making it smooth
                     barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
                 }

@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: -4132041292962809732}
   m_Layer: 9
   m_Name: 'HeliPrototype '
-  m_TagString: Player
+  m_TagString: Helicopter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -623,10 +623,7 @@ MonoBehaviour:
   remainsPrefab: {fileID: 3915631344924530330, guid: 1955945f986fece47b746f6f1c2b0c5f,
     type: 3}
   healthSlider: {fileID: 1970896369317087581}
-  healthCanvasObjects:
-  - {fileID: 2043765145016291921}
-  - {fileID: 8987691419613779740}
-  - {fileID: 5724020600890017541}
+  healthCanvasImages: []
   isDead: 0
   currentHealth: 100
 --- !u!114 &966085030510419840
