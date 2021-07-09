@@ -13,14 +13,14 @@ public class SpawnBase : NetworkBehaviour
     void Start()
     {
         if (baseExists) return;
-        if (SceneManager.GetActiveScene().name.StartsWith("Scene"))
+        if (SceneManager.GetActiveScene().name.StartsWith("Scene") && hasAuthority)
         {
             CmdBase();
             baseExists = true;
         }
     }
 
-    [Command]
+    [Command/*(requiresAuthority = false)*/]
     public void CmdBase()
     {
        

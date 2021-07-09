@@ -5119,6 +5119,7 @@ GameObject:
   - component: {fileID: -944917735111854182}
   - component: {fileID: 8148881275393627466}
   - component: {fileID: 1314190739577259368}
+  - component: {fileID: 3245834762990115750}
   m_Layer: 9
   m_Name: JeepPrototype
   m_TagString: Player
@@ -5346,6 +5347,8 @@ MonoBehaviour:
   - {fileID: 5808478871725025640}
   - {fileID: 4220167087466766309}
   - {fileID: 1386754432523084413}
+  baseSoldier: {fileID: 0}
+  numOfSoldiers: 1
   isDead: 0
   currentHealth: 1000
 --- !u!114 &3716252263390049881
@@ -5459,6 +5462,22 @@ MonoBehaviour:
   interpolatePosition: 1
   syncScale: 1
   target: {fileID: 3403364496651858693}
+--- !u!114 &3245834762990115750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938947275852223064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1690302dd82ae44f8134e0a44449c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  colorRenderers:
+  - {fileID: 3403364496653767499}
 --- !u!1 &938947275852227022
 GameObject:
   m_ObjectHideFlags: 0

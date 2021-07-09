@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 5804915866719710164}
   - component: {fileID: 4883695780895961284}
   - component: {fileID: -4132041292962809732}
+  - component: {fileID: 9169020512396956053}
   m_Layer: 9
   m_Name: 'HeliPrototype '
   m_TagString: Helicopter
@@ -624,6 +625,8 @@ MonoBehaviour:
     type: 3}
   healthSlider: {fileID: 1970896369317087581}
   healthCanvasImages: []
+  baseSoldier: {fileID: 0}
+  numOfSoldiers: 1
   isDead: 0
   currentHealth: 100
 --- !u!114 &966085030510419840
@@ -757,6 +760,22 @@ MonoBehaviour:
   interpolatePosition: 1
   syncScale: 1
   target: {fileID: 5595653201431740357}
+--- !u!114 &9169020512396956053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938947275852223064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1690302dd82ae44f8134e0a44449c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  colorRenderers:
+  - {fileID: 5595653201433981993}
 --- !u!1 &1150543543094423038
 GameObject:
   m_ObjectHideFlags: 0

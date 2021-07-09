@@ -12,6 +12,7 @@ TagManager:
   - HomeBase
   - Helicannon
   - Helicopter
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -7,8 +7,12 @@ public class TeamColorSetter : NetworkBehaviour
     [SerializeField] private Renderer[] colorRenderers = new Renderer[0];
 
     [SyncVar(hook = nameof(HandleTeamColorUpdated))]
-    private Color teamColor = new Color();
+    public Color teamColor = new Color();
 
+    public Color GetTeamColor()
+    {
+        return teamColor;
+    }
     #region Server
 
     public override void OnStartServer()
