@@ -26,7 +26,7 @@ public class SoldierAI : NetworkBehaviour
 
     void Update()
     {
-        GetSoldierTargets();
+        //GetSoldierTargets();
 
         if (mainTarget == null) { return; }
         if (GetIsInAttackRange(mainTarget))
@@ -55,23 +55,22 @@ public class SoldierAI : NetworkBehaviour
         targets = FindObjectsOfType<Health>();
         for (int i = 0; i < targets.Length; i++)
         {
-            mainTarget = targets[i].transform;
-            if (CheckTeamColors()) { Debug.Log(1); break; }
-            else if (!GetIsInRange(mainTarget.transform)) { Debug.Log(2); break; }    
-            else if (mainTarget.tag == "Enemy") { Debug.Log(3); break; }
-            else if (mainTarget.tag == "Building") { Debug.Log(4); break; }
-            else if (mainTarget.tag == "Player")
+            if (CheckTeamColors(targets[i].transform)) { Debug.Log(1); break; }
+            else if(!GetIsInRange(targets[i].transform)) { Debug.Log(2); break; }
+            else if(targets[i].tag == "Enemy") { Debug.Log(3); break; }
+            else if (targets[i].tag == "Building") { Debug.Log(4); break; }
+            else if (targets[i].tag == "Player")
             {
-                
-                
+                mainTarget = targets[i].transform;
+                Debug.Log("Here");
                 return;
             }
         }
     }
 
-    private bool CheckTeamColors()
+    private bool CheckTeamColors(Transform possibleTarget)
     {
-        return GetComponent<TeamColorSetter>().GetTeamColor() == mainTarget.GetComponent<TeamColorSetter>().GetTeamColor();
+        return GetComponent<TeamColorSetter>().GetTeamColor() == possibleTarget.GetComponent<TeamColorSetter>().GetTeamColor();
     }
 
     void OnDrawGizmosSelected()

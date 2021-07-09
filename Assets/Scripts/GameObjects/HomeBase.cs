@@ -9,6 +9,7 @@ namespace GameObjects
 
         private void OnTriggerEnter(Collider other)
         {
+            if(other.tag != "Player") { return; }
             if (!other.GetComponent<TankController>().hasFlag) return;
             var flag = GameObject.FindGameObjectWithTag("Flag");
             flag.transform.SetParent(flagMountTransform);

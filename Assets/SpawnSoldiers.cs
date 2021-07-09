@@ -10,24 +10,26 @@ public class SpawnSoldiers : NetworkBehaviour
     [SerializeField] private int numOfSoldiers = 1;
 
     private bool hasSpawnedEnemies = false;
-    private void Start()
+    private void Update()
     {
-        StartCoroutine(spawnEnemiesAfterStart());
+        Debug.Log("Starting");
+        if (!hasSpawnedEnemies)
+        {
+            hasSpawnedEnemies = true;
+            spawnEnemies();
+        }
     }
-    IEnumerator spawnEnemiesAfterStart()
+    private void spawnEnemies()
     {
-        yield return new WaitForSeconds(2);
         CmdSpawnEnemies();
     }
-    [Command(requiresAuthority = false)]
+    [Command(requiresAuthority =false)]
     public void CmdSpawnEnemies( NetworkConnectionToClient sender = null)
     {
-        hasSpawnedEnemies = true;
-        for(int i = 0; i < numOfSoldiers; i++)
-        {
-            GameObject enemyInstance = Instantiate(baseSoldier);
-            NetworkServer.Spawn(enemyInstance, sender);
-        }
+        
+        GameObject enemyInstance = Instantiate(baseSoldier);
+        NetworkServer.Spawn(enemyInstance, sender);
+        Debug.Log("Spawned");
         
     }
 }
