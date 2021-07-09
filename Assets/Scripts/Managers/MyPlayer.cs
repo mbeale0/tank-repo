@@ -19,7 +19,7 @@ namespace Managers
         
         public static event Action<bool> AuthorityOnPartyOwnerStateUpdated;
 
-        private int numLives = 3;
+        public int numLives = 3;
 
         public void ReduceLives()
         {

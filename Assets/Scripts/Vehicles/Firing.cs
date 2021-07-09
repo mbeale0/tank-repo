@@ -40,7 +40,6 @@ public class Firing :NetworkBehaviour
         if (Input.GetKey(shootKey)&&canShoot)
         {
             StartCoroutine(ShootDelay());
-            UpdateAmmo();
         }
     }
 
@@ -63,6 +62,7 @@ public class Firing :NetworkBehaviour
     [Command]
     public void CmdFire()
     {
+        UpdateAmmo();
         AudioSource.PlayClipAtPoint(shotFiringClip, transform.position, shotFiringVolume);
         GameObject projectile = Instantiate(projectilePrefab, projectileMount.position, projectileMount.rotation);
         NetworkServer.Spawn(projectile);

@@ -5830,10 +5830,10 @@ MonoBehaviour:
   remainsPrefab: {fileID: 3915631344924530330, guid: 1955945f986fece47b746f6f1c2b0c5f,
     type: 3}
   healthSlider: {fileID: 1970896369317087581}
-  healthCanvasObjects:
-  - {fileID: 3407037261184589311}
-  - {fileID: 5741634870272055474}
-  - {fileID: 8969795709615818923}
+  healthCanvasImages:
+  - {fileID: 1614897169993708283}
+  - {fileID: 8963169528796824694}
+  - {fileID: 6182357511743912430}
   isDead: 0
   currentHealth: 100
 --- !u!114 &3716252263390049881
@@ -5907,6 +5907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  numLives: 3
 --- !u!114 &1382306681823657629
 MonoBehaviour:
   m_ObjectHideFlags: 0

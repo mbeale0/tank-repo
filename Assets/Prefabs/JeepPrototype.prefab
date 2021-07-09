@@ -5171,8 +5171,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.7, z: 1.6}
-  m_Center: {x: 0, y: 0.85, z: 0}
+  m_Size: {x: 1.5, y: 1.9782482, z: 4.726632}
+  m_Center: {x: 0, y: 0.9891241, z: -0.01178503}
 --- !u!82 &938947275844139218
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5342,10 +5342,10 @@ MonoBehaviour:
   remainsPrefab: {fileID: 3915631344924530330, guid: 1955945f986fece47b746f6f1c2b0c5f,
     type: 3}
   healthSlider: {fileID: 1970896369317087581}
-  healthCanvasObjects:
-  - {fileID: 7618580938530178668}
-  - {fileID: 674689848279679777}
-  - {fileID: 4218048784136098616}
+  healthCanvasImages:
+  - {fileID: 5808478871725025640}
+  - {fileID: 4220167087466766309}
+  - {fileID: 1386754432523084413}
   isDead: 0
   currentHealth: 1000
 --- !u!114 &3716252263390049881
@@ -5426,14 +5426,14 @@ MonoBehaviour:
   m_EngineIdling: {fileID: 8300000, guid: 4932ab25b84dd7649b80af68a9660ddc, type: 3}
   m_EngineDriving: {fileID: 8300000, guid: 4932ab25b84dd7649b80af68a9660ddc, type: 3}
   m_PitchRange: 0.2
-  m_MovementAxisName: 
-  m_TurnAxisName: 
+  m_MovementAxisName: MovementAxis
+  m_TurnAxisName: TurnAxis
   m_Rigidbody: {fileID: 0}
   m_MovementInputValue: 0
   m_TurnInputValue: 0
   currentFuel: 100
   maxFuel: 100
-  fuelConsumption: 0
+  fuelConsumption: 0.5
   fuelGauge: {fileID: 5129057220883184603}
 --- !u!114 &1314190739577259368
 MonoBehaviour:
@@ -10844,7 +10844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6106648819380927890
 Transform:
   m_ObjectHideFlags: 0
