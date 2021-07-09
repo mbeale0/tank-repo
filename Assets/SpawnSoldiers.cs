@@ -12,7 +12,7 @@ public class SpawnSoldiers : NetworkBehaviour
     private bool hasSpawnedEnemies = false;
     private void Update()
     {
-        Debug.Log("Starting");
+        if (!isClientOnly) { return; }
         if (!hasSpawnedEnemies)
         {
             hasSpawnedEnemies = true;
@@ -21,15 +21,13 @@ public class SpawnSoldiers : NetworkBehaviour
     }
     private void spawnEnemies()
     {
+       
         CmdSpawnEnemies();
     }
     [Command(requiresAuthority =false)]
     public void CmdSpawnEnemies( NetworkConnectionToClient sender = null)
     {
-        
         GameObject enemyInstance = Instantiate(baseSoldier);
         NetworkServer.Spawn(enemyInstance, sender);
-        Debug.Log("Spawned");
-        
     }
 }

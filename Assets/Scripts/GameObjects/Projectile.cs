@@ -38,21 +38,27 @@ namespace GameObjects
         [ServerCallback]
         private void OnTriggerEnter(Collider co)
         {
-          if (!co.TryGetComponent<Health>(out var health))return;
-          health.DealDamage(damageAmount);
-          NetworkServer.Destroy(gameObject);
+            if (!co.TryGetComponent<Health>(out var health))return;
+            if (CheckTeamColors(co.transform)){ Debug.Log("Color"); return; }
+            health.DealDamage(damageAmount);
+            NetworkServer.Destroy(gameObject);
 
-          /*  if (co.TryGetComponent<NetworkIdentity>(out var networkIdentity))
-         {
-             if (networkIdentity.connectionToClient == connectionToClient) { return; }
-         }*/
+            /*if (co.TryGetComponent<NetworkIdentity>(out var networkIdentity))
+            {
+                if (networkIdentity.connectionToClient == connectionToClient) { return; }
+            }*/
+
 
         }
 
-/*        IEnumerator VechicleHit()
+        /*IEnumerator VechicleHit()
         {
             yield return new WaitForSeconds(10f);
             NetworkServer.Destroy(gameObject);
         }*/
+        private bool CheckTeamColors(Transform possibleTarget)
+        {
+            return GetComponent<TeamColorSetter>().GetTeamColor() == possibleTarget.GetComponent<TeamColorSetter>().GetTeamColor();
+        }
     }
 }

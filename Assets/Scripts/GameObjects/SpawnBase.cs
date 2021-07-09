@@ -21,11 +21,11 @@ public class SpawnBase : NetworkBehaviour
     }
 
     [Command/*(requiresAuthority = false)*/]
-    public void CmdBase()
+    public void CmdBase(NetworkConnectionToClient sender = null)
     {
        
         GameObject projectile = Instantiate(basePrefab, baseSpawn.position, baseSpawn.rotation);
-        NetworkServer.Spawn(projectile);
+        NetworkServer.Spawn(projectile, sender);
 
     }
 }
