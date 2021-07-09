@@ -60,12 +60,12 @@ public class Firing :NetworkBehaviour
     }
 
     [Command]
-    public void CmdFire()
+    public void CmdFire(NetworkConnectionToClient sender = null)
     {
         UpdateAmmo();
         AudioSource.PlayClipAtPoint(shotFiringClip, transform.position, shotFiringVolume);
         GameObject projectile = Instantiate(projectilePrefab, projectileMount.position, projectileMount.rotation);
-        NetworkServer.Spawn(projectile);
+        NetworkServer.Spawn(projectile, sender);
         
     }
 }
