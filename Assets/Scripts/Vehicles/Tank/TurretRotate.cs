@@ -60,17 +60,19 @@ namespace Complete
                     hasFired = false;
                 }
 
-                if (rotateUp)
+                if (rotateUp && !CompareTag("Helicopter"))
                 {
-                    if (CompareTag("Helicopter"))
-                    {
-                    
-                        barrelVectorRotation.x = 35;
-                    }
-                    if (!CompareTag("Helicopter"))
-                    {
+                 
                         barrelVectorRotation.x = -35;
-                    }
+                    
+                    //Actually doing the rotation and making it smooth
+                    barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
+                }
+                if (rotateUp && CompareTag("Helicopter"))
+                {
+                   
+                        barrelVectorRotation.x = 35;
+                 
                     //Actually doing the rotation and making it smooth
                     barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
                 }
