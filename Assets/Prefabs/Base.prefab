@@ -298,13 +298,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  currentHealth: 100
-  maxHealth: 100
   remainsPrefab: {fileID: 7279081621764097298, guid: 1efd3903df39ae14886498476dba1ae6,
     type: 3}
   healthSlider: {fileID: 9044878866953966398}
-  mainCameraPrefab: {fileID: 0}
+  healthCanvasImages: []
+  baseSoldier: {fileID: 7707611557710566432, guid: 560d0064cf83bd1459b519763f3df8d9,
+    type: 3}
+  numOfSoldiers: 1
   isDead: 0
+  currentHealth: 100
 --- !u!114 &1656485170
 MonoBehaviour:
   m_ObjectHideFlags: 0

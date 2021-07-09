@@ -12,6 +12,9 @@ namespace Tank
         [SerializeField] private GameObject remainsPrefab;
         [SerializeField] private Slider healthSlider;
         [SerializeField] private Image[] healthCanvasImages = null;
+        [SerializeField] private GameObject baseSoldier = null;
+        [SerializeField] private int numOfSoldiers = 1;
+
         [SyncVar] public bool isDead = false;
 
         [SyncVar(hook = nameof(SetHealthHook))] public float currentHealth = 100;
@@ -94,7 +97,12 @@ namespace Tank
             {
                 Destroy(gameObject);
             }
-            GetComponent<PlayerCameraMounting>().DismountCamera();
+            // if ONLY buildins and vehicles hace health this ensures that only players run this, but it is not great option
+            if(gameObject.tag != "Building" && gameObject.tag != "Enemy")
+            {
+                GetComponent<PlayerCameraMounting>().DismountCamera();
+            }
+            
 
             NetworkServer.Destroy(gameObject);
 
