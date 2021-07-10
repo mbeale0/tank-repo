@@ -49,6 +49,12 @@ public class Firing :NetworkBehaviour
         ammoText.text = $"Ammo: {currentAmmo}/{maxAmmo}";
     }
 
+    public void AddAmmo(int ammo)
+    {
+        currentAmmo += ammo;
+        ammoText.text = $"Ammo: {currentAmmo}/{maxAmmo}";
+    }
+
     IEnumerator ShootDelay()
     {
         CmdFire();
