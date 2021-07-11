@@ -105,9 +105,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1471788628200126558}
   - component: {fileID: 7850082200825652911}
-  - component: {fileID: 7416440082050591857}
+  - component: {fileID: -9164918987233257422}
   m_Layer: 0
-  m_Name: Ammo Pickup
+  m_Name: Fuel Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,9 +139,9 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 0.92
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7416440082050591857
+--- !u!114 &-9164918987233257422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,9 +150,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5326933921037731239}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86b8fe348dd27e942bccbc6b8f165c3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e4b40c94c69ad742bb6ab19110b24ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  ammoAmount: 5
+  fuel: 50

@@ -152,5 +152,14 @@ namespace Vehicles
             // Apply this rotation to the rigidbody's rotation.
             m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation);
         }
+
+        public void AddFuel(float fuel)
+        {
+            currentFuel += fuel;
+            if (currentFuel > 100)
+            {
+                currentFuel = 100f;
+            }
+        }
     }
 }
