@@ -43,7 +43,8 @@ public class Firing :NetworkBehaviour
         }
     }
 
-    private void UpdateAmmo()
+    [TargetRpc]
+    public void TargetUpdateAmmo(NetworkConnection sender)
     {
         currentAmmo--;
         ammoText.text = $"Ammo: {currentAmmo}/{maxAmmo}";
@@ -57,18 +58,26 @@ public class Firing :NetworkBehaviour
 
     IEnumerator ShootDelay()
     {
-        CmdFire();
-        yield return new WaitForEndOfFrame();
-        timerSlider.value = 0;
-        canShoot=false;
-        yield return new WaitForSeconds(cannonRechargeTime);
-        canShoot = true;
+        if (hasAuthority)
+        {
+            CmdFire();
+            yield return new WaitForEndOfFrame();
+            timerSlider.value = 0;
+            canShoot = false;
+            yield return new WaitForSeconds(cannonRechargeTime);
+            canShoot = true;
+        }
+        else
+        {
+            yield return new WaitForSeconds(1);
+        }
     }
 
     [Command]
     public void CmdFire(NetworkConnectionToClient sender = null)
     {
-        UpdateAmmo();
+        
+        TargetUpdateAmmo(sender);
         AudioSource.PlayClipAtPoint(shotFiringClip, transform.position, shotFiringVolume);
         GameObject projectile = Instantiate(projectilePrefab, projectileMount.position, projectileMount.rotation);
         NetworkServer.Spawn(projectile, sender);

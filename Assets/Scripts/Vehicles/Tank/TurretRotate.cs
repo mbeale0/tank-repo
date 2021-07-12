@@ -21,25 +21,13 @@ namespace Complete
         }
         public void Rotate()
         {
-            if (Input.GetKey("e"))
-            {
-                turret.transform.Rotate(new Vector3(0f, 1f, 0f));
-                //AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
-            }
-            if (Input.GetKey("q"))
-            {
-                turret.transform.Rotate(new Vector3(0f, -1f, 0f));
-                //AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
-            }
-            if (Input.GetKeyUp("q"))
-            {
-                //AkSoundEngine.PostEvent("Stop_Tank_Rotation", gameObject);
-            }
-            if (Input.GetKeyUp("e"))
-            {
-                //AkSoundEngine.PostEvent("Stop_Tank_Rotation", gameObject);
-            }
-            if(barrel != null)
+            HorizontalTurretRotate();
+            VerticalBarrelRotate();
+        }
+
+        private void VerticalBarrelRotate()
+        {
+            if (barrel != null)
             {
                 var barrelVectorRotation = barrel.transform.localRotation.eulerAngles;
                 var smoothTime = 1f;
@@ -56,17 +44,17 @@ namespace Complete
 
                 if (rotateUp && !CompareTag("Helicopter"))
                 {
-                 
-                        barrelVectorRotation.x = -35;
-                    
+
+                    barrelVectorRotation.x = -35;
+
                     //Actually doing the rotation and making it smooth
                     barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
                 }
                 if (rotateUp && CompareTag("Helicopter"))
                 {
-                   
-                        barrelVectorRotation.x = 35;
-                 
+
+                    barrelVectorRotation.x = 35;
+
                     //Actually doing the rotation and making it smooth
                     barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
                 }
@@ -97,6 +85,31 @@ namespace Complete
                     hasFired = true;
                     firingScript.CmdFire();
                     isDown = true;
+                }
+            }
+        }
+
+        private void HorizontalTurretRotate()
+        {
+            if (turret != null)
+            {
+                if (Input.GetKey("e"))
+                {
+                    turret.transform.Rotate(new Vector3(0f, 1f, 0f));
+                    //AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
+                }
+                if (Input.GetKey("q"))
+                {
+                    turret.transform.Rotate(new Vector3(0f, -1f, 0f));
+                    //AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
+                }
+                if (Input.GetKeyUp("q"))
+                {
+                    //AkSoundEngine.PostEvent("Stop_Tank_Rotation", gameObject);
+                }
+                if (Input.GetKeyUp("e"))
+                {
+                    //AkSoundEngine.PostEvent("Stop_Tank_Rotation", gameObject);
                 }
             }
         }
