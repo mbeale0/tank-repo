@@ -15,8 +15,9 @@ namespace Managers
         [SyncVar(hook = nameof(ClientHandledisplayNameUpdated))]
         private string displayName;
 
+  
         public static event Action ClientOnInfoUpdated;
-        
+
         public static event Action<bool> AuthorityOnPartyOwnerStateUpdated;
 
         public int numLives = 3;
@@ -82,6 +83,12 @@ namespace Managers
 
             ((MyNetworkManager)NetworkManager.singleton).Players.Add(this);
         }
+
+        private void HandleClientDeath()
+        {
+            ReduceLives();
+        }
+
         public override void OnStopClient()
         {
             ClientOnInfoUpdated?.Invoke();

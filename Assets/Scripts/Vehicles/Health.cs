@@ -16,12 +16,12 @@ namespace Tank
         [SerializeField] private int numOfSoldiers = 1;
 
         [SyncVar] public bool isDead = false;
-
         [SyncVar(hook = nameof(SetHealthHook))] public float currentHealth = 100;
 
         private float maxHealth;
 
         NetworkConnection cachedNetworkConnection;
+
 
         public override void OnStartServer()
         {
@@ -80,15 +80,16 @@ namespace Tank
             }
             else if (currentHealth <= 0)
             {
+                NetworkIdentity thisObject = GetComponent<NetworkIdentity>();
+                
                 MyPlayer player = NetworkClient.localPlayer.GetComponent<MyPlayer>();
                 player.ReduceLives();
                 if (player.GetLives() == 0) { return; }
-                NetworkIdentity thisObject = GetComponent<NetworkIdentity>();
+                
                 FindObjectOfType<VehicleViewer>().TargetEnableVehicleViewer(thisObject.connectionToClient, true);
                 StartCoroutine(Respawn());
             }
         }
-
         [ServerCallback]
         IEnumerator Respawn()
         {

@@ -367,16 +367,16 @@ GameObject:
   - component: {fileID: 938947275846056772}
   - component: {fileID: 938947275844139218}
   - component: {fileID: 4240186484102755110}
-  - component: {fileID: 529701309319719024}
   - component: {fileID: 2691014721684132837}
   - component: {fileID: 2100528784791923600}
+  - component: {fileID: -4132041292962809732}
+  - component: {fileID: 529701309319719024}
   - component: {fileID: 1711636247754386380}
   - component: {fileID: 966085030510419840}
   - component: {fileID: 7911614411755471670}
   - component: {fileID: 1345815395479515465}
   - component: {fileID: 5804915866719710164}
   - component: {fileID: 4883695780895961284}
-  - component: {fileID: -4132041292962809732}
   - component: {fileID: 9169020512396956053}
   m_Layer: 9
   m_Name: 'HeliPrototype '
@@ -545,21 +545,6 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 
   hasSpawned: 0
---- !u!114 &529701309319719024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938947275852223064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97995d05bd22ff849abd112fbfef5cd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  CameraMountPoint: {fileID: 5766072085168891754}
 --- !u!114 &2691014721684132837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,6 +592,45 @@ MonoBehaviour:
   interpolatePosition: 1
   syncScale: 1
   target: {fileID: 5595653201431659189}
+--- !u!114 &-4132041292962809732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938947275852223064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734b48bea0b204338958ee3d885e11f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 1
+  localPositionSensitivity: 0.01
+  localRotationSensitivity: 0.01
+  localScaleSensitivity: 0.01
+  compressRotation: 0
+  interpolateScale: 1
+  interpolateRotation: 1
+  interpolatePosition: 1
+  syncScale: 1
+  target: {fileID: 5595653201431740357}
+--- !u!114 &529701309319719024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938947275852223064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97995d05bd22ff849abd112fbfef5cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  CameraMountPoint: {fileID: 5766072085168891754}
 --- !u!114 &1711636247754386380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,7 +726,6 @@ MonoBehaviour:
   fuelGauge: {fileID: 5129057220883184603}
   heliGameObject: {fileID: 5595653201431484423}
   rotationLock: 0.18
-  leanSpeed: 0.05
 --- !u!114 &5804915866719710164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,31 +758,7 @@ MonoBehaviour:
   turret: {fileID: 0}
   barrel: {fileID: 5595653201431513739}
   barrelQuaternionRotation: {x: 0, y: 0, z: 0, w: 0}
-  firingScript: {fileID: 0}
---- !u!114 &-4132041292962809732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938947275852223064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734b48bea0b204338958ee3d885e11f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  clientAuthority: 1
-  localPositionSensitivity: 0.01
-  localRotationSensitivity: 0.01
-  localScaleSensitivity: 0.01
-  compressRotation: 0
-  interpolateScale: 1
-  interpolateRotation: 1
-  interpolatePosition: 1
-  syncScale: 1
-  target: {fileID: 5595653201431740357}
+  firingScript: {fileID: 966085030510419840}
 --- !u!114 &9169020512396956053
 MonoBehaviour:
   m_ObjectHideFlags: 0

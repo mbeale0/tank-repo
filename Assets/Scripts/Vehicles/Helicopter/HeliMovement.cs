@@ -9,7 +9,8 @@ namespace Vehicles
         [SerializeField] private GameObject heliGameObject = null;
         [Tooltip("The rotation in code as of now is only between -1 and 1, so this number is small")]
         [SerializeField][Range(0, 1)] private float rotationLock = .18f;
-        [SerializeField] [Range(0, 1)] private float leanSpeed = .05f;
+        
+        private float leanSpeed = .3f;
 
         protected override void Awake()
         {
@@ -35,6 +36,7 @@ namespace Vehicles
         }
         private void UpdateHeliLean()
         {
+            if(!hasAuthority) { return; }
             if (Input.GetKey("e"))
             {
                 LeanRight();
@@ -54,8 +56,9 @@ namespace Vehicles
         }
         private void LeanRight()
         {
-            heliGameObject.transform.Rotate(new Vector3(0, 0, -.4f));
+            heliGameObject.transform.Rotate(new Vector3(0, 0, -.4f) );
             transform.Translate(new Vector3(leanSpeed, 0f, 0f));
+
             if (heliGameObject.transform.localRotation.z < -rotationLock)
             {
                 var rot = heliGameObject.transform.localRotation;
