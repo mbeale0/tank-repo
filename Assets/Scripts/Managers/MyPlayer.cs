@@ -56,7 +56,6 @@ namespace Managers
         {
             this.displayName = newDisplayname;
         }
-
         [Command]
         public void CmdStartGame()
         {
