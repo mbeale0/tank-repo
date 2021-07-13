@@ -19,6 +19,9 @@ public class Firing :NetworkBehaviour
     [SerializeField] private int maxAmmo = 10;
     [SerializeField] private TMP_Text ammoText = null;
 
+    private int ammoAmount;
+
+    
     private int currentAmmo;
     private bool canShoot = true;
      
@@ -42,6 +45,16 @@ public class Firing :NetworkBehaviour
             StartCoroutine(ShootDelay());
         }
     }
+             private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="Ammo")
+        {
+            ammoAmount=other.gameObject.GetComponent<AmmoPickup>().ammoAmount;
+            CmdAddAmmo();
+            Destroy(other.gameObject);
+        }
+    }
+
 
     [TargetRpc]
     public void TargetUpdateAmmo(NetworkConnection sender)
@@ -50,9 +63,10 @@ public class Firing :NetworkBehaviour
         ammoText.text = $"Ammo: {currentAmmo}/{maxAmmo}";
     }
 
-    public void AddAmmo(int ammo)
+     [TargetRpc]
+    public void TargetAddAmmo(NetworkConnection sender)
     {
-        currentAmmo += ammo;
+        currentAmmo += ammoAmount;
         ammoText.text = $"Ammo: {currentAmmo}/{maxAmmo}";
     }
 
@@ -82,5 +96,10 @@ public class Firing :NetworkBehaviour
         GameObject projectile = Instantiate(projectilePrefab, projectileMount.position, projectileMount.rotation);
         NetworkServer.Spawn(projectile, sender);
         
+    }
+     [Command]
+    public void CmdAddAmmo(NetworkConnectionToClient sender = null)
+    {
+        TargetAddAmmo(sender);
     }
 }
