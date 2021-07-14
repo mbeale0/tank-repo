@@ -28,6 +28,8 @@ namespace Vehicles
         [SerializeField] float maxFuel = 100f; 
         [SerializeField] float fuelConsumption; 
         [SerializeField] Slider fuelGauge;
+        private float fuelAmount;
+
        
         protected virtual void Awake ()
         {
@@ -153,13 +155,28 @@ namespace Vehicles
             m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation);
         }
 
-        public void AddFuel(float fuel)
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="Fuel")
         {
-            currentFuel += fuel;
-            if (currentFuel > 100)
+            fuelAmount=other.gameObject.GetComponent<FuelPickup>().fuelAmount;
+            CmdAddFuel();
+            Destroy(other.gameObject);
+        }
+    }
+          [TargetRpc]
+    public void TargetAddFuel(NetworkConnection sender)
+    {
+        currentFuel += fuelAmount;
+           if (currentFuel > 100)
             {
                 currentFuel = 100f;
             }
-        }
+    }
+      [Command]
+    public void CmdAddFuel(NetworkConnectionToClient sender = null)
+    {
+        TargetAddFuel(sender);
+    }
     }
 }

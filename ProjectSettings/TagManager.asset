@@ -13,6 +13,8 @@ TagManager:
   - Helicannon
   - Helicopter
   - Enemy
+  - Ammo
+  - Fuel
   layers:
   - Default
   - TransparentFX

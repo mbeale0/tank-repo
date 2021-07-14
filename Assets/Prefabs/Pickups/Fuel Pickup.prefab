@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: -9164918987233257422}
   m_Layer: 0
   m_Name: Fuel Pickup
-  m_TagString: Untagged
+  m_TagString: Fuel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,4 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4b40c94c69ad742bb6ab19110b24ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuel: 50
+  fuelAmount: 50
