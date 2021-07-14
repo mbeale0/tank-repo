@@ -115,16 +115,13 @@ namespace Tank
     {
         if(other.tag=="Health")
         {
-            //healthAmount=other.gameObject.GetComponent<HealthPickup>().healthAmount;
-             //currentHealth += healthAmount;
-
-             currentHealth += 50f;
-            //CmdAddHealth();
+            healthAmount=other.gameObject.GetComponent<HealthPickup>().healthAmount;
+            CmdAddHealth();
             Destroy(other.gameObject);
         }
     }
-          [TargetRpc]
-    public void TargetAddHealth(NetworkConnection sender)
+          
+    public void AddHealth()
     {
         currentHealth += healthAmount;
            if (currentHealth > 100)
@@ -133,9 +130,9 @@ namespace Tank
             }
     }
       [Command]
-    public void CmdAddHealth(NetworkConnectionToClient sender = null)
+    public void CmdAddHealth()
     {
-        TargetAddHealth(sender);
+        AddHealth();
     }
     }
 }
