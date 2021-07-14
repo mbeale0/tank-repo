@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - Ammo
   - Fuel
+  - Health
   layers:
   - Default
   - TransparentFX

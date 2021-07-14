@@ -67,6 +67,7 @@ public class Firing :NetworkBehaviour
     public void TargetAddAmmo(NetworkConnection sender)
     {
         currentAmmo += ammoAmount;
+        
         ammoText.text = $"Ammo: {currentAmmo}/{maxAmmo}";
     }
 

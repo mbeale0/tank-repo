@@ -19,6 +19,7 @@ namespace Tank
         [SyncVar(hook = nameof(SetHealthHook))] public float currentHealth = 100;
 
         private float maxHealth;
+        private float healthAmount;
 
         NetworkConnection cachedNetworkConnection;
 
@@ -110,6 +111,31 @@ namespace Tank
 
             yield return new WaitForEndOfFrame();
         }
-    }
+            private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="Health")
+        {
+            //healthAmount=other.gameObject.GetComponent<HealthPickup>().healthAmount;
+             //currentHealth += healthAmount;
 
+             currentHealth += 50f;
+            //CmdAddHealth();
+            Destroy(other.gameObject);
+        }
+    }
+          [TargetRpc]
+    public void TargetAddHealth(NetworkConnection sender)
+    {
+        currentHealth += healthAmount;
+           if (currentHealth > 100)
+            {
+                currentHealth = 100f;
+            }
+    }
+      [Command]
+    public void CmdAddHealth(NetworkConnectionToClient sender = null)
+    {
+        TargetAddHealth(sender);
+    }
+    }
 }
