@@ -45,7 +45,7 @@ public class Firing :NetworkBehaviour
             StartCoroutine(ShootDelay());
         }
     }
-             private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.tag=="Ammo")
         {
