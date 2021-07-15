@@ -1,10 +1,6 @@
 using Mirror;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using Tank;
-using System;
 
 public class VehicleViewer : NetworkBehaviour
 {
