@@ -17,40 +17,29 @@ namespace Managers
         private string displayName;
 
         private Color _teamColor = new Color();
+        private int maxPlayerLives = 0;
 
         NetworkConnection cachedNetworkConnection;
 
         public static event Action ClientOnInfoUpdated;
         public static event Action<bool> AuthorityOnPartyOwnerStateUpdated;
 
-        public void ReduceLives(string vehicleType)
-        {
-            ReduceVehicleLives(vehicleType);
-        }  
-
+        #region Getters
         public int GetLives(string vehicleType)
         {
             return GetVehicleLives(vehicleType);
         }
-
-        private void ReduceVehicleLives(string vehicleType)
+        public string GetDisplayName()
         {
-            if (vehicleType == "JEEP")
-            {
-                jeepLives--;
-            }
-            else if (vehicleType == "TANK")
-            {
-                tankLives--;
-            }
-            else if (vehicleType == "AATANK")
-            {
-                aaTankLives--;
-            }
-            else if (vehicleType == "HELI")
-            {
-                heliLives--;
-            }
+            return displayName;
+        }
+        public bool GetIsPartyOwner()
+        {
+            return isPartyOwner;
+        }
+        public Color GetTeamColor()
+        {
+            return _teamColor;
         }
         private int GetVehicleLives(string vehicleType)
         {
@@ -75,18 +64,9 @@ namespace Managers
                 return 0;
             }
         }
-        public string GetDisplayName()
-        {
-            return displayName;
-        }
-        public bool GetIsPartyOwner()
-        {
-            return isPartyOwner;
-        }
-        public Color GetTeamColor()
-        {
-            return _teamColor;
-        }
+        #endregion
+
+        #region Setters
         [Server]
         public void SetTeamColor(Color newTeamColor)
         {
@@ -102,6 +82,44 @@ namespace Managers
         {
             this.displayName = newDisplayname;
         }
+        private void SetMaxPlayerLives()
+        {
+            maxPlayerLives = jeepLives + tankLives + aaTankLives + heliLives;
+        }
+        #endregion
+
+        public void ReducePlayerLives(string vehicleType)
+        {
+            if (vehicleType == "JEEP")
+            {
+                jeepLives--;
+            }
+            else if (vehicleType == "TANK")
+            {
+                tankLives--;
+            }
+            else if (vehicleType == "AATANK")
+            {
+                aaTankLives--;
+            }
+            else if (vehicleType == "HELI")
+            {
+                heliLives--;
+            }
+        }  
+
+        private void Update()
+        {
+            if (!hasAuthority) { return; }
+            SetMaxPlayerLives();
+            if (maxPlayerLives == 0)
+            {
+                Debug.Log("GAME OVER");
+            }
+        } 
+
+
+
         [Command]
         public void CmdStartGame()
         {
@@ -127,6 +145,8 @@ namespace Managers
             if (NetworkServer.active) { return; }
 
             ((MyNetworkManager)NetworkManager.singleton).Players.Add(this);
+
+            
         }
         public override void OnStopClient()
         {

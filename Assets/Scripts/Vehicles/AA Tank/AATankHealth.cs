@@ -81,7 +81,7 @@ namespace Vehicles
                 NetworkIdentity thisObject = GetComponent<NetworkIdentity>();
                 
                 MyPlayer player = NetworkClient.localPlayer.GetComponent<MyPlayer>();
-                player.ReduceLives(vehicleType);
+                player.ReducePlayerLives(vehicleType);
                 if (player.GetLives(vehicleType) == 0) { return; }
                 
                 FindObjectOfType<VehicleViewer>().TargetEnableVehicleViewer(thisObject.connectionToClient, true);

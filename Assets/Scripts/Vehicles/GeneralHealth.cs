@@ -11,9 +11,8 @@ namespace Vehicles
     {
         [SerializeField] private GameObject remainsPrefab;
         [SerializeField] private Slider healthSlider;
-        [SerializeField] private Image[] healthCanvasImages = null;
-        [SerializeField] private GameObject baseSoldier = null;
-        [SerializeField] private int numOfSoldiers = 1;
+        //[SerializeField] private GameObject baseSoldier = null;
+        //[SerializeField] private int numOfSoldiers = 1;
 
         [SyncVar] public bool isDead = false;
         [SyncVar(hook = nameof(SetHealthHook))] public float currentHealth = 100;
