@@ -2,7 +2,7 @@ using Managers;
 using Mirror;
 using System.Collections;
 using System.Collections.Generic;
-using Tank;
+using Vehicles;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,7 +11,7 @@ public class SoldierAI : NetworkBehaviour
     [SerializeField] private float chaseRange = 50f;
     [SerializeField] private float attackRange = 10f;
     
-    private Health[] targets;
+    private GeneralHealth[] targets;
     private Transform mainTarget = null;
     private NavMeshAgent navMeshAgent;
     
@@ -52,7 +52,7 @@ public class SoldierAI : NetworkBehaviour
     }
     private void GetSoldierTargets()
     {
-        targets = FindObjectsOfType<Health>();
+        targets = FindObjectsOfType<GeneralHealth>();
         for (int i = 0; i < targets.Length; i++)
         {
             if (CheckTeamColors(targets[i].transform)) { Debug.Log(1); break; }

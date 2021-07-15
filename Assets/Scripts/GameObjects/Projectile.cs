@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using Mirror;
-using Tank;
+﻿using Mirror;
+using Vehicles;
 using UnityEngine;
 
 namespace GameObjects
@@ -38,9 +37,32 @@ namespace GameObjects
         [ServerCallback]
         private void OnTriggerEnter(Collider co)
         {
-            if (!co.TryGetComponent<Health>(out var health))return;
-            if (CheckTeamColors(co.transform)){ Debug.Log("Color"); return; }
-            health.DealDamage(damageAmount);
+            // I do not like my method of checking all healths but it should work, feels repetitive
+            if (co.TryGetComponent<GeneralHealth>(out var health))
+            {
+                if (CheckTeamColors(co)) { return; }
+                health.DealDamage(damageAmount);
+            }
+            else if (co.TryGetComponent<TankHealth>(out var tankHealth))
+            {
+                if (CheckTeamColors(co)) { return; }
+                tankHealth.DealDamage(damageAmount);
+            }
+            else if (co.TryGetComponent<JeepHealth>(out var jeepHealth))
+            {
+                if (CheckTeamColors(co)) { return; }
+                jeepHealth.DealDamage(damageAmount);
+            }
+            else if (co.TryGetComponent<AATankHealth>(out var aAHealth))
+            {
+                if (CheckTeamColors(co)) { return; }
+                aAHealth.DealDamage(damageAmount);
+            }
+            else if (co.TryGetComponent<HeliHealth>(out var heliHealth))
+            {
+                if (CheckTeamColors(co)) { return; }
+                heliHealth.DealDamage(damageAmount);
+            }
             NetworkServer.Destroy(gameObject);
 
             /*if (co.TryGetComponent<NetworkIdentity>(out var networkIdentity))
@@ -56,7 +78,7 @@ namespace GameObjects
             yield return new WaitForSeconds(10f);
             NetworkServer.Destroy(gameObject);
         }*/
-        private bool CheckTeamColors(Transform possibleTarget)
+        private bool CheckTeamColors(Collider possibleTarget)
         {
             return GetComponent<TeamColorSetter>().GetTeamColor() == possibleTarget.GetComponent<TeamColorSetter>().GetTeamColor();
         }

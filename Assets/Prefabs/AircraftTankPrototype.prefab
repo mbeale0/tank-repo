@@ -4910,14 +4910,14 @@ GameObject:
   - component: {fileID: 938947275844139218}
   - component: {fileID: 4240186484102755110}
   - component: {fileID: 2691014721684132837}
-  - component: {fileID: 1711636247754386380}
+  - component: {fileID: 2844542458156611572}
   - component: {fileID: 529701309319719024}
   - component: {fileID: 3716252263390049881}
   - component: {fileID: 966085030510419840}
   - component: {fileID: 2583519413049482098}
   - component: {fileID: 2943993236082670580}
-  - component: {fileID: 2844542458156611572}
   - component: {fileID: 8011912878928762925}
+  - component: {fileID: 1306559634906665296}
   m_Layer: 9
   m_Name: AircraftTankPrototype
   m_TagString: Helicopter
@@ -5111,7 +5111,7 @@ MonoBehaviour:
   interpolateRotation: 1
   interpolatePosition: 1
   syncScale: 1
---- !u!114 &1711636247754386380
+--- !u!114 &2844542458156611572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5120,19 +5120,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 938947275852223064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdcf67aea603fa04a978b00dd62eeb13, type: 3}
+  m_Script: {fileID: 11500000, guid: 734b48bea0b204338958ee3d885e11f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  remainsPrefab: {fileID: 3915631344924530330, guid: 1955945f986fece47b746f6f1c2b0c5f,
-    type: 3}
-  healthSlider: {fileID: 8670111738222773779}
-  healthCanvasImages: []
-  baseSoldier: {fileID: 0}
-  numOfSoldiers: 1
-  isDead: 0
-  currentHealth: 100
+  clientAuthority: 1
+  localPositionSensitivity: 0.01
+  localRotationSensitivity: 0.01
+  localScaleSensitivity: 0.01
+  compressRotation: 0
+  interpolateScale: 1
+  interpolateRotation: 1
+  interpolatePosition: 1
+  syncScale: 1
+  target: {fileID: 3585173464908176660}
 --- !u!114 &529701309319719024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5235,30 +5237,6 @@ MonoBehaviour:
   maxFuel: 100
   fuelConsumption: 1
   fuelGauge: {fileID: 2604902615553864853}
---- !u!114 &2844542458156611572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938947275852223064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734b48bea0b204338958ee3d885e11f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  clientAuthority: 1
-  localPositionSensitivity: 0.01
-  localRotationSensitivity: 0.01
-  localScaleSensitivity: 0.01
-  compressRotation: 0
-  interpolateScale: 1
-  interpolateRotation: 1
-  interpolatePosition: 1
-  syncScale: 1
-  target: {fileID: 3585173464908176660}
 --- !u!114 &8011912878928762925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5275,6 +5253,30 @@ MonoBehaviour:
   syncInterval: 0.1
   colorRenderers:
   - {fileID: 7653924947939403022}
+  teamColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &1306559634906665296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938947275852223064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70eabce52b6ade94fb96c8d8a6c46b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  remainsPrefab: {fileID: 3915631344924530330, guid: 1955945f986fece47b746f6f1c2b0c5f,
+    type: 3}
+  healthSlider: {fileID: 8670111738222773779}
+  healthCanvasImages:
+  - {fileID: 8856411481526011184}
+  - {fileID: 1216706410247943101}
+  - {fileID: 4129003012066119205}
+  isDead: 0
+  currentHealth: 100
 --- !u!1 &938947275852227022
 GameObject:
   m_ObjectHideFlags: 0

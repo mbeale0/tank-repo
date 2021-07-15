@@ -1,34 +1,79 @@
 using Mirror;
 using System;
-using Tank;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 
 namespace Managers
 {
     public class MyPlayer : NetworkBehaviour
     {
-        NetworkConnection cachedNetworkConnection;
-        private Color _teamColor = new Color();
+        [SerializeField] private int jeepLives = 3;
+        [SerializeField] private int tankLives = 3;
+        [SerializeField] private int aaTankLives = 3;
+        [SerializeField] private int heliLives = 3;
+
         [SyncVar(hook = nameof(AuthorityHandlePartyOwnerState))]
         private bool isPartyOwner = false;
         [SyncVar(hook = nameof(ClientHandledisplayNameUpdated))]
         private string displayName;
 
-  
-        public static event Action ClientOnInfoUpdated;
+        private Color _teamColor = new Color();
 
+        NetworkConnection cachedNetworkConnection;
+
+        public static event Action ClientOnInfoUpdated;
         public static event Action<bool> AuthorityOnPartyOwnerStateUpdated;
 
-        public int numLives = 3;
+        public void ReduceLives(string vehicleType)
+        {
+            ReduceVehicleLives(vehicleType);
+        }  
 
-        public void ReduceLives()
+        public int GetLives(string vehicleType)
         {
-            numLives -= 1;
+            return GetVehicleLives(vehicleType);
         }
-        public int GetLives()
+
+        private void ReduceVehicleLives(string vehicleType)
         {
-            return numLives;
+            if (vehicleType == "JEEP")
+            {
+                jeepLives--;
+            }
+            else if (vehicleType == "TANK")
+            {
+                tankLives--;
+            }
+            else if (vehicleType == "AATANK")
+            {
+                aaTankLives--;
+            }
+            else if (vehicleType == "HELI")
+            {
+                heliLives--;
+            }
+        }
+        private int GetVehicleLives(string vehicleType)
+        {
+            if (vehicleType == "JEEP")
+            {
+                return jeepLives;
+            }
+            else if (vehicleType == "TANK")
+            {
+                return tankLives;
+            }
+            else if (vehicleType == "AATANK")
+            {
+                return aaTankLives;
+            }
+            else if (vehicleType == "HELI")
+            {
+                return heliLives;
+            }
+            else
+            {
+                return 0;
+            }
         }
         public string GetDisplayName()
         {
@@ -83,12 +128,6 @@ namespace Managers
 
             ((MyNetworkManager)NetworkManager.singleton).Players.Add(this);
         }
-
-        private void HandleClientDeath()
-        {
-            ReduceLives();
-        }
-
         public override void OnStopClient()
         {
             ClientOnInfoUpdated?.Invoke();
@@ -96,13 +135,6 @@ namespace Managers
 
             ((MyNetworkManager)NetworkManager.singleton).Players.Remove(this);
         }
-        public void Update()
-        {
-            if(numLives != 0) { return; }
-            else
-            {
-                Debug.Log("all lives gone!");
-            }
-        }
+
     }
 }

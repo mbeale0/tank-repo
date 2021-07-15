@@ -1,4 +1,5 @@
 using UnityEngine;
+using Vehicles;
 
 namespace Complete
 {
@@ -49,7 +50,7 @@ namespace Complete
                 float damage = CalculateDamage (targetRigidbody.position);
 
                 // Deal this damage to the tank.
-                targetHealth.TakeDamage (damage);
+                targetHealth.DealDamage (damage);
             }
 
             // Unparent the particles from the shell.
