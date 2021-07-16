@@ -5637,7 +5637,6 @@ GameObject:
   - component: {fileID: 8814510079438543220}
   - component: {fileID: 3716252263390049881}
   - component: {fileID: 1936343208719200607}
-  - component: {fileID: 384421972612098679}
   - component: {fileID: 1382306681823657629}
   - component: {fileID: 4991455639244389974}
   - component: {fileID: 2172441862460566415}
@@ -5953,7 +5952,7 @@ MonoBehaviour:
   turret: {fileID: 489806629534330833}
   barrel: {fileID: 489806629534364807}
   barrelQuaternionRotation: {x: 0, y: 0, z: 0, w: 0}
-  firingScript: {fileID: 0}
+  firingScript: {fileID: 2172441862460566415}
 --- !u!114 &1936343208719200607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5972,24 +5971,6 @@ MonoBehaviour:
   - {fileID: 489806629536477181}
   - {fileID: 489806629536012847}
   teamColor: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &384421972612098679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938947275852223064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c139cfcd4e723740914fbbbe705ad2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  jeepLives: 3
-  tankLives: 3
-  aaTankLives: 3
-  heliLives: 3
 --- !u!114 &1382306681823657629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11581,7 +11562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4570225683492786996
 RectTransform:
   m_ObjectHideFlags: 0
