@@ -6038,20 +6038,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  cannonClass:
-    cannonProjectileMount: {fileID: 5165330777541841067}
+  tankCannonClass:
+    cannonCurrentAmmo: 0
+    cannonProjectileMount: {fileID: 0}
     cannonShotFiringVolume: 1
     cannonRechargeTime: 1
     cannonMaxAmmo: 10
-    cannonProjectilePrefab: {fileID: 2565721997620015117, guid: 01155c166e347d34c81fc7d27ca9f2c1,
-      type: 3}
-  machineGunClass:
-    gunProjectileMount: {fileID: 7036370422843259465}
+    cannonProjectilePrefab: {fileID: 0}
+  tankMachineGunClass:
+    gunCurrentAmmo: 0
+    gunProjectileMount: {fileID: 0}
     gunshotFiringVolume: 0.5
     gunRechargeTime: 0.5
     gunMaxAmmo: 20
-    gunProjectilePrefab: {fileID: 2565721997620015117, guid: 6e4fe2b89aa11564190706b8258c46e1,
-      type: 3}
+    gunProjectilePrefab: {fileID: 0}
   shootKey: 32
   timerSlider: {fileID: 3276833678499275587}
   shotFiringClip: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}

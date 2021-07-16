@@ -8,8 +8,8 @@ using TMPro;
 
 public class TankFiring :NetworkBehaviour
 {
-    public TankCannonClass cannonClass;
-    public TankMachineGunClass machineGunClass;
+    public TankCannonClass tankCannonClass;
+    public TankMachineGunClass tankMachineGunClass;
     
     [Header("Firing")]
     public KeyCode shootKey = KeyCode.Space;
@@ -17,7 +17,6 @@ public class TankFiring :NetworkBehaviour
     [SerializeField] private AudioClip shotFiringClip;
     [SerializeField] private TMP_Text ammoText = null;
     [SerializeField] private TMP_Text gunText = null;
-    [SerializeField] private GameObject nullobject = null; 
 
     private GameObject tankProjectilePrefab;
     private Transform tankProjectileMount;
@@ -71,11 +70,11 @@ public class TankFiring :NetworkBehaviour
 
     private void UpdateForFirstStart()
     {
-        tankMaxAmmo = cannonClass.cannonMaxAmmo;
-        tankRechargeTime = cannonClass.cannonRechargeTime;
-        tankShotFiringVolume = cannonClass.cannonShotFiringVolume;
-        tankProjectileMount = cannonClass.cannonProjectileMount;
-        tankProjectilePrefab = cannonClass.cannonProjectilePrefab;
+        tankMaxAmmo = tankCannonClass.cannonMaxAmmo;
+        tankRechargeTime = tankCannonClass.cannonRechargeTime;
+        tankShotFiringVolume = tankCannonClass.cannonShotFiringVolume;
+        tankProjectileMount = tankCannonClass.cannonProjectileMount;
+        tankProjectilePrefab = tankCannonClass.cannonProjectilePrefab;
         gunText.text = "Gun: Cannon";
     }
     private void UpdateForCannon()
@@ -83,16 +82,16 @@ public class TankFiring :NetworkBehaviour
         switch (currentWeapon)
         {
             case CurrentWeapon.MachineGun:
-                machineGunClass.gunCurrentAmmo = tankCurrentAmmo;
+                tankMachineGunClass.gunCurrentAmmo = tankCurrentAmmo;
                 break;
         }
         currentWeapon = CurrentWeapon.Cannon;
-        tankCurrentAmmo = cannonClass.cannonCurrentAmmo;
-        tankMaxAmmo = cannonClass.cannonMaxAmmo;
-        tankRechargeTime = cannonClass.cannonRechargeTime;
-        tankShotFiringVolume = cannonClass.cannonShotFiringVolume;
-        tankProjectileMount = cannonClass.cannonProjectileMount;
-        tankProjectilePrefab = cannonClass.cannonProjectilePrefab;
+        tankCurrentAmmo = tankCannonClass.cannonCurrentAmmo;
+        tankMaxAmmo = tankCannonClass.cannonMaxAmmo;
+        tankRechargeTime = tankCannonClass.cannonRechargeTime;
+        tankShotFiringVolume = tankCannonClass.cannonShotFiringVolume;
+        tankProjectileMount = tankCannonClass.cannonProjectileMount;
+        tankProjectilePrefab = tankCannonClass.cannonProjectilePrefab;
         gunText.text = "Gun: Cannon";
         ammoText.text = $"Ammo: {tankCurrentAmmo}/{tankMaxAmmo}";
     }
@@ -101,16 +100,16 @@ public class TankFiring :NetworkBehaviour
         switch (currentWeapon)
         {
             case CurrentWeapon.Cannon:
-                cannonClass.cannonCurrentAmmo = tankCurrentAmmo;
+                tankCannonClass.cannonCurrentAmmo = tankCurrentAmmo;
                 break;
         }
         currentWeapon = CurrentWeapon.MachineGun;
-        tankCurrentAmmo = machineGunClass.gunCurrentAmmo;
-        tankMaxAmmo = machineGunClass.gunMaxAmmo;
-        tankRechargeTime = machineGunClass.gunRechargeTime;
-        tankShotFiringVolume = machineGunClass.gunshotFiringVolume;
-        tankProjectileMount = machineGunClass.gunProjectileMount;
-        tankProjectilePrefab = machineGunClass.gunProjectilePrefab;
+        tankCurrentAmmo = tankMachineGunClass.gunCurrentAmmo;
+        tankMaxAmmo = tankMachineGunClass.gunMaxAmmo;
+        tankRechargeTime = tankMachineGunClass.gunRechargeTime;
+        tankShotFiringVolume = tankMachineGunClass.gunshotFiringVolume;
+        tankProjectileMount = tankMachineGunClass.gunProjectileMount;
+        tankProjectilePrefab = tankMachineGunClass.gunProjectilePrefab;
         gunText.text = "Gun: MachineGun";
         if (!hasSwitchedWeapon)
         {
