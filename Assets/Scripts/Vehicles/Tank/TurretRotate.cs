@@ -8,7 +8,7 @@ namespace Complete
         [SerializeField] GameObject turret;
         [SerializeField] GameObject barrel;
         [SerializeField] Quaternion barrelQuaternionRotation;
-        [SerializeField] Firing firingScript;
+        [SerializeField] TankFiring firingScript;
 
         AudioSource audioSource;
         private bool rotateUp = false;

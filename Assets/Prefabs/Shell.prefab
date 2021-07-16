@@ -14735,7 +14735,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   damageAmount: 25
-  destroyAfter: 5
+  destroyAfter: 35.22
   rigidBody: {fileID: 2565721997620015182}
   force: 2500
 --- !u!114 &5404457501631484000

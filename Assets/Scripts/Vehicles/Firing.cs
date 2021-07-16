@@ -38,6 +38,7 @@ public class Firing :NetworkBehaviour
     private void Update()
     {
         if (!hasAuthority) return;
+        if (!NetworkServer.active) { return; }
         timerSlider.value += Time.deltaTime;
         if (currentAmmo <= 0) { return; }
         if (Input.GetKey(shootKey)&&canShoot)
