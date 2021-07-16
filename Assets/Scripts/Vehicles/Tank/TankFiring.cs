@@ -17,6 +17,7 @@ public class TankFiring :NetworkBehaviour
     [SerializeField] private AudioClip shotFiringClip;
     [SerializeField] private TMP_Text ammoText = null;
     [SerializeField] private TMP_Text gunText = null;
+    [SerializeField] private GameObject nullobject = null; 
 
     private GameObject tankProjectilePrefab;
     private Transform tankProjectileMount;
@@ -30,23 +31,25 @@ public class TankFiring :NetworkBehaviour
 
     private enum CurrentWeapon { Cannon, MachineGun};
     private CurrentWeapon currentWeapon;
+
     private void Start()
     {
+        UpdateForFirstStart();
         if (!hasAuthority) { return; }
         currentWeapon = CurrentWeapon.Cannon;
-        UpdateForFirstStart();
         timerSlider.maxValue = tankRechargeTime;
         timerSlider.value = tankRechargeTime;
         timerSlider.gameObject.SetActive(true);
         tankCurrentAmmo = tankMaxAmmo;
         ammoText.text = $"Ammo: {tankCurrentAmmo}/{tankMaxAmmo}";
         ammoText.gameObject.SetActive(true);
+        gunText.gameObject.SetActive(true);
     }
     private void Update()
     {
+        CheckWeaponSwitching();
         if (!hasAuthority) return;
         timerSlider.value += Time.deltaTime;
-        CheckWeaponSwitching();
         if (tankCurrentAmmo <= 0) { return; }
         if (Input.GetKey(shootKey) && canShoot)
         {
@@ -56,7 +59,6 @@ public class TankFiring :NetworkBehaviour
 
     private void CheckWeaponSwitching()
     {
-        // TODO cache current ammo to switch back to
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             UpdateForCannon();
@@ -66,6 +68,7 @@ public class TankFiring :NetworkBehaviour
             UpdateForMachineGun();
         }
     }
+
     private void UpdateForFirstStart()
     {
         tankMaxAmmo = cannonClass.cannonMaxAmmo;
@@ -74,7 +77,6 @@ public class TankFiring :NetworkBehaviour
         tankProjectileMount = cannonClass.cannonProjectileMount;
         tankProjectilePrefab = cannonClass.cannonProjectilePrefab;
         gunText.text = "Gun: Cannon";
-        gunText.gameObject.SetActive(true);
     }
     private void UpdateForCannon()
     {
@@ -92,7 +94,7 @@ public class TankFiring :NetworkBehaviour
         tankProjectileMount = cannonClass.cannonProjectileMount;
         tankProjectilePrefab = cannonClass.cannonProjectilePrefab;
         gunText.text = "Gun: Cannon";
-        TargetUpdateAmmo(connectionToServer);
+        ammoText.text = $"Ammo: {tankCurrentAmmo}/{tankMaxAmmo}";
     }
     private void UpdateForMachineGun()
     {
@@ -115,7 +117,7 @@ public class TankFiring :NetworkBehaviour
             tankCurrentAmmo = tankMaxAmmo;
             hasSwitchedWeapon = true;
         }
-        TargetUpdateAmmo(connectionToServer);
+        ammoText.text = $"Ammo: {tankCurrentAmmo}/{tankMaxAmmo}";
     }
 
     private void OnTriggerEnter(Collider other)
@@ -126,12 +128,6 @@ public class TankFiring :NetworkBehaviour
             CmdAddAmmo();
             Destroy(other.gameObject);
         }
-    }
-
-    [TargetRpc]
-    public void TargetUpdateAmmo(NetworkConnection sender)
-    {
-        ammoText.text = $"Ammo: {tankCurrentAmmo}/{tankMaxAmmo}";
     }
     [TargetRpc]
     public void TargetReduceAmmo(NetworkConnection sender)
@@ -152,6 +148,7 @@ public class TankFiring :NetworkBehaviour
     {
         if (hasAuthority)
         {
+            
             CmdFire();
             yield return new WaitForEndOfFrame();
             timerSlider.value = 0;
@@ -169,7 +166,7 @@ public class TankFiring :NetworkBehaviour
     public void CmdFire(NetworkConnectionToClient sender = null)
     {
         TargetReduceAmmo(sender);
-        AudioSource.PlayClipAtPoint(shotFiringClip, transform.position, tankShotFiringVolume);
+        AudioSource.PlayClipAtPoint(shotFiringClip, transform.position, tankShotFiringVolume); 
         GameObject projectile = Instantiate(tankProjectilePrefab, tankProjectileMount.position, tankProjectileMount.rotation);
         NetworkServer.Spawn(projectile, sender);
     }
