@@ -138,15 +138,11 @@ namespace Managers
         }
         public override void OnStartClient()
         {
-            //Why are you referencing this own script to call a function you can call naturally?
-            //MyPlayer player = connectionToClient.identity.GetComponent<MyPlayer>();
-            //_teamColor = player.GetTeamColor();
             _teamColor = GetTeamColor();
             if (NetworkServer.active) { return; }
 
             ((MyNetworkManager)NetworkManager.singleton).Players.Add(this);
-
-            
+            //NetworkClient.ready = true;        
         }
         public override void OnStopClient()
         {

@@ -9,10 +9,10 @@ namespace Complete
         [SerializeField] GameObject barrel;
         [SerializeField] Quaternion barrelQuaternionRotation;
         [SerializeField] TankFiring firingScript;
-
+        [SerializeField] HeliFiring heliFiringScript;
         AudioSource audioSource;
         private bool rotateUp = false;
-        private bool hasFired = false;
+        private bool hasFired = true;// not realy true but prevents fire on start
         private bool isDown = true;
 
         private void Start()
@@ -74,18 +74,75 @@ namespace Complete
 
                 // eulerangle for barrel starts at 360, and the negative 
                 // rotation is the same as subtracting the rotation from 360
-                if (CheckBarrelPosition(barrelVectorRotation) && !hasFired && rotateUp)
+                if (CompareTag("Helicopter"))
                 {
-                    hasFired = true;
-                    firingScript.CmdFire();
-                    isDown = false;
+                    CheckPositionForHelicopter(barrelVectorRotation);
                 }
-                else if (CheckBarrelPosition(barrelVectorRotation) && !hasFired && !rotateUp)
+                else
                 {
-                    hasFired = true;
-                    firingScript.CmdFire();
-                    isDown = true;
+                    CheckPositionForTank(barrelVectorRotation);
                 }
+            }
+        }
+
+        private void CheckPositionForTank(Vector3 barrelVectorRotation)
+        {
+            if (CheckTankBarrelPosition(barrelVectorRotation) && !hasFired && rotateUp)
+            {
+                hasFired = true;
+                if (firingScript != null)
+                {
+                    firingScript.CmdFire();
+                }
+                else if (heliFiringScript != null)
+                {
+                    heliFiringScript.CmdFire();
+                }
+                isDown = false;
+            }
+            else if (CheckTankBarrelPosition(barrelVectorRotation) && !hasFired && !rotateUp)
+            {
+                hasFired = true;
+                if (firingScript != null)
+                {
+                    firingScript.CmdFire();
+                }
+                else if (heliFiringScript != null)
+                {
+                    heliFiringScript.CmdFire();
+                }
+                isDown = true;
+            }
+        }
+
+        private void CheckPositionForHelicopter(Vector3 barrelVectorRotation)
+        {
+            if (CheckHeliBarrelPosition(barrelVectorRotation) && !hasFired && rotateUp)
+            {
+                
+                hasFired = true;
+                if (firingScript != null)
+                {
+                    firingScript.CmdFire();
+                }
+                else if (heliFiringScript != null)
+                {
+                    heliFiringScript.CmdFire();
+                }
+                isDown = false;
+            }
+            else if (CheckHeliBarrelPosition(barrelVectorRotation) && !hasFired && !rotateUp)
+            {
+                hasFired = true;
+                if (firingScript != null)
+                {
+                    firingScript.CmdFire();
+                }
+                else if (heliFiringScript != null)
+                {
+                    heliFiringScript.CmdFire();
+                }
+                isDown = true;
             }
         }
 
@@ -114,9 +171,15 @@ namespace Complete
             }
         }
 
-        private bool CheckBarrelPosition(Vector3 barrelVectorRotation)
+        private bool CheckTankBarrelPosition(Vector3 barrelVectorRotation)
         {
             return Mathf.Round(barrel.transform.eulerAngles.x) == (360 + barrelVectorRotation.x);
+        }
+        private bool CheckHeliBarrelPosition(Vector3 barrelVectorRotation)
+        {
+
+            bool isAtAngle = Mathf.Round(barrel.transform.eulerAngles.x) == (barrelVectorRotation.x);
+            return isAtAngle;
         }
     }
 }

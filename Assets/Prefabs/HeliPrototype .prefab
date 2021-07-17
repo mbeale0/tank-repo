@@ -847,6 +847,7 @@ MonoBehaviour:
   barrel: {fileID: 5595653201431513739}
   barrelQuaternionRotation: {x: 0, y: 0, z: 0, w: 0}
   firingScript: {fileID: 0}
+  heliFiringScript: {fileID: 5824244853514464031}
 --- !u!114 &9169020512396956053
 MonoBehaviour:
   m_ObjectHideFlags: 0
