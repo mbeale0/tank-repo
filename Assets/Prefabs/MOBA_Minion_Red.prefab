@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 4770333308380242}
   - component: {fileID: 114265329553848392}
   - component: {fileID: 114137116066936216}
-  - component: {fileID: 136803178295577336}
   - component: {fileID: 114133843032450618}
   - component: {fileID: 114608189160345180}
   - component: {fileID: 114294555454794644}
@@ -140,6 +139,7 @@ GameObject:
   - component: {fileID: 114904371457683896}
   - component: {fileID: 114051176905879438}
   - component: {fileID: 114810209324554296}
+  - component: {fileID: 9146635092212725086}
   m_Layer: 0
   m_Name: MOBA_Minion_Red
   m_TagString: Untagged
@@ -303,20 +303,6 @@ MonoBehaviour:
   isDoingAction: 0
   editorAdvancedMode: 1
   agentType: 1
---- !u!136 &136803178295577336
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814625269223080}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.25
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &114133843032450618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,12 +371,12 @@ MonoBehaviour:
   _type: 0
   _weight: 1
   _walkSpeed: 0.7
-  _canRun: 0
+  _canRun: 1
   _runSpeed: 3
   _walkCost: []
   _runCost: []
   _rotationSpeed: 10
-  _canDodge: 0
+  _canDodge: 1
   _dodgeSpeed: 10
   _dodgeDelay: 0
   _dodgeCoolDown: 2
@@ -417,7 +403,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1814625269223080}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.25
+  m_Radius: 1.03
   m_Speed: 5
   m_Acceleration: 100
   avoidancePriority: 50
@@ -449,9 +435,9 @@ MonoBehaviour:
   _fieldOfView: 270
   _resolution: 15
   _range: 10
-  _canSeeEverythingAtRange: 0
+  _canSeeEverythingAtRange: 1
   _seeEverythingMode: 0
-  _seeEverythingRange: 2
+  _seeEverythingRange: 10
   _seeEverythingResolution: 7
   _origin: {fileID: 4491900501065156}
   agentMemory:
@@ -530,6 +516,20 @@ MonoBehaviour:
           m_Calls: []
       agent: {fileID: 0}
     displayResources: 1
+--- !u!136 &9146635092212725086
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814625269223080}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7361183
+  m_Height: 3.2320888
+  m_Direction: 1
+  m_Center: {x: 0.023479462, y: 1.4862744, z: 0}
 --- !u!1 &5919690333928303803
 GameObject:
   m_ObjectHideFlags: 0
