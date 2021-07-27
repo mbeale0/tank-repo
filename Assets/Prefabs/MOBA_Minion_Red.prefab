@@ -137,9 +137,9 @@ GameObject:
   - component: {fileID: 114294555454794644}
   - component: {fileID: 195703483486729822}
   - component: {fileID: 114904371457683896}
-  - component: {fileID: 114051176905879438}
   - component: {fileID: 114810209324554296}
   - component: {fileID: 9146635092212725086}
+  - component: {fileID: 1355898582}
   m_Layer: 0
   m_Name: MOBA_Minion_Red
   m_TagString: Untagged
@@ -155,7 +155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814625269223080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.709, y: 0.011, z: -40.013}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4902366639546448}
@@ -449,36 +449,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   _seenUnits: []
---- !u!114 &114051176905879438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814625269223080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48127164bd21aa648b770b4a1cbbbd16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathType: 0
-  deathDelay: 0
-  spawnRagdoll: 1
-  _ragdollPref: {fileID: 1613878441728496, guid: 5b56b447f406d944c827bf9765fdba5f,
-    type: 3}
-  _dropItems: 0
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onRespawn:
-    m_PersistentCalls:
-      m_Calls: []
-  _onDeathSounds: []
-  agentsPoolHandler:
-    wayPointsGroup: {fileID: 0}
-    AgentsPool: []
-    WavesInitiated: 0
-  newPositionOnRespawn: 0
 --- !u!114 &114810209324554296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +500,47 @@ CapsuleCollider:
   m_Height: 3.2320888
   m_Direction: 1
   m_Center: {x: 0.023479462, y: 1.4862744, z: 0}
+--- !u!114 &1355898582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814625269223080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48127164bd21aa648b770b4a1cbbbd16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathType: 0
+  deathDelay: 0
+  spawnRagdoll: 1
+  _ragdollPref: {fileID: 100058, guid: f4e535defbffdb748a6d9d29bc4d6bda, type: 3}
+  _dropItems: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1355898582}
+        m_TargetAssemblyTypeName: Eliot.AgentComponents.AgentDeathHandler, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDeathSounds: []
+  agentsPoolHandler:
+    wayPointsGroup: {fileID: 0}
+    AgentsPool: []
+    WavesInitiated: 0
+  newPositionOnRespawn: 0
 --- !u!1 &5919690333928303803
 GameObject:
   m_ObjectHideFlags: 0
