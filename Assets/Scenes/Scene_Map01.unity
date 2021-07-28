@@ -2422,7 +2422,7 @@ GameObject:
   - component: {fileID: 1199070711}
   - component: {fileID: 1199070712}
   m_Layer: 9
-  m_Name: MecanimPrefab (2)
+  m_Name: WhiteSoldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2436,7 +2436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199070710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.66, z: -50.4}
+  m_LocalPosition: {x: 0, y: 0.719, z: -50.4}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1594698257}
@@ -3649,6 +3649,7 @@ MonoBehaviour:
   - {fileID: 2139208156}
   - {fileID: 2139208153}
   - {fileID: 2139208154}
+  - {fileID: 2139208160}
   triggers: []
   objectFinder:
     useCustomTags: 0
@@ -5459,6 +5460,8 @@ GameObject:
   - component: {fileID: 2139208154}
   - component: {fileID: 2139208153}
   - component: {fileID: 2139208152}
+  - component: {fileID: 2139208160}
+  - component: {fileID: 2139208161}
   m_Layer: 9
   m_Name: States
   m_TagString: Untagged
@@ -5559,7 +5562,8 @@ MonoBehaviour:
   saveId: -1
   isEnabled: 1
   name: Mecanim Attack
-  triggers: []
+  triggers:
+  - {fileID: 2139208161}
   ownsObjectFinder: 0
   objectFinder:
     useCustomTags: 0
@@ -5735,6 +5739,74 @@ MonoBehaviour:
     cachePoint: 0
   invertResult: 0
   distanceThreshold: 1
+  negotiationMode: 0
+--- !u!114 &2139208160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139208150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2edd08ca088e52748a507af760769287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Flee
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 2
+  rotationSpeed: 1
+  animationStatesComponent: {fileID: 1594698258}
+  animationStates:
+  - {fileID: 1977349045}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  fleeMode: 3
+  fleeTargetTag: Untagged
+  fleeToTarget: {fileID: 0}
+  fleeDirection: {x: 0, y: 0, z: 0}
+  flightEndedState: {fileID: 2139208156}
+  distanceToTargetThreshold: 1
+  stopFleeDistance: 15
+--- !u!114 &2139208161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139208150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e16c48c66fdd14b976ec4366310b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  transitionState: {fileID: 2139208160}
+  parentTrigger: {fileID: 0}
+  subTriggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  invertResult: 0
+  distanceThreshold: 3
   negotiationMode: 0
 --- !u!1 &1031906009165551
 GameObject:
