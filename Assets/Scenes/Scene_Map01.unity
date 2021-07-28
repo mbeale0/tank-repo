@@ -3575,6 +3575,7 @@ MonoBehaviour:
   - {fileID: 1977349046}
   - {fileID: 1977349045}
   - {fileID: 1977349044}
+  - {fileID: 1977349048}
   animationStatesGameObject: {fileID: 1977349042}
 --- !u!114 &1594698259
 MonoBehaviour:
@@ -3644,12 +3645,13 @@ MonoBehaviour:
   aiTransform: {fileID: 1199070711}
   useSightTransform: 0
   sightTransform: {fileID: 0}
-  initialState: {fileID: 2139208153}
+  initialState: {fileID: 2139208156}
   states:
   - {fileID: 2139208156}
   - {fileID: 2139208153}
   - {fileID: 2139208154}
   - {fileID: 2139208160}
+  - {fileID: 2139208162}
   triggers: []
   objectFinder:
     useCustomTags: 0
@@ -5165,6 +5167,7 @@ GameObject:
   - component: {fileID: 1977349046}
   - component: {fileID: 1977349045}
   - component: {fileID: 1977349044}
+  - component: {fileID: 1977349048}
   m_Layer: 9
   m_Name: AnimationStates
   m_TagString: Untagged
@@ -5262,6 +5265,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Base Layer.Idle
+  startFrame: 0
+  endFrame: 0
+  speed: 1
+  animationWrapMode: 2
+  crossFadeIn: 1
+  crossFadeOut: 1
+  transitionTime: 0.2
+  foldoutOpen: 1
+--- !u!114 &1977349048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977349042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8f81bc193daf543bf6a41cdb398b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Base Layer.Reload
   startFrame: 0
   endFrame: 0
   speed: 1
@@ -5462,6 +5486,7 @@ GameObject:
   - component: {fileID: 2139208152}
   - component: {fileID: 2139208160}
   - component: {fileID: 2139208161}
+  - component: {fileID: 2139208162}
   m_Layer: 9
   m_Name: States
   m_TagString: Untagged
@@ -5599,7 +5624,7 @@ MonoBehaviour:
   attackInterval: 0.5
   attacksBeforeReload: 10
   attackCount: 0
-  reloadState: {fileID: 2139208156}
+  reloadState: {fileID: 2139208162}
   noTargetState: {fileID: 2139208156}
   animator: {fileID: 0}
   mecanimLayerIndex: 0
@@ -5766,7 +5791,7 @@ MonoBehaviour:
   rotationSpeed: 1
   animationStatesComponent: {fileID: 1594698258}
   animationStates:
-  - {fileID: 1977349045}
+  - {fileID: 1977349048}
   sounds: []
   spawnItemsOnStateEnter: 0
   itemSpawnMode: 0
@@ -5796,7 +5821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveId: -1
-  transitionState: {fileID: 2139208160}
+  transitionState: {fileID: 2139208156}
   parentTrigger: {fileID: 0}
   subTriggers: []
   ownsObjectFinder: 0
@@ -5806,8 +5831,45 @@ MonoBehaviour:
     - Player
     cachePoint: 0
   invertResult: 0
-  distanceThreshold: 3
+  distanceThreshold: 5
   negotiationMode: 0
+--- !u!114 &2139208162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139208150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de8ee7718e399c4eaf5d84126066a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Reload
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 1
+  rotationSpeed: 360
+  animationStatesComponent: {fileID: 1594698258}
+  animationStates:
+  - {fileID: 0}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  changeInto: {fileID: 0}
 --- !u!1 &1031906009165551
 GameObject:
   m_ObjectHideFlags: 0
