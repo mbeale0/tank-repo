@@ -2,6 +2,7 @@ using Complete;
 using GameObjects;
 using Mirror;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Vehicles
 {
@@ -28,8 +29,8 @@ namespace Vehicles
         {
             if (!hasAuthority) return;
 
-            _tankMovement.Move();
-            _tankMovement.Turn();
+            //_tankMovement.OnMove(InputValue input);
+            //_tankMovement.OnTurn();
             _turretRotate.Rotate();
         }
 
