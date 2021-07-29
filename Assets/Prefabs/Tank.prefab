@@ -5694,8 +5694,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2.1976886, z: 5.8671637}
-  m_Center: {x: 0, y: 0.9264591, z: 0.10669279}
+  m_Size: {x: 3.2167363, y: 2.1976886, z: 5.8671637}
+  m_Center: {x: -0.015059173, y: 0.9264591, z: 0.10669279}
 --- !u!82 &938947275844139218
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5953,6 +5953,7 @@ MonoBehaviour:
   barrel: {fileID: 489806629534364807}
   barrelQuaternionRotation: {x: 0, y: 0, z: 0, w: 0}
   firingScript: {fileID: 2172441862460566415}
+  heliFiringScript: {fileID: 0}
 --- !u!114 &1936343208719200607
 MonoBehaviour:
   m_ObjectHideFlags: 0
