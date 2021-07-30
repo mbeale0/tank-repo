@@ -41,6 +41,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""VerticalRotation"",
+                    ""type"": ""Button"",
+                    ""id"": ""ac976749-db38-4a97-a74d-60813970cb1a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""HorizontalChange"",
+                    ""type"": ""Button"",
+                    ""id"": ""0764b6c3-550b-4633-8d13-c7df607371be"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -164,6 +180,72 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""28ec90cb-ec09-46fa-b1fe-fd59eb7d685e"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalRotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""6d7391e6-2e90-4ada-bcff-d2b590e8c650"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & Mouse"",
+                    ""action"": ""VerticalRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""aa99db06-adcb-4f9e-a5a3-30f9c68cd66a"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & Mouse"",
+                    ""action"": ""VerticalRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""0e0fad74-b481-4a46-af12-635af11f2570"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & Mouse"",
+                    ""action"": ""HorizontalChange"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""426e40da-ba0c-49ac-ade8-e94f5c351b9b"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & Mouse"",
+                    ""action"": ""HorizontalChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""9115bfc3-a9aa-4313-b3b0-8ca2f5fd11a9"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & Mouse"",
+                    ""action"": ""HorizontalChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -208,6 +290,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_VehicleControls_Fire = m_VehicleControls.FindAction("Fire", throwIfNotFound: true);
         m_VehicleControls_Move = m_VehicleControls.FindAction("Move", throwIfNotFound: true);
         m_VehicleControls_Turn = m_VehicleControls.FindAction("Turn", throwIfNotFound: true);
+        m_VehicleControls_VerticalRotation = m_VehicleControls.FindAction("VerticalRotation", throwIfNotFound: true);
+        m_VehicleControls_HorizontalChange = m_VehicleControls.FindAction("HorizontalChange", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -260,6 +344,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_VehicleControls_Fire;
     private readonly InputAction m_VehicleControls_Move;
     private readonly InputAction m_VehicleControls_Turn;
+    private readonly InputAction m_VehicleControls_VerticalRotation;
+    private readonly InputAction m_VehicleControls_HorizontalChange;
     public struct VehicleControlsActions
     {
         private @PlayerControls m_Wrapper;
@@ -267,6 +353,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Fire => m_Wrapper.m_VehicleControls_Fire;
         public InputAction @Move => m_Wrapper.m_VehicleControls_Move;
         public InputAction @Turn => m_Wrapper.m_VehicleControls_Turn;
+        public InputAction @VerticalRotation => m_Wrapper.m_VehicleControls_VerticalRotation;
+        public InputAction @HorizontalChange => m_Wrapper.m_VehicleControls_HorizontalChange;
         public InputActionMap Get() { return m_Wrapper.m_VehicleControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -285,6 +373,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Turn.started -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnTurn;
                 @Turn.performed -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnTurn;
                 @Turn.canceled -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnTurn;
+                @VerticalRotation.started -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnVerticalRotation;
+                @VerticalRotation.performed -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnVerticalRotation;
+                @VerticalRotation.canceled -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnVerticalRotation;
+                @HorizontalChange.started -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnHorizontalChange;
+                @HorizontalChange.performed -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnHorizontalChange;
+                @HorizontalChange.canceled -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnHorizontalChange;
             }
             m_Wrapper.m_VehicleControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -298,6 +392,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Turn.started += instance.OnTurn;
                 @Turn.performed += instance.OnTurn;
                 @Turn.canceled += instance.OnTurn;
+                @VerticalRotation.started += instance.OnVerticalRotation;
+                @VerticalRotation.performed += instance.OnVerticalRotation;
+                @VerticalRotation.canceled += instance.OnVerticalRotation;
+                @HorizontalChange.started += instance.OnHorizontalChange;
+                @HorizontalChange.performed += instance.OnHorizontalChange;
+                @HorizontalChange.canceled += instance.OnHorizontalChange;
             }
         }
     }
@@ -325,5 +425,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnTurn(InputAction.CallbackContext context);
+        void OnVerticalRotation(InputAction.CallbackContext context);
+        void OnHorizontalChange(InputAction.CallbackContext context);
     }
 }

@@ -41,11 +41,16 @@ public class Firing :NetworkBehaviour
         if (!NetworkServer.active) { return; }
         timerSlider.value += Time.deltaTime;
         if (currentAmmo <= 0) { return; }
-        if (Input.GetKey(shootKey)&&canShoot)
+    }
+
+    private void OnFire()
+    {
+        if (canShoot)
         {
             StartCoroutine(ShootDelay());
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag=="Ammo")

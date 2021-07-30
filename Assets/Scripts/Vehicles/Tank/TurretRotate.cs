@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 
 namespace Complete
 {
@@ -14,6 +14,7 @@ namespace Complete
         private bool rotateUp = false;
         private bool hasFired = true;// not realy true but prevents fire on start
         private bool isDown = true;
+        private float HorizontalRotationDirection;
 
         private void Start()
         {
@@ -21,7 +22,7 @@ namespace Complete
         }
         public void Rotate()
         {
-            HorizontalTurretRotate();
+            HorizontalRotation(HorizontalRotationDirection);
             VerticalBarrelRotate();
         }
 
@@ -31,16 +32,7 @@ namespace Complete
             {
                 var barrelVectorRotation = barrel.transform.localRotation.eulerAngles;
                 var smoothTime = 1f;
-                if (Input.GetKey("z") && !isDown)
-                {
-                    rotateUp = false;
-                    hasFired = false;
-                }
-                if (Input.GetKey("x") && isDown)
-                {
-                    rotateUp = true;
-                    hasFired = false;
-                }
+
 
                 if (rotateUp && !CompareTag("Helicopter"))
                 {
@@ -82,6 +74,21 @@ namespace Complete
                 {
                     CheckPositionForTank(barrelVectorRotation);
                 }
+            }
+        }
+
+        private void OnVerticalRotation(InputValue input)
+        {
+            float rotationDirection = input.Get<float>();
+            if (rotationDirection == -1 && !isDown)
+            {
+                rotateUp = false;
+                hasFired = false;
+            }
+            if (rotationDirection == 1 && isDown)
+            {
+                rotateUp = true;
+                hasFired = false;
             }
         }
 
@@ -146,16 +153,26 @@ namespace Complete
             }
         }
 
-        private void HorizontalTurretRotate()
+        private void OnHorizontalChange(InputValue input)
+        {
+            HorizontalRotationDirection = input.Get<float>();
+        }
+
+        private void HorizontalRotation(float HorizontalRotationDirection)
         {
             if (turret != null)
             {
-                if (Input.GetKey("e"))
+                Debug.Log(HorizontalRotationDirection);
+                if(HorizontalRotationDirection == 0)
+                {
+                    turret.transform.Rotate(new Vector3(0f, 0f, 0f));
+                }
+                else if (HorizontalRotationDirection == 1)
                 {
                     turret.transform.Rotate(new Vector3(0f, 1f, 0f));
                     //AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
                 }
-                if (Input.GetKey("q"))
+                else if (HorizontalRotationDirection == -1)
                 {
                     turret.transform.Rotate(new Vector3(0f, -1f, 0f));
                     //AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
