@@ -32,12 +32,14 @@ public class HeliFiring :NetworkBehaviour
 
     private enum CurrentWeapon { Cannon, MachineGun, Missile};
     private CurrentWeapon currentWeapon;
+    private CurrentWeapon nextWeapon;
 
     private void Start()
     {
         UpdateForFirstStart();
         if (!hasAuthority) { return; }
         currentWeapon = CurrentWeapon.Cannon;
+        nextWeapon = CurrentWeapon.MachineGun;
         timerSlider.maxValue = heliRechargeTime;
         timerSlider.value = heliRechargeTime;
         timerSlider.gameObject.SetActive(true);
@@ -48,7 +50,6 @@ public class HeliFiring :NetworkBehaviour
     }
     private void Update()
     {
-        CheckWeaponSwitching();
         if (!hasAuthority) return;
         timerSlider.value += Time.deltaTime;
         if (heliCurrentAmmo <= 0) { return; }
@@ -62,17 +63,17 @@ public class HeliFiring :NetworkBehaviour
         }
     }
 
-    private void CheckWeaponSwitching()
+    private void OnWeaponSwitch()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (nextWeapon == CurrentWeapon.Cannon)
         {
             UpdateForCannon();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (nextWeapon == CurrentWeapon.MachineGun)
         {
             UpdateForMachineGun();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (nextWeapon == CurrentWeapon.Missile)
         {
             UpdateForMissile();
         }
@@ -99,6 +100,7 @@ public class HeliFiring :NetworkBehaviour
                 break;
         }
         currentWeapon = CurrentWeapon.Cannon;
+        nextWeapon = CurrentWeapon.MachineGun;
         heliCurrentAmmo = heliCannonClass.cannonCurrentAmmo;
         heliMaxAmmo = heliCannonClass.cannonMaxAmmo;
         heliRechargeTime = heliCannonClass.cannonRechargeTime;
@@ -120,6 +122,7 @@ public class HeliFiring :NetworkBehaviour
                 break;
         }
         currentWeapon = CurrentWeapon.MachineGun;
+        nextWeapon = CurrentWeapon.Missile;
         heliCurrentAmmo = heliMachineGunClass.gunCurrentAmmo;
         heliMaxAmmo = heliMachineGunClass.gunMaxAmmo;
         heliRechargeTime = heliMachineGunClass.gunRechargeTime;
@@ -146,6 +149,7 @@ public class HeliFiring :NetworkBehaviour
                 break;
         }
         currentWeapon = CurrentWeapon.Missile;
+        nextWeapon = CurrentWeapon.Cannon;
         heliCurrentAmmo = heliMissileClass.missileCurrentAmmo;
         heliMaxAmmo = heliMissileClass.missileMaxAmmo;
         heliRechargeTime = heliMissileClass.missileRechargeTime;

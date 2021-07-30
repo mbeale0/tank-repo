@@ -4,7 +4,7 @@ using UnityEngine;
 using Mirror;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.InputSystem;
 
 public class TankFiring :NetworkBehaviour
 {
@@ -30,12 +30,14 @@ public class TankFiring :NetworkBehaviour
 
     private enum CurrentWeapon { Cannon, MachineGun};
     private CurrentWeapon currentWeapon;
+    private CurrentWeapon nextWeapon;
 
     private void Start()
     {
         UpdateForFirstStart();
         if (!hasAuthority) { return; }
         currentWeapon = CurrentWeapon.Cannon;
+        nextWeapon = CurrentWeapon.MachineGun;
         timerSlider.maxValue = tankRechargeTime;
         timerSlider.value = tankRechargeTime;
         timerSlider.gameObject.SetActive(true);
@@ -46,7 +48,6 @@ public class TankFiring :NetworkBehaviour
     }
     private void Update()
     {
-        CheckWeaponSwitching();
         if (!hasAuthority) return;
         timerSlider.value += Time.deltaTime;
         if (tankCurrentAmmo <= 0) { return; }
@@ -61,13 +62,13 @@ public class TankFiring :NetworkBehaviour
         }
     }
 
-    private void CheckWeaponSwitching()
+    private void OnWeaponSwitch()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (nextWeapon == CurrentWeapon.Cannon)
         {
             UpdateForCannon();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (nextWeapon == CurrentWeapon.MachineGun)
         {
             UpdateForMachineGun();
         }
@@ -91,6 +92,7 @@ public class TankFiring :NetworkBehaviour
                 break;
         }
         currentWeapon = CurrentWeapon.Cannon;
+        nextWeapon = CurrentWeapon.MachineGun;
         tankCurrentAmmo = tankCannonClass.cannonCurrentAmmo;
         tankMaxAmmo = tankCannonClass.cannonMaxAmmo;
         tankRechargeTime = tankCannonClass.cannonRechargeTime;
@@ -109,6 +111,7 @@ public class TankFiring :NetworkBehaviour
                 break;
         }
         currentWeapon = CurrentWeapon.MachineGun;
+        nextWeapon = CurrentWeapon.Cannon;
         tankCurrentAmmo = tankMachineGunClass.gunCurrentAmmo;
         tankMaxAmmo = tankMachineGunClass.gunMaxAmmo;
         tankRechargeTime = tankMachineGunClass.gunRechargeTime;
