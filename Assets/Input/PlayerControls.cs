@@ -57,6 +57,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""WeaponSwitch"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba72d754-c47d-481c-96e3-7f6644296d83"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -246,6 +254,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""HorizontalChange"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9bb4b6ca-e57e-47cf-aa79-557698519937"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & Mouse"",
+                    ""action"": ""WeaponSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -292,6 +311,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_VehicleControls_Turn = m_VehicleControls.FindAction("Turn", throwIfNotFound: true);
         m_VehicleControls_VerticalRotation = m_VehicleControls.FindAction("VerticalRotation", throwIfNotFound: true);
         m_VehicleControls_HorizontalChange = m_VehicleControls.FindAction("HorizontalChange", throwIfNotFound: true);
+        m_VehicleControls_WeaponSwitch = m_VehicleControls.FindAction("WeaponSwitch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -346,6 +366,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_VehicleControls_Turn;
     private readonly InputAction m_VehicleControls_VerticalRotation;
     private readonly InputAction m_VehicleControls_HorizontalChange;
+    private readonly InputAction m_VehicleControls_WeaponSwitch;
     public struct VehicleControlsActions
     {
         private @PlayerControls m_Wrapper;
@@ -355,6 +376,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Turn => m_Wrapper.m_VehicleControls_Turn;
         public InputAction @VerticalRotation => m_Wrapper.m_VehicleControls_VerticalRotation;
         public InputAction @HorizontalChange => m_Wrapper.m_VehicleControls_HorizontalChange;
+        public InputAction @WeaponSwitch => m_Wrapper.m_VehicleControls_WeaponSwitch;
         public InputActionMap Get() { return m_Wrapper.m_VehicleControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -379,6 +401,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @HorizontalChange.started -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnHorizontalChange;
                 @HorizontalChange.performed -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnHorizontalChange;
                 @HorizontalChange.canceled -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnHorizontalChange;
+                @WeaponSwitch.started -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnWeaponSwitch;
+                @WeaponSwitch.performed -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnWeaponSwitch;
+                @WeaponSwitch.canceled -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnWeaponSwitch;
             }
             m_Wrapper.m_VehicleControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -398,6 +423,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @HorizontalChange.started += instance.OnHorizontalChange;
                 @HorizontalChange.performed += instance.OnHorizontalChange;
                 @HorizontalChange.canceled += instance.OnHorizontalChange;
+                @WeaponSwitch.started += instance.OnWeaponSwitch;
+                @WeaponSwitch.performed += instance.OnWeaponSwitch;
+                @WeaponSwitch.canceled += instance.OnWeaponSwitch;
             }
         }
     }
@@ -427,5 +455,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnTurn(InputAction.CallbackContext context);
         void OnVerticalRotation(InputAction.CallbackContext context);
         void OnHorizontalChange(InputAction.CallbackContext context);
+        void OnWeaponSwitch(InputAction.CallbackContext context);
     }
 }
