@@ -39,11 +39,11 @@
                 },
                 {
                     "name": "HorizontalChange",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "0764b6c3-550b-4633-8d13-c7df607371be",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press(behavior=2)"
                 }
             ],
             "bindings": [
@@ -205,7 +205,7 @@
                     "name": "1D Axis",
                     "id": "0e0fad74-b481-4a46-af12-635af11f2570",
                     "path": "1DAxis",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "KeyBoard & Mouse",
                     "action": "HorizontalChange",
