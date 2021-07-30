@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Vehicles
 {
     public class TankMovement : GeneralVehicleMovement
     {
+
         protected override void Awake()
         {
             base.Awake();
@@ -30,13 +30,13 @@ namespace Vehicles
         {
             base.EngineAudio();
         }
-        public override void Move()
+        public void OnMove(InputValue input)
         {
-            base.Move();
+            vehicleMovementValue = input.Get<float>();         
         }
-        public override void Turn()
+        public void OnTurn(InputValue input)
         {
-            base.Turn();
+            vehicleTurnValue = input.Get<float>();
         }
     }
 }

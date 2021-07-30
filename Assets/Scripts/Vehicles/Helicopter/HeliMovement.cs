@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Vehicles
 {
@@ -9,7 +10,8 @@ namespace Vehicles
         [SerializeField] private GameObject heliGameObject = null;
         [Tooltip("The rotation in code as of now is only between -1 and 1, so this number is small")]
         [SerializeField][Range(0, 1)] private float rotationLock = .18f;
-        
+
+
         private float leanSpeed = .3f;
 
         protected override void Awake()
@@ -93,13 +95,13 @@ namespace Vehicles
         {
             base.EngineAudio();
         }
-        public override void Move()
+        public void OnMove(InputValue input)
         {
-            base.Move();
+            vehicleMovementValue = input.Get<float>();
         }
-        public override void Turn()
+        public void OnTurn(InputValue input)
         {
-            base.Turn();
+            vehicleTurnValue = input.Get<float>();
         }
     }
 }

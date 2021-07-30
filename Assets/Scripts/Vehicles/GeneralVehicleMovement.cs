@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 using Mirror;
+using UnityEngine.InputSystem;
 
 namespace Vehicles
 {
@@ -30,7 +31,8 @@ namespace Vehicles
         [SerializeField] Slider fuelGauge;
         private float fuelAmount;
 
-       
+        protected float vehicleMovementValue;
+        protected float vehicleTurnValue;
         protected virtual void Awake ()
         {
             m_Rigidbody = GetComponent<Rigidbody> (); 
@@ -68,7 +70,7 @@ namespace Vehicles
             }
         }
 
-
+        
         protected virtual void Start ()
         {
             if (!hasAuthority) { return; }
@@ -85,19 +87,17 @@ namespace Vehicles
         }
 
 
-        protected virtual void Update ()
+        protected virtual void Update()
         {
             if (Input.GetKey(KeyCode.W) | Input.GetKey(KeyCode.S))
             {
                 currentFuel -= fuelConsumption* Time.deltaTime;
                 fuelGauge.value = currentFuel;
             }
-            // Store the value of both input axes.
-            m_MovementInputValue = Input.GetAxis (m_MovementAxisName);
-            m_TurnInputValue = Input.GetAxis (m_TurnAxisName);
+            VerticalMovement();
+            Rotation();
             
             EngineAudio ();
-        
         }
 
 
@@ -128,25 +128,23 @@ namespace Vehicles
             }
         }
 
-        public virtual void Move ()
+        public void VerticalMovement ()
         {
             if(currentFuel<=0) return;
-            
+
             // Create a vector in the direction the tank is facing with a magnitude based on the input, speed and the time between frames.
-            var movement = transform.forward * (m_MovementInputValue * m_Speed * Time.deltaTime);
+            var movement = transform.forward * (vehicleMovementValue * m_Speed * Time.deltaTime);
 
             // Apply this movement to the rigidbody's position.
-            m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
-            
-            
+            m_Rigidbody.MovePosition(m_Rigidbody.position + movement);            
+           
         }
 
-
-        public virtual void Turn ()
+        public void Rotation ()
         {
             if(currentFuel<=0) return;
             // Determine the number of degrees to be turned based on the input, speed and time between frames.
-            var turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
+            var turn = vehicleTurnValue * m_TurnSpeed * Time.deltaTime;
 
             // Make this into a rotation in the y axis.
             Quaternion turnRotation = Quaternion.Euler (0f, turn, 0f);

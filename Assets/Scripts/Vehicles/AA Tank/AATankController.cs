@@ -28,8 +28,8 @@ namespace Vehicles
         {
             if (!hasAuthority) return;
 
-            _AATankMovement.Move();
-            _AATankMovement.Turn();
+            //_AATankMovement.OnMove();
+            //_AATankMovement.OnTurn();
             _turretRotate.Rotate();
         }
 

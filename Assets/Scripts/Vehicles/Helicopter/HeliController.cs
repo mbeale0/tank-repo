@@ -28,8 +28,8 @@ namespace Vehicles
         {
             if (!hasAuthority) return;
 
-            _heliMovement.Move();
-            _heliMovement.Turn();
+            //_heliMovement.OnMove();
+            //_heliMovement.OnTurn();
             _turretRotate.Rotate();
         }
 

@@ -52,7 +52,11 @@ public class HeliFiring :NetworkBehaviour
         if (!hasAuthority) return;
         timerSlider.value += Time.deltaTime;
         if (heliCurrentAmmo <= 0) { return; }
-        if (Input.GetKey(shootKey) && canShoot)
+    }
+
+    private void OnFire()
+    {
+        if (canShoot)
         {
             StartCoroutine(ShootDelay());
         }

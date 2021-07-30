@@ -28,8 +28,8 @@ namespace Vehicles
         {
             if (!hasAuthority) return;
 
-            _jeepMovement.Move();
-            _jeepMovement.Turn();
+            //_jeepMovement.OnMove();
+           // _jeepMovement.OnTurn();
             _turretRotate.Rotate();
         }
 

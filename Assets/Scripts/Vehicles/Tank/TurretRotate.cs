@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 
 namespace Complete
 {
@@ -14,6 +14,7 @@ namespace Complete
         private bool rotateUp = false;
         private bool hasFired = true;// not realy true but prevents fire on start
         private bool isDown = true;
+        private float HorizontalRotationDirection;
 
         private void Start()
         {
@@ -21,7 +22,7 @@ namespace Complete
         }
         public void Rotate()
         {
-            HorizontalTurretRotate();
+            HorizontalRotation(HorizontalRotationDirection);
             VerticalBarrelRotate();
         }
 
@@ -31,16 +32,7 @@ namespace Complete
             {
                 var barrelVectorRotation = barrel.transform.localRotation.eulerAngles;
                 var smoothTime = 1f;
-                if (Input.GetKey("z") && !isDown)
-                {
-                    rotateUp = false;
-                    hasFired = false;
-                }
-                if (Input.GetKey("x") && isDown)
-                {
-                    rotateUp = true;
-                    hasFired = false;
-                }
+
 
                 if (rotateUp && !CompareTag("Helicopter"))
                 {
@@ -85,33 +77,30 @@ namespace Complete
             }
         }
 
+        private void OnVerticalRotation(InputValue input)
+        {
+            float rotationDirection = input.Get<float>();
+            if (rotationDirection == -1 && !isDown)
+            {
+                rotateUp = false;
+                hasFired = false;
+            }
+            else if (rotationDirection == 1 && isDown)
+            {
+                rotateUp = true;
+                hasFired = false;
+            }
+        }
+
         private void CheckPositionForTank(Vector3 barrelVectorRotation)
         {
             if (CheckTankBarrelPosition(barrelVectorRotation) && !hasFired && rotateUp)
             {
-                hasFired = true;
-                if (firingScript != null)
-                {
-                    firingScript.CmdFire();
-                }
-                else if (heliFiringScript != null)
-                {
-                    heliFiringScript.CmdFire();
-                }
-                isDown = false;
+                FireAtTankUpPosition();
             }
             else if (CheckTankBarrelPosition(barrelVectorRotation) && !hasFired && !rotateUp)
             {
-                hasFired = true;
-                if (firingScript != null)
-                {
-                    firingScript.CmdFire();
-                }
-                else if (heliFiringScript != null)
-                {
-                    heliFiringScript.CmdFire();
-                }
-                isDown = true;
+                FireAtTankDownPosition();
             }
         }
 
@@ -119,55 +108,95 @@ namespace Complete
         {
             if (CheckHeliBarrelPosition(barrelVectorRotation) && !hasFired && rotateUp)
             {
-                
-                hasFired = true;
-                if (firingScript != null)
-                {
-                    firingScript.CmdFire();
-                }
-                else if (heliFiringScript != null)
-                {
-                    heliFiringScript.CmdFire();
-                }
-                isDown = false;
+                FireAtHeliUpPosition();
             }
             else if (CheckHeliBarrelPosition(barrelVectorRotation) && !hasFired && !rotateUp)
             {
-                hasFired = true;
-                if (firingScript != null)
-                {
-                    firingScript.CmdFire();
-                }
-                else if (heliFiringScript != null)
-                {
-                    heliFiringScript.CmdFire();
-                }
-                isDown = true;
+                FireAtHeliDownPosition();
             }
         }
+        private void FireAtTankUpPosition()
+        {
+            hasFired = true;
+            if (firingScript != null)
+            {
+                firingScript.CmdFire();
+            }
+            else if (heliFiringScript != null)
+            {
+                heliFiringScript.CmdFire();
+            }
+            isDown = false;
+        }
+        private void FireAtTankDownPosition()
+        {
+            hasFired = true;
+            if (firingScript != null)
+            {
+                firingScript.CmdFire();
+            }
+            else if (heliFiringScript != null)
+            {
+                heliFiringScript.CmdFire();
+            }
+            isDown = true;
+        }
+        private void FireAtHeliUpPosition()
+        {
+            hasFired = true;
+            if (firingScript != null)
+            {
+                firingScript.CmdFire();
+            }
+            else if (heliFiringScript != null)
+            {
+                heliFiringScript.CmdFire();
+            }
+            isDown = false;
+        }
+        private void FireAtHeliDownPosition()
+        {
+            hasFired = true;
+            if (firingScript != null)
+            {
+                firingScript.CmdFire();
+            }
+            else if (heliFiringScript != null)
+            {
+                heliFiringScript.CmdFire();
+            }
+            isDown = true;
+        }
 
-        private void HorizontalTurretRotate()
+        private void OnHorizontalChange(InputValue input)
+        {
+            HorizontalRotationDirection = input.Get<float>();
+        }
+
+        private void HorizontalRotation(float HorizontalRotationDirection)
         {
             if (turret != null)
             {
-                if (Input.GetKey("e"))
-                {
-                    turret.transform.Rotate(new Vector3(0f, 1f, 0f));
-                    //AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
-                }
-                if (Input.GetKey("q"))
-                {
-                    turret.transform.Rotate(new Vector3(0f, -1f, 0f));
-                    //AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
-                }
-                if (Input.GetKeyUp("q"))
-                {
-                    //AkSoundEngine.PostEvent("Stop_Tank_Rotation", gameObject);
-                }
-                if (Input.GetKeyUp("e"))
-                {
-                    //AkSoundEngine.PostEvent("Stop_Tank_Rotation", gameObject);
-                }
+                RotateTurret(HorizontalRotationDirection);
+            }
+        }
+
+        private void RotateTurret(float HorizontalRotationDirection)
+        {
+            if (HorizontalRotationDirection == 0)
+            {
+                turret.transform.Rotate(new Vector3(0f, 0f, 0f));
+                //AkSoundEngine.PostEvent("Stop_Tank_Rotation", gameObject);
+            }
+            else if (HorizontalRotationDirection == 1)
+            {
+                turret.transform.Rotate(new Vector3(0f, 1f, 0f));
+                //AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
+            }
+            else if (HorizontalRotationDirection == -1)
+            {
+                turret.transform.Rotate(new Vector3(0f, -1f, 0f));
+                //AkSoundEngine.PostEvent("Play_Tank_Rotation", gameObject);
             }
         }
 

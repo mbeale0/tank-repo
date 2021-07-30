@@ -50,7 +50,12 @@ public class TankFiring :NetworkBehaviour
         if (!hasAuthority) return;
         timerSlider.value += Time.deltaTime;
         if (tankCurrentAmmo <= 0) { return; }
-        if (Input.GetKey(shootKey) && canShoot)
+    }
+
+    //called by player input despite no references
+    private void OnFire()
+    {
+        if (canShoot)
         {
             StartCoroutine(ShootDelay());
         }
