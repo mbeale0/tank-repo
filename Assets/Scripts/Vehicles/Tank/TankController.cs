@@ -13,13 +13,11 @@ namespace Vehicles
 
         public bool hasFlag = false;
         public GameObject flagMountPoint;
-        private TankMovement _tankMovement;
         private TurretRotate _turretRotate;
 
         private void Start()
         {
             _turretRotate = GetComponent<TurretRotate>();
-            _tankMovement = GetComponent<TankMovement>();
             if (!hasAuthority) { return; }
 
             playerMinmap.SetActive(true);
@@ -29,8 +27,6 @@ namespace Vehicles
         {
             if (!hasAuthority) return;
 
-            //_tankMovement.OnMove(InputValue input);
-            //_tankMovement.OnTurn();
             _turretRotate.Rotate();
         }
 

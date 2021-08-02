@@ -65,6 +65,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""AimPos"",
+                    ""type"": ""Value"",
+                    ""id"": ""d8b37de7-d125-4814-8c5a-0d8ee1c77831"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -331,6 +339,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""VerticalRotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""92537bde-972b-496d-abbc-4704adf68289"",
+                    ""path"": ""<VirtualMouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & Mouse"",
+                    ""action"": ""AimPos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c7257b6-17c3-4d8e-9f93-4913582d00ff"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""AimPos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -373,6 +403,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_VehicleControls_VerticalRotation = m_VehicleControls.FindAction("VerticalRotation", throwIfNotFound: true);
         m_VehicleControls_HorizontalChange = m_VehicleControls.FindAction("HorizontalChange", throwIfNotFound: true);
         m_VehicleControls_WeaponSwitch = m_VehicleControls.FindAction("WeaponSwitch", throwIfNotFound: true);
+        m_VehicleControls_AimPos = m_VehicleControls.FindAction("AimPos", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -428,6 +459,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_VehicleControls_VerticalRotation;
     private readonly InputAction m_VehicleControls_HorizontalChange;
     private readonly InputAction m_VehicleControls_WeaponSwitch;
+    private readonly InputAction m_VehicleControls_AimPos;
     public struct VehicleControlsActions
     {
         private @PlayerControls m_Wrapper;
@@ -438,6 +470,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @VerticalRotation => m_Wrapper.m_VehicleControls_VerticalRotation;
         public InputAction @HorizontalChange => m_Wrapper.m_VehicleControls_HorizontalChange;
         public InputAction @WeaponSwitch => m_Wrapper.m_VehicleControls_WeaponSwitch;
+        public InputAction @AimPos => m_Wrapper.m_VehicleControls_AimPos;
         public InputActionMap Get() { return m_Wrapper.m_VehicleControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -465,6 +498,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @WeaponSwitch.started -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnWeaponSwitch;
                 @WeaponSwitch.performed -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnWeaponSwitch;
                 @WeaponSwitch.canceled -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnWeaponSwitch;
+                @AimPos.started -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnAimPos;
+                @AimPos.performed -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnAimPos;
+                @AimPos.canceled -= m_Wrapper.m_VehicleControlsActionsCallbackInterface.OnAimPos;
             }
             m_Wrapper.m_VehicleControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -487,6 +523,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @WeaponSwitch.started += instance.OnWeaponSwitch;
                 @WeaponSwitch.performed += instance.OnWeaponSwitch;
                 @WeaponSwitch.canceled += instance.OnWeaponSwitch;
+                @AimPos.started += instance.OnAimPos;
+                @AimPos.performed += instance.OnAimPos;
+                @AimPos.canceled += instance.OnAimPos;
             }
         }
     }
@@ -517,5 +556,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnVerticalRotation(InputAction.CallbackContext context);
         void OnHorizontalChange(InputAction.CallbackContext context);
         void OnWeaponSwitch(InputAction.CallbackContext context);
+        void OnAimPos(InputAction.CallbackContext context);
     }
 }

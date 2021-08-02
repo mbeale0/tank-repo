@@ -52,6 +52,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "AimPos",
+                    "type": "Value",
+                    "id": "d8b37de7-d125-4814-8c5a-0d8ee1c77831",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -316,6 +324,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "VerticalRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "92537bde-972b-496d-abbc-4704adf68289",
+                    "path": "<VirtualMouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyBoard & Mouse",
+                    "action": "AimPos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9c7257b6-17c3-4d8e-9f93-4913582d00ff",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "AimPos",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
