@@ -20,7 +20,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Fire"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""059e3eb0-61a2-42d8-b658-5dbeb6a7cea7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -71,7 +71,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""154f7c83-9ed5-4bbe-8130-c513312d3454"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -137,7 +137,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""f8b3742e-e10c-4c2f-848c-1ea3a78d4492"",
-                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -148,7 +148,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""ccaeb05f-d66b-471b-838a-10ff16c3629c"",
-                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -191,34 +191,34 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""1D Axis"",
-                    ""id"": ""28ec90cb-ec09-46fa-b1fe-fd59eb7d685e"",
+                    ""id"": ""7f32543a-5a36-4728-8e55-dc93be5040d1"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""VerticalRotation"",
+                    ""action"": ""Turn"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""6d7391e6-2e90-4ada-bcff-d2b590e8c650"",
-                    ""path"": ""<Keyboard>/z"",
+                    ""id"": ""a607e816-34e5-425b-8c9a-d3bed900d582"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyBoard & Mouse"",
-                    ""action"": ""VerticalRotation"",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""aa99db06-adcb-4f9e-a5a3-30f9c68cd66a"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""id"": ""7c1da25a-5eb4-457a-a2c7-739720a8c8bd"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyBoard & Mouse"",
-                    ""action"": ""VerticalRotation"",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -256,6 +256,39 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""0b29e0d6-323d-4cd8-aefd-1e923774a605"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HorizontalChange"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""06bd0553-5793-4fd3-b376-857aa59c7759"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""HorizontalChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""9c7749e5-4ab5-4a74-b8a5-3e598226bd15"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""HorizontalChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""9bb4b6ca-e57e-47cf-aa79-557698519937"",
                     ""path"": ""<Keyboard>/r"",
@@ -265,11 +298,55 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""WeaponSwitch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8769b272-b2de-4c17-9556-312669592c3e"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""WeaponSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b33d03c-0d07-4d21-bd67-3ef495d24e9a"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & Mouse"",
+                    ""action"": ""VerticalRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d941efd0-9db7-4196-a39c-a67150d51d6e"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""VerticalRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
     ""controlSchemes"": [
+        {
+            ""name"": ""Gamepad"",
+            ""bindingGroup"": ""Gamepad"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        },
         {
             ""name"": ""KeyBoard & Mouse"",
             ""bindingGroup"": ""KeyBoard & Mouse"",
@@ -281,23 +358,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""devicePath"": ""<Mouse>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                },
-                {
-                    ""devicePath"": ""<Gamepad>"",
                     ""isOptional"": true,
-                    ""isOR"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Gamepad"",
-            ""bindingGroup"": ""Gamepad"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": false,
                     ""isOR"": false
                 }
             ]
@@ -430,15 +491,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public VehicleControlsActions @VehicleControls => new VehicleControlsActions(this);
-    private int m_KeyBoardMouseSchemeIndex = -1;
-    public InputControlScheme KeyBoardMouseScheme
-    {
-        get
-        {
-            if (m_KeyBoardMouseSchemeIndex == -1) m_KeyBoardMouseSchemeIndex = asset.FindControlSchemeIndex("KeyBoard & Mouse");
-            return asset.controlSchemes[m_KeyBoardMouseSchemeIndex];
-        }
-    }
     private int m_GamepadSchemeIndex = -1;
     public InputControlScheme GamepadScheme
     {
@@ -446,6 +498,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         {
             if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
             return asset.controlSchemes[m_GamepadSchemeIndex];
+        }
+    }
+    private int m_KeyBoardMouseSchemeIndex = -1;
+    public InputControlScheme KeyBoardMouseScheme
+    {
+        get
+        {
+            if (m_KeyBoardMouseSchemeIndex == -1) m_KeyBoardMouseSchemeIndex = asset.FindControlSchemeIndex("KeyBoard & Mouse");
+            return asset.controlSchemes[m_KeyBoardMouseSchemeIndex];
         }
     }
     public interface IVehicleControlsActions
