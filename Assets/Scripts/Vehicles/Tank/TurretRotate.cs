@@ -15,6 +15,7 @@ namespace Complete
         private bool hasFired = true;// not realy true but prevents fire on start
         private bool isDown = true;
         private float HorizontalRotationDirection;
+        private Vector2 mousePos;
 
         private void Start()
         {
@@ -22,6 +23,9 @@ namespace Complete
         }
         public void Rotate()
         {
+            mousePos = Mouse.current.position.ReadValue();
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Confined;
             HorizontalRotation(HorizontalRotationDirection);
             VerticalBarrelRotate();
         }
@@ -33,11 +37,15 @@ namespace Complete
                 var barrelVectorRotation = barrel.transform.localRotation.eulerAngles;
                 var smoothTime = 1f;
 
-
-                if (rotateUp && !CompareTag("Helicopter"))
+                barrelVectorRotation.x = -mousePos.x;
+               // barrelVectorRotation.y = -mousePos.y;
+                //Actually doing the rotation and making it smooth
+                barrelQuaternionRotation = Quaternion.Euler(barrelVectorRotation);
+                barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
+                /*f (rotateUp && !CompareTag("Helicopter"))
                 {
 
-                    barrelVectorRotation.x = -35;
+                    barrelVectorRotation.x = -mousePos.x;
 
                     //Actually doing the rotation and making it smooth
                     barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
@@ -55,13 +63,13 @@ namespace Complete
                     barrelVectorRotation.x = 0;
                     //Actually doing the rotation and making it smooth
                     barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
-                }
+                }*/
 
                 //Clamping the value so it will be between -35 and 0 
                 //barrelVectorRotation.x = Mathf.Clamp(barrelVectorRotation.x, -35, 0);
 
                 //Actually doing the rotation and making it smooth
-                barrelQuaternionRotation = Quaternion.Euler(barrelVectorRotation);
+                
 
 
                 // eulerangle for barrel starts at 360, and the negative 
