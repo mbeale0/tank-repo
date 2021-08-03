@@ -8293,7 +8293,7 @@ PrefabInstance:
     - target: {fileID: 3522466794923364937, guid: e415f13d2ba219e45a7580b6a6a553b9,
         type: 3}
       propertyPath: fleeMode
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3522466794923364937, guid: e415f13d2ba219e45a7580b6a6a553b9,
         type: 3}
@@ -8308,7 +8308,7 @@ PrefabInstance:
     - target: {fileID: 3522466794923364937, guid: e415f13d2ba219e45a7580b6a6a553b9,
         type: 3}
       propertyPath: fleeDirection.x
-      value: -180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3522466794923364937, guid: e415f13d2ba219e45a7580b6a6a553b9,
         type: 3}
