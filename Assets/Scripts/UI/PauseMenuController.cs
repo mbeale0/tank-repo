@@ -32,6 +32,7 @@ public class PauseMenuController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenu.SetActive(true);
+            Cursor.visible = true;
         }
     }
     private void SetupResolutionDropdown()

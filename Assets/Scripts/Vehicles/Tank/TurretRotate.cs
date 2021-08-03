@@ -7,6 +7,7 @@ namespace Complete
     {
         [SerializeField] GameObject turret;
         [SerializeField] GameObject barrel;
+        [SerializeField] private GameObject crossHair;
         [SerializeField] Quaternion barrelQuaternionRotation;
         [SerializeField] TankFiring firingScript;
         [SerializeField] HeliFiring heliFiringScript;
@@ -15,14 +16,20 @@ namespace Complete
         private bool hasFired = true;// not realy true but prevents fire on start
         private bool isDown = true;
         private float HorizontalRotationDirection;
-
+        private Vector2 mousePos;
+        private float lastMousePos = 0;
         private void Start()
         {
             audioSource = GetComponent<AudioSource>();
         }
         public void Rotate()
         {
+            mousePos = Mouse.current.position.ReadValue();
+            //Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Confined;
+            
             HorizontalRotation(HorizontalRotationDirection);
+            HorizontalLookAtMouse();
             VerticalBarrelRotate();
         }
 
@@ -166,7 +173,27 @@ namespace Complete
             }
             isDown = true;
         }
-
+        private void HorizontalLookAtMouse()
+        {
+            Debug.Log($"{mousePos.x}");
+            
+            if (mousePos.x == lastMousePos)
+            {
+                turret.transform.Rotate(new Vector3(0f, 0f, 0f));
+            }
+            else if (mousePos.x <= lastMousePos)
+            {
+                Vector3 lookHere = new Vector3(0, -mousePos.x  * .001f, 0);
+                turret.transform.Rotate(lookHere);
+            }
+            else if (mousePos.x >= lastMousePos)
+            {
+                Vector3 lookHere = new Vector3(0, mousePos.x * .001f, 0);
+                turret.transform.Rotate(lookHere);
+            }
+            lastMousePos = mousePos.x; 
+            
+        }
         private void OnHorizontalChange(InputValue input)
         {
             HorizontalRotationDirection = input.Get<float>();
