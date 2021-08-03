@@ -7,6 +7,7 @@ namespace Complete
     {
         [SerializeField] GameObject turret;
         [SerializeField] GameObject barrel;
+        [SerializeField] private GameObject crossHair;
         [SerializeField] Quaternion barrelQuaternionRotation;
         [SerializeField] TankFiring firingScript;
         [SerializeField] HeliFiring heliFiringScript;
@@ -16,7 +17,7 @@ namespace Complete
         private bool isDown = true;
         private float HorizontalRotationDirection;
         private Vector2 mousePos;
-
+        private float lastMousePos = 0;
         private void Start()
         {
             audioSource = GetComponent<AudioSource>();
@@ -24,9 +25,11 @@ namespace Complete
         public void Rotate()
         {
             mousePos = Mouse.current.position.ReadValue();
-            Cursor.visible = false;
+            //Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Confined;
+            
             HorizontalRotation(HorizontalRotationDirection);
+            HorizontalLookAtMouse();
             VerticalBarrelRotate();
         }
 
@@ -37,15 +40,11 @@ namespace Complete
                 var barrelVectorRotation = barrel.transform.localRotation.eulerAngles;
                 var smoothTime = 1f;
 
-                barrelVectorRotation.x = -mousePos.x;
-               // barrelVectorRotation.y = -mousePos.y;
-                //Actually doing the rotation and making it smooth
-                barrelQuaternionRotation = Quaternion.Euler(barrelVectorRotation);
-                barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
-                /*f (rotateUp && !CompareTag("Helicopter"))
+
+                if (rotateUp && !CompareTag("Helicopter"))
                 {
 
-                    barrelVectorRotation.x = -mousePos.x;
+                    barrelVectorRotation.x = -35;
 
                     //Actually doing the rotation and making it smooth
                     barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
@@ -63,13 +62,13 @@ namespace Complete
                     barrelVectorRotation.x = 0;
                     //Actually doing the rotation and making it smooth
                     barrel.transform.localRotation = Quaternion.Slerp(barrel.transform.localRotation, barrelQuaternionRotation, smoothTime * Time.deltaTime);
-                }*/
+                }
 
                 //Clamping the value so it will be between -35 and 0 
                 //barrelVectorRotation.x = Mathf.Clamp(barrelVectorRotation.x, -35, 0);
 
                 //Actually doing the rotation and making it smooth
-                
+                barrelQuaternionRotation = Quaternion.Euler(barrelVectorRotation);
 
 
                 // eulerangle for barrel starts at 360, and the negative 
@@ -174,7 +173,27 @@ namespace Complete
             }
             isDown = true;
         }
-
+        private void HorizontalLookAtMouse()
+        {
+            Debug.Log($"{mousePos.x}");
+            
+            if (mousePos.x == lastMousePos)
+            {
+                turret.transform.Rotate(new Vector3(0f, 0f, 0f));
+            }
+            else if (mousePos.x <= lastMousePos)
+            {
+                Vector3 lookHere = new Vector3(0, -mousePos.x  * .001f, 0);
+                turret.transform.Rotate(lookHere);
+            }
+            else if (mousePos.x >= lastMousePos)
+            {
+                Vector3 lookHere = new Vector3(0, mousePos.x * .001f, 0);
+                turret.transform.Rotate(lookHere);
+            }
+            lastMousePos = mousePos.x; 
+            
+        }
         private void OnHorizontalChange(InputValue input)
         {
             HorizontalRotationDirection = input.Get<float>();

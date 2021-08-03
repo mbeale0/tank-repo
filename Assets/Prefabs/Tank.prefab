@@ -5924,6 +5924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret: {fileID: 489806629534330833}
   barrel: {fileID: 489806629534364807}
+  crossHair: {fileID: 1133282700853914966}
   barrelQuaternionRotation: {x: 0, y: 0, z: 0, w: 0}
   firingScript: {fileID: 2172441862460566415}
   heliFiringScript: {fileID: 0}
