@@ -77,15 +77,14 @@ namespace Complete
             }
         }
 
-        private void OnVerticalRotation(InputValue input)
+        private void OnVerticalRotation()
         {
-            float rotationDirection = input.Get<float>();
-            if (rotationDirection == -1 && !isDown)
+            if (!isDown)
             {
                 rotateUp = false;
                 hasFired = false;
             }
-            else if (rotationDirection == 1 && isDown)
+            else if (isDown)
             {
                 rotateUp = true;
                 hasFired = false;

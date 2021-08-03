@@ -27,6 +27,7 @@ public class TankFiring :NetworkBehaviour
     private int tankCurrentAmmo;
     private bool canShoot = true;
     private bool hasSwitchedWeapon = false; // note: this is a system for only two weapons 
+    private float fireValue = 0;
 
     private enum CurrentWeapon { Cannon, MachineGun};
     private CurrentWeapon currentWeapon;
@@ -51,15 +52,16 @@ public class TankFiring :NetworkBehaviour
         if (!hasAuthority) return;
         timerSlider.value += Time.deltaTime;
         if (tankCurrentAmmo <= 0) { return; }
-    }
-
-    //called by player input despite no references
-    private void OnFire()
-    {
-        if (canShoot)
+        if (canShoot && fireValue == 1)
         {
             StartCoroutine(ShootDelay());
         }
+    }
+
+    //called by player input despite no references
+    private void OnFire(InputValue input)
+    {
+        fireValue = input.Get<float>();
     }
 
     private void OnWeaponSwitch()
